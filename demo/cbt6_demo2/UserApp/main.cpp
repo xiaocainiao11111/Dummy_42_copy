@@ -4,16 +4,18 @@
 #include <tim.h>
 
 /* Component Definitions -----------------------------------------------------*/
-// BoardConfig_t boardConfig;
+BoardConfig_t boardConfig;
 // Motor motor;
 // TB67H450 tb67H450;
 // MT6816 mt6816;
 // EncoderCalibrator encoderCalibrator(&motor);
+EEPROM eeprom;
 Button button1(1, 1000), button2(2, 3000);
 void OnButton1Event(Button::Event _event);
 void OnButton2Event(Button::Event _event);
 // Led statusLed;
 
+//..............................
 uint8_t button_num = 0;
 uint64_t serialNum = 0;
 uint16_t defaultNodeID = 0;
@@ -25,7 +27,7 @@ void Main()
     // // Change below to fit your situation
     switch (serialNum)
     {
-    case 0x6d7730845187:
+    case 0x6d7730845187: // 替换成自己的
         defaultNodeID = 1;
         //     case 431466563640: //J1
         //         defaultNodeID = 1;
@@ -51,7 +53,7 @@ void Main()
 
     // /*---------- Apply EEPROM Settings ----------*/
     // // Setting priority is EEPROM > Motor.h
-    EEPROM eeprom;
+    // EEPROM eeprom;
     // eeprom.get(0, boardConfig);
     // if (boardConfig.configStatus != CONFIG_OK) // use default settings
     // {
@@ -150,6 +152,15 @@ void OnButton1Event(Button::Event _event)
         break;
     case ButtonBase::CLICK:
         button_num = 4;
+        eeprom_buffered_write_byte(0, 0x67);
+        eeprom_buffered_write_byte(1, 0x45);
+        eeprom_buffered_write_byte(2, 0x23);
+        eeprom_buffered_write_byte(3, 0x01);
+        eeprom_buffered_write_byte(4, 0xEF);
+        eeprom_buffered_write_byte(5, 0xCD);
+        eeprom_buffered_write_byte(6, 0xAB);
+        eeprom_buffered_write_byte(7, 0x89);
+        eeprom_buffer_flush();
         // if (motor.controller->modeRunning != Motor::MODE_STOP)
         // {
         //     boardConfig.defaultMode = motor.controller->modeRunning;
