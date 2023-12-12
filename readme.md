@@ -1,1 +1,1 @@
-xiaocainiao42的demo文件
+复刻dummy42步进电机闭环驱动器的demo分享，gpl3.0开源协议。
