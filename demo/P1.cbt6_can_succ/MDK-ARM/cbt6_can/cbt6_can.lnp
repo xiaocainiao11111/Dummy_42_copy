@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"cbt6_can\startup_stm32f103xb.o"
+"cbt6_can\main.o"
+"cbt6_can\gpio.o"
+"cbt6_can\can.o"
+"cbt6_can\stm32f1xx_it.o"
+"cbt6_can\stm32f1xx_hal_msp.o"
+"cbt6_can\stm32f1xx_hal_gpio_ex.o"
+"cbt6_can\stm32f1xx_hal_can.o"
+"cbt6_can\stm32f1xx_hal.o"
+"cbt6_can\stm32f1xx_hal_rcc.o"
+"cbt6_can\stm32f1xx_hal_rcc_ex.o"
+"cbt6_can\stm32f1xx_hal_gpio.o"
+"cbt6_can\stm32f1xx_hal_dma.o"
+"cbt6_can\stm32f1xx_hal_cortex.o"
+"cbt6_can\stm32f1xx_hal_pwr.o"
+"cbt6_can\stm32f1xx_hal_flash.o"
+"cbt6_can\stm32f1xx_hal_flash_ex.o"
+"cbt6_can\stm32f1xx_hal_exti.o"
+"cbt6_can\stm32f1xx_hal_tim.o"
+"cbt6_can\stm32f1xx_hal_tim_ex.o"
+"cbt6_can\system_stm32f1xx.o"
+--strict --scatter "cbt6_can\cbt6_can.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "cbt6_can.map" -o cbt6_can\cbt6_can.axf
