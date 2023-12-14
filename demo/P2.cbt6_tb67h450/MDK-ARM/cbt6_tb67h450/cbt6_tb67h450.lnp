@@ -1,0 +1,28 @@
+--cpu Cortex-M3
+"cbt6_tb67h450\startup_stm32f103xb.o"
+"cbt6_tb67h450\main.o"
+"cbt6_tb67h450\gpio.o"
+"cbt6_tb67h450\tim.o"
+"cbt6_tb67h450\stm32f1xx_it.o"
+"cbt6_tb67h450\stm32f1xx_hal_msp.o"
+"cbt6_tb67h450\stm32f1xx_hal_gpio_ex.o"
+"cbt6_tb67h450\stm32f1xx_hal_tim.o"
+"cbt6_tb67h450\stm32f1xx_hal_tim_ex.o"
+"cbt6_tb67h450\stm32f1xx_hal.o"
+"cbt6_tb67h450\stm32f1xx_hal_rcc.o"
+"cbt6_tb67h450\stm32f1xx_hal_rcc_ex.o"
+"cbt6_tb67h450\stm32f1xx_hal_gpio.o"
+"cbt6_tb67h450\stm32f1xx_hal_dma.o"
+"cbt6_tb67h450\stm32f1xx_hal_cortex.o"
+"cbt6_tb67h450\stm32f1xx_hal_pwr.o"
+"cbt6_tb67h450\stm32f1xx_hal_flash.o"
+"cbt6_tb67h450\stm32f1xx_hal_flash_ex.o"
+"cbt6_tb67h450\stm32f1xx_hal_exti.o"
+"cbt6_tb67h450\system_stm32f1xx.o"
+"cbt6_tb67h450\main_1.o"
+"cbt6_tb67h450\tb67h450_base.o"
+"cbt6_tb67h450\tb67h450_stm32.o"
+--strict --scatter "cbt6_tb67h450\cbt6_tb67h450.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "cbt6_tb67h450.map" -o cbt6_tb67h450\cbt6_tb67h450.axf
