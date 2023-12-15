@@ -8,7 +8,7 @@ class TB67H450 : public TB67H450Base
 public:
     explicit TB67H450() : TB67H450Base()
     {}
-
+    void SetFocCurrentVector1(uint32_t _directionInCount, int32_t _current_mA);
 // private:
     void InitGpio() override;
 

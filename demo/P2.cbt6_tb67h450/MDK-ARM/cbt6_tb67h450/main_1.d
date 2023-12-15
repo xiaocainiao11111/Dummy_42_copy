@@ -1,15 +1,8 @@
 cbt6_tb67h450/main_1.o: ../UserApp/main.cpp ../UserApp/common_inc.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdio \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  ../UserApp/tb67h450_stm32.h ../UserApp/tb67h450_base.h \
-  ../UserApp/driver_base.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdint \
-  ../Core/Inc\tim.h ../Core/Inc/main.h \
-  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h ../Core/Inc\tim.h \
+  ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal.h \
   ../Core/Inc\stm32f1xx_hal_conf.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_rcc.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
@@ -36,4 +29,10 @@ cbt6_tb67h450/main_1.o: ../UserApp/main.cpp ../UserApp/common_inc.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_pwr.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_tim.h \
-  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdio \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  ../UserApp/tb67h450_stm32.h ../UserApp/tb67h450_base.h \
+  ../UserApp/driver_base.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdint

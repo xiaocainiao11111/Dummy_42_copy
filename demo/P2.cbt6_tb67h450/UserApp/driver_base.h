@@ -3,7 +3,6 @@
 
 #include <cstdint>
 
-
 class DriverBase
 {
 public:

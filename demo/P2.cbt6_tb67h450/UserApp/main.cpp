@@ -1,5 +1,5 @@
 #include "common_inc.h"
-#include <tim.h>
+
 
 void TIM1_Callback_10ms(void);
 void TIM4_Callback_50ms(void);
@@ -9,7 +9,7 @@ void TIM4_Callback_50ms(void);
 fabs测试
 */
 
-TB67H450 tb67H450;
+TB67H450 tb67h450;
 TB67H450Base tb67h450base;
 
 uint32_t goPosition = 0;
@@ -17,8 +17,8 @@ uint32_t goPosition = 0;
 void Main()
 {
 
-    tb67H450.InitGpio();
-    tb67H450.InitPwm();
+    tb67h450.InitGpio();
+    tb67h450.InitPwm();
 
     __HAL_TIM_CLEAR_IT(&htim1, TIM_IT_UPDATE);
     __HAL_TIM_CLEAR_IT(&htim4, TIM_IT_UPDATE);
@@ -55,7 +55,7 @@ void TIM1_Callback_10ms(void)
     if (goPosition <= 51200)
     {
         // 测试：以2000mA电流跑一圈
-        tb67h450base.SetFocCurrentVector(goPosition, 2000);
+        tb67h450.SetFocCurrentVector1(goPosition, 2000);
         goPosition += 2;
     }
 }

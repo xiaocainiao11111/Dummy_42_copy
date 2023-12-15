@@ -1,8 +1,40 @@
 #include "tb67h450_stm32.h"
 #include "tim.h"
+#include "sin_map.h"
 
+void TB67H450::SetFocCurrentVector1(uint32_t _directionInCount, int32_t _current_mA)
+{
+    phaseB.sinMapPtr = (_directionInCount) & (0x000003FF);
+    phaseA.sinMapPtr = (phaseB.sinMapPtr + (256)) & (0x000003FF);
 
+    phaseA.sinMapData = sin_pi_m2[phaseA.sinMapPtr];
+    phaseB.sinMapData = sin_pi_m2[phaseB.sinMapPtr];
 
+    uint32_t dac_reg = fabs(_current_mA);
+    dac_reg = (uint32_t)(dac_reg * 5083) >> 12; // 将0到3300映射至0到4095
+    dac_reg = dac_reg & (0x00000FFF);
+    phaseA.dacValue12Bits =
+        (uint32_t)(dac_reg * fabs(phaseA.sinMapData)) >> sin_pi_m2_dpiybit;
+    phaseB.dacValue12Bits =
+        (uint32_t)(dac_reg * fabs(phaseB.sinMapData)) >> sin_pi_m2_dpiybit;
+
+    // SetTwoCoilsCurrent(phaseA.dacValue12Bits, phaseB.dacValue12Bits);
+    DacOutputVoltage(phaseA.dacValue12Bits, phaseB.dacValue12Bits);
+    
+    if (phaseA.sinMapData > 0)
+        SetInputA(true, false);
+    else if (phaseA.sinMapData < 0)
+        SetInputA(false, true);
+    else
+        SetInputA(true, true);
+
+    if (phaseB.sinMapData > 0)
+        SetInputB(true, false);
+    else if (phaseB.sinMapData < 0)
+        SetInputB(false, true);
+    else
+        SetInputB(true, true);
+}
 
 void TB67H450::InitGpio()
 {
@@ -24,12 +56,10 @@ void TB67H450::InitGpio()
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 }
 
-
 void TB67H450::InitPwm()
 {
     MX_TIM2_Init();
 }
-
 
 void TB67H450::DacOutputVoltage(uint16_t _voltageA_3300mVIn12bits, uint16_t _voltageB_3300mVIn12bits)
 {
@@ -37,13 +67,11 @@ void TB67H450::DacOutputVoltage(uint16_t _voltageA_3300mVIn12bits, uint16_t _vol
     __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, _voltageB_3300mVIn12bits >> 2);
 }
 
-
 void TB67H450::SetInputA(bool _statusAp, bool _statusAm)
 {
     _statusAp ? (GPIOA->BSRR = GPIO_PIN_5) : (GPIOA->BRR = GPIO_PIN_5);
     _statusAm ? (GPIOA->BSRR = GPIO_PIN_4) : (GPIOA->BRR = GPIO_PIN_4);
 }
-
 
 void TB67H450::SetInputB(bool _statusBp, bool _statusBm)
 {

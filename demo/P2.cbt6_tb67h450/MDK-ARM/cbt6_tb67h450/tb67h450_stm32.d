@@ -32,4 +32,10 @@ cbt6_tb67h450/tb67h450_stm32.o: ../UserApp/tb67h450_stm32.cpp \
   ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_pwr.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_tim.h \
-  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  ../UserApp/sin_map.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cmath \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\type_traits \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstddef

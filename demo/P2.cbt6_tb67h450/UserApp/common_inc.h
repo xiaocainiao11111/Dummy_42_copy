@@ -6,7 +6,7 @@ extern "C" {
 #endif
 /*---------------------------- C Scope ---------------------------*/
 #include "stdint.h"
-
+#include <tim.h>
 void Main();
 
 #ifdef __cplusplus
