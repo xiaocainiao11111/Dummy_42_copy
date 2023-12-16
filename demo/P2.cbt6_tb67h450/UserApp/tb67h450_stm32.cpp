@@ -2,19 +2,23 @@
 #include "tim.h"
 #include "sin_map.h"
 
+
+/// @brief 主驱动函数
+/// @param _directionInCount 位置细分数
+/// @param _current_mA 最大电流
 void TB67H450::SetFocCurrentVector1(uint32_t _directionInCount, int32_t _current_mA)
 {
-    phaseB.sinMapPtr = (_directionInCount) & (0x000003FF);
-    phaseA.sinMapPtr = (phaseB.sinMapPtr + (256)) & (0x000003FF);
+    phaseB.sinMapPtr = (_directionInCount) & (0x000003FF);// 限制在1023内
+    phaseA.sinMapPtr = (phaseB.sinMapPtr + (256)) & (0x000003FF);// B相延后四分之一周期
 
-    phaseA.sinMapData = sin_pi_m2[phaseA.sinMapPtr];
+    phaseA.sinMapData = sin_pi_m2[phaseA.sinMapPtr];// 取对应sin值
     phaseB.sinMapData = sin_pi_m2[phaseB.sinMapPtr];
 
-    uint32_t dac_reg = fabs(_current_mA);
-    dac_reg = (uint32_t)(dac_reg * 5083) >> 12; // 将0到3300映射至0到4095
+    uint32_t dac_reg = fabs(_current_mA);// 绝对值
+    dac_reg = (uint32_t)(dac_reg * 5083) >> 12; // 3300转4095
     dac_reg = dac_reg & (0x00000FFF);
     phaseA.dacValue12Bits =
-        (uint32_t)(dac_reg * fabs(phaseA.sinMapData)) >> sin_pi_m2_dpiybit;
+        (uint32_t)(dac_reg * fabs(phaseA.sinMapData)) >> sin_pi_m2_dpiybit;// 由实际细分数得到实际电流（对标4095）
     phaseB.dacValue12Bits =
         (uint32_t)(dac_reg * fabs(phaseB.sinMapData)) >> sin_pi_m2_dpiybit;
 
@@ -63,7 +67,7 @@ void TB67H450::InitPwm()
 
 void TB67H450::DacOutputVoltage(uint16_t _voltageA_3300mVIn12bits, uint16_t _voltageB_3300mVIn12bits)
 {
-    __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, _voltageA_3300mVIn12bits >> 2);
+    __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, _voltageA_3300mVIn12bits >> 2);// 4095转1023得到实际占空比
     __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, _voltageB_3300mVIn12bits >> 2);
 }
 
