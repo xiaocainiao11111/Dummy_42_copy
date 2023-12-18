@@ -90,7 +90,7 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-
+  Main();
   /* USER CODE END 2 */
 
   /* Infinite loop */
