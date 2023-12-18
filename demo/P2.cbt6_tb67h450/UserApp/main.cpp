@@ -1,6 +1,5 @@
 #include "common_inc.h"
 
-
 void TIM1_Callback_10ms(void);
 void TIM4_Callback_50ms(void);
 
@@ -11,7 +10,7 @@ fabs测试
 
 TB67H450 tb67h450;
 TB67H450Base tb67h450base;
-
+bool flag = 1;
 uint32_t goPosition = 0;
 
 void Main()
@@ -51,14 +50,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 void TIM1_Callback_10ms(void)
 {
-
-    if (goPosition <= 51200)
-    {
-        // 测试：以2000mA电流跑一圈
-        tb67h450.SetFocCurrentVector1(goPosition, 2000);
-        goPosition += 2;
-    }
 }
 void TIM4_Callback_50ms(void)
 {
+    if (goPosition <= 51200)
+    {
+        // 测试：以2000mA电流跑一圈
+        tb67h450.SetFocCurrentVector1(goPosition, 1000);
+        goPosition += 2;
+    }
 }
