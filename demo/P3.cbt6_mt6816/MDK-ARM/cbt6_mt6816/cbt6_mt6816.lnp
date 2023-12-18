@@ -1,0 +1,28 @@
+--cpu Cortex-M3
+"cbt6_mt6816\startup_stm32f103xb.o"
+"cbt6_mt6816\main.o"
+"cbt6_mt6816\gpio.o"
+"cbt6_mt6816\spi.o"
+"cbt6_mt6816\tim.o"
+"cbt6_mt6816\stm32f1xx_it.o"
+"cbt6_mt6816\stm32f1xx_hal_msp.o"
+"cbt6_mt6816\stm32f1xx_hal_gpio_ex.o"
+"cbt6_mt6816\stm32f1xx_hal_spi.o"
+"cbt6_mt6816\stm32f1xx_hal.o"
+"cbt6_mt6816\stm32f1xx_hal_rcc.o"
+"cbt6_mt6816\stm32f1xx_hal_rcc_ex.o"
+"cbt6_mt6816\stm32f1xx_hal_gpio.o"
+"cbt6_mt6816\stm32f1xx_hal_dma.o"
+"cbt6_mt6816\stm32f1xx_hal_cortex.o"
+"cbt6_mt6816\stm32f1xx_hal_pwr.o"
+"cbt6_mt6816\stm32f1xx_hal_flash.o"
+"cbt6_mt6816\stm32f1xx_hal_flash_ex.o"
+"cbt6_mt6816\stm32f1xx_hal_exti.o"
+"cbt6_mt6816\stm32f1xx_hal_tim.o"
+"cbt6_mt6816\stm32f1xx_hal_tim_ex.o"
+"cbt6_mt6816\system_stm32f1xx.o"
+"cbt6_mt6816\main_1.o"
+--strict --scatter "cbt6_mt6816\cbt6_mt6816.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "cbt6_mt6816.map" -o cbt6_mt6816\cbt6_mt6816.axf
