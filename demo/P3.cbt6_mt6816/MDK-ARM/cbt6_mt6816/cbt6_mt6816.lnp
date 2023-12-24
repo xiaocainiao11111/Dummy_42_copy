@@ -22,6 +22,9 @@
 "cbt6_mt6816\stm32f1xx_hal_tim_ex.o"
 "cbt6_mt6816\system_stm32f1xx.o"
 "cbt6_mt6816\main_1.o"
+"cbt6_mt6816\tb67h450_base.o"
+"cbt6_mt6816\tb67h450_stm32.o"
+"cbt6_mt6816\encoder_calibrator_base.o"
 --strict --scatter "cbt6_mt6816\cbt6_mt6816.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

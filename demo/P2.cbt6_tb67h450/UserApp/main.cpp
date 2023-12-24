@@ -48,6 +48,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
 }
 
+
+// 测试通过，注意电机线序
 void TIM1_Callback_10ms(void)
 {
 }
