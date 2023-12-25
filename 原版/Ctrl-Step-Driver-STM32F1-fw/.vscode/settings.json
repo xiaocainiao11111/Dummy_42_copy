@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "can.h": "c",
+        "common_inc.h": "c",
+        "configurations.h": "c",
+        "adc.h": "c",
+        "main.h": "c",
+        "motor.h": "c",
+        "led_stm32.h": "c",
+        "eeprom_interface.h": "c",
+        "st_hardware.h": "c",
+        "stockpile_f103cb.h": "c"
+    }
+}
