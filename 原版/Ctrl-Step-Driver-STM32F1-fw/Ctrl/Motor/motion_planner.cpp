@@ -73,6 +73,8 @@ void MotionPlanner::CurrentTracker::CalcCurrentIntegral(int32_t _current)
     currentIntegral = currentIntegral % context->CONTROL_FREQUENCY;
 }
 
+
+
 void MotionPlanner::CurrentTracker::SetCurrentAcc(int32_t _currentAcc)
 {
     currentAcc = _currentAcc;

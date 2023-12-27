@@ -35,7 +35,7 @@ public:
 
 
         void Init();
-        void SetCurrentAcc(int32_t _currentAcc);
+        void SetCurrentAcc(int32_t _currentAcc);// 把主currentAcc赋给自身的currntAcc
         void NewTask(int32_t _realCurrent);
         void CalcSoftGoal(int32_t _goalCurrent);
 
