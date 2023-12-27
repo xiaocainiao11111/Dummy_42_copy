@@ -1,10 +1,36 @@
 // #include <Platform/Memory/stockpile_f103cb.h>
 // #include <valarray>
 #include "encoder_calibrator_base.h"
+#include "stockpile_f103cb.h"
 
 uint32_t goposition = 0;
 
 extern TB67H450 tb67h450;
+
+void EncoderCalibratorBase::BeginWriteFlash()
+{
+    Stockpile_Flash_Data_Begin(&stockpile_quick_cali);
+}
+
+
+void EncoderCalibratorBase::EndWriteFlash()
+{
+    Stockpile_Flash_Data_End(&stockpile_quick_cali);
+}
+
+
+void EncoderCalibratorBase::ClearFlash()
+{
+    Stockpile_Flash_Data_Empty(&stockpile_quick_cali);
+}
+
+//记录编码器从0开始的对应细分数
+void EncoderCalibratorBase::WriteFlash16bitsAppend(uint16_t _data)
+{
+    Stockpile_Flash_Data_Write_Data16(&stockpile_quick_cali, &_data, 1);
+}
+
+
 
 int32_t EncoderCalibratorBase::CycleDataAverage(const uint16_t *_data, uint16_t _length, int32_t _cyc)
 {

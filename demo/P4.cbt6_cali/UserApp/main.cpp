@@ -8,7 +8,7 @@ fabs测试
 TB67H450 tb67h450;
 TB67H450Base tb67h450base;
 
-EncoderCalibratorBase encoderCalibratorBase;
+// EncoderCalibratorBase encoderCalibratorBase;
 
 bool flag = 1;
 extern uint32_t goPosition;
@@ -59,7 +59,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
     if (htim == (&htim4))
     {
-        encoderCalibratorBase.Tick20kHz();
+        // encoderCalibratorBase.Tick20kHz();
         // TIM1_Callback_10ms();
         // 进入校准
     }

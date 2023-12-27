@@ -40,4 +40,6 @@ cbt6_mt6816/encoder_calibrator_base.o: \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   ../UserApp/tb67h450_stm32.h ../UserApp/tb67h450_base.h \
   ../UserApp/driver_base.h ../UserApp/motor.h \
-  ../UserApp/motion_planner.h ../UserApp/encoder_base.h
+  ../UserApp/motion_planner.h ../UserApp/encoder_base.h \
+  ../UserApp/stockpile_f103cb.h ../Core/Inc\gpio.h \
+  ../UserApp/stockpile_config.h

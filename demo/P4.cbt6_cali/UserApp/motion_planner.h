@@ -35,8 +35,8 @@ public:
 
 
         void Init();
-        void SetCurrentAcc(int32_t _currentAcc);
-        void NewTask(int32_t _realCurrent);
+        void SetCurrentAcc(int32_t _currentAcc);// 把主currentAcc赋给自身的currntAcc
+        void NewTask(int32_t _realCurrent);// 更新变量用
         void CalcSoftGoal(int32_t _goalCurrent);
 
 
@@ -159,7 +159,7 @@ public:
 
         void Init(int32_t _updateTimeout);
         void SetSlowDownVelocityAcc(int32_t value);
-        void NewTask(int32_t real_location, int32_t real_speed);
+        void NewTask(int32_t real_location, int32_t real_speed);// 更新变量用
         void CalcSoftGoal(int32_t _goalPosition, int32_t _goalVelocity);
 
 

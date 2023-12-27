@@ -8,7 +8,6 @@
 class EncoderCalibratorBase
 {
 public:
-    // EncoderCalibratorBase();
     static const int32_t MOTOR_ONE_CIRCLE_HARD_STEPS = 200; // for 1.8° step-motors
     static const uint8_t SAMPLE_COUNTS_PER_STEP = 16;
     static const uint8_t AUTO_CALIB_SPEED = 2;
@@ -73,10 +72,10 @@ public:
     static int32_t CycleDataAverage(const uint16_t *_data, uint16_t _length, int32_t _cyc);
 
     /***** Port Specified Implements *****/
-    // virtual void BeginWriteFlash() = 0;
-    // virtual void EndWriteFlash() = 0;
-    // virtual void ClearFlash() = 0;
-    // virtual void WriteFlash16bitsAppend(uint16_t _data) = 0;
+    virtual void BeginWriteFlash() = 0;
+    virtual void EndWriteFlash() = 0;
+    virtual void ClearFlash() = 0;
+    virtual void WriteFlash16bitsAppend(uint16_t _data) = 0;
 };
 
 #endif
