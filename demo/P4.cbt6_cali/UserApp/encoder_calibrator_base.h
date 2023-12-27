@@ -4,6 +4,7 @@
 // #include "Motor/motor.h"
 #include <cstdint>
 #include "common_inc.h"
+#include "motor.h"
 
 class EncoderCalibratorBase
 {
@@ -33,26 +34,26 @@ public:
         CALI_CALCULATING,
     } State_t;
 
-    // explicit EncoderCalibratorBase(Motor* _motor)
-    // {
-    //     motor = _motor;
+    explicit EncoderCalibratorBase(Motor* _motor)
+    {
+        motor = _motor;
 
-    //     isTriggered = false;
-    //     errorCode = CALI_NO_ERROR;
-    //     state = CALI_DISABLE;
-    //     goPosition = 0;
-    //     rcdX = 0;
-    //     rcdY = 0;
-    //     resultNum = 0;
-    // }
+        isTriggered = false;
+        errorCode = CALI_NO_ERROR;
+        state = CALI_DISABLE;
+        goPosition = 0;
+        rcdX = 0;
+        rcdY = 0;
+        resultNum = 0;
+    }
 
     bool isTriggered;
 
     void Tick20kHz();
     void TickMainLoop();
 
-// private:
-    // Motor* motor;
+private:
+    Motor* motor;
 
     Error_t errorCode;
     State_t state;

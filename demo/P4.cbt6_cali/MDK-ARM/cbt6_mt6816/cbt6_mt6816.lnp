@@ -29,6 +29,7 @@
 "cbt6_mt6816\mt6816_base.o"
 "cbt6_mt6816\mt6816_stm32.o"
 "cbt6_mt6816\stockpile_f103cb.o"
+"cbt6_mt6816\encoder_calibrator_stm32.o"
 --strict --scatter "cbt6_mt6816\cbt6_mt6816.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

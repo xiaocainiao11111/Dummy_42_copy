@@ -1,7 +1,7 @@
 #ifndef CTRL_STEP_FW_ENCODER_CALIBRATOR_H
 #define CTRL_STEP_FW_ENCODER_CALIBRATOR_H
 
-#include "Sensor/Encoder/encoder_calibrator_base.h"
+#include "encoder_calibrator_base.h"
 
 class EncoderCalibrator : public EncoderCalibratorBase
 {
