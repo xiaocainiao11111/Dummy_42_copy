@@ -34,8 +34,10 @@ cbt6_mt6816/main_1.o: ../UserApp/main.cpp ../UserApp/common_inc.h \
   ../Core/Inc\spi.h D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdio \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  ../UserApp/encoder_calibrator_stm32.h \
   ../UserApp/encoder_calibrator_base.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdint \
   ../UserApp/motor.h ../UserApp/motion_planner.h \
   ../UserApp/encoder_base.h ../UserApp/driver_base.h \
-  ../UserApp/tb67h450_stm32.h ../UserApp/tb67h450_base.h
+  ../UserApp/tb67h450_stm32.h ../UserApp/tb67h450_base.h \
+  ../UserApp/mt6816_stm32.h ../UserApp/mt6816_base.h

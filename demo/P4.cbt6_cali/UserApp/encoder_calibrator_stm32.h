@@ -3,7 +3,7 @@
 
 #include "encoder_calibrator_base.h"
 
-class EncoderCalibrator : public EncoderCalibratorBase
+class EncoderCalibrator :public EncoderCalibratorBase
 {
 public:
     explicit EncoderCalibrator(Motor* _motor) : EncoderCalibratorBase(_motor)

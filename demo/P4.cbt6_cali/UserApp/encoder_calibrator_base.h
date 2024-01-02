@@ -3,7 +3,7 @@
 
 // #include "Motor/motor.h"
 #include <cstdint>
-#include "common_inc.h"
+// #include "common_inc.h"
 #include "motor.h"
 
 class EncoderCalibratorBase
@@ -51,9 +51,10 @@ public:
 
     void Tick20kHz();
     void TickMainLoop();
-
-private:
+    void test();
     Motor* motor;
+private:
+
 
     Error_t errorCode;
     State_t state;
@@ -73,10 +74,10 @@ private:
     static int32_t CycleDataAverage(const uint16_t *_data, uint16_t _length, int32_t _cyc);
 
     /***** Port Specified Implements *****/
-    virtual void BeginWriteFlash() = 0;
-    virtual void EndWriteFlash() = 0;
-    virtual void ClearFlash() = 0;
-    virtual void WriteFlash16bitsAppend(uint16_t _data) = 0;
+    virtual void BeginWriteFlash();
+    virtual void EndWriteFlash();
+    virtual void ClearFlash();
+    virtual void WriteFlash16bitsAppend(uint16_t _data);
 };
 
 #endif

@@ -551,6 +551,11 @@
               <FilePath>..\UserApp\stockpile_f103cb.c</FilePath>
             </File>
             <File>
+              <FileName>motor.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\UserApp\motor.cpp</FilePath>
+            </File>
+            <File>
               <FileName>encoder_calibrator_stm32.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\UserApp\encoder_calibrator_stm32.cpp</FilePath>

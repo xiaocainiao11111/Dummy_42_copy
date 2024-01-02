@@ -33,8 +33,8 @@ public:
 
         /*****************************************************/
 
-        motionPlanner.AttachConfig(&config.motionParams);
-        controller->AttachConfig(&config.ctrlParams);
+        // motionPlanner.AttachConfig(&config.motionParams);
+        // controller->AttachConfig(&config.ctrlParams);
     }
 
     const int32_t MOTOR_ONE_CIRCLE_HARD_STEPS = 200; // for 1.8° step-motors

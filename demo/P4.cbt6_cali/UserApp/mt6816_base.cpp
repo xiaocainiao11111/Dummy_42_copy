@@ -1,6 +1,8 @@
 #include "mt6816_base.h"
 #include "spi.h"
 
+uint16_t aaa=0;
+
 bool MT6816Base::Init()
 {
     SpiInit();
@@ -73,7 +75,9 @@ uint16_t MT6816Base::UpdateAngle()
     angleData.rawAngle = spiRawData.rawAngle;
     angleData.rectifiedAngle = quickCaliDataPtr[angleData.rawAngle];
 
+    aaa=angleData.rawAngle;
     return angleData.rectifiedAngle;
+
 }
 
 bool MT6816Base::IsCalibrated()

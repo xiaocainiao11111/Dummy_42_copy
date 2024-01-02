@@ -2,6 +2,7 @@
 // #include <valarray>
 #include "encoder_calibrator_base.h"
 #include "stockpile_f103cb.h"
+#include "tb67h450_stm32.h"
 
 uint32_t goposition = 0;
 
@@ -12,25 +13,21 @@ void EncoderCalibratorBase::BeginWriteFlash()
     Stockpile_Flash_Data_Begin(&stockpile_quick_cali);
 }
 
-
 void EncoderCalibratorBase::EndWriteFlash()
 {
     Stockpile_Flash_Data_End(&stockpile_quick_cali);
 }
-
 
 void EncoderCalibratorBase::ClearFlash()
 {
     Stockpile_Flash_Data_Empty(&stockpile_quick_cali);
 }
 
-//记录编码器从0开始的对应细分数
+// 记录编码器从0开始的对应细分数
 void EncoderCalibratorBase::WriteFlash16bitsAppend(uint16_t _data)
 {
     Stockpile_Flash_Data_Write_Data16(&stockpile_quick_cali, &_data, 1);
 }
-
-
 
 int32_t EncoderCalibratorBase::CycleDataAverage(const uint16_t *_data, uint16_t _length, int32_t _cyc)
 {
@@ -161,7 +158,6 @@ int32_t EncoderCalibratorBase::CycleDataAverage(const uint16_t *_data, uint16_t 
 //     errorCode = CALI_NO_ERROR;
 // }
 
-
 // 注意电流超过1A
 void EncoderCalibratorBase::Tick20kHz()
 {
@@ -176,6 +172,8 @@ void EncoderCalibratorBase::Tick20kHz()
     }
 
     // mt6816_get_raw_data(); // 先获取一次位置数据
+
+    motor->encoder->UpdateAngle();
 
     switch (state)
     {
@@ -283,6 +281,11 @@ void EncoderCalibratorBase::Tick20kHz()
     default:
         break;
     }
+}
+
+void EncoderCalibratorBase::test()
+{
+
 }
 
 // // // 主函数记录校准数据部分，暂时忽略
