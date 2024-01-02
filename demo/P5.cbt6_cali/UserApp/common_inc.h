@@ -8,6 +8,7 @@ extern "C"
 /*------------- C Scope -------------*/
 #include "stdint.h"
 #include "main.h"
+#include "tim.h"
     void Main(void);
 
 
