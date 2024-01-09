@@ -1,16 +1,33 @@
 #include "common_inc.h"
 
-Test test;
-void Test::tick(void)
-{
-}
+extern uint16_t _a;
+
+
+uint16_t _h=0;
+
+Test test1;
 
 void Main()
 {
-    test.num = 0;
-    test.tick();
+
     while (1)
     {
-        /* code */
+        test();
+        test1.test1();
+
+        if(test1._b==1)
+        {
+            _h++;
+            if(_h==1000)
+            {
+                _h=0;
+            }
+            // _h=1;
+        }
+
+
+
     }
 }
+
+

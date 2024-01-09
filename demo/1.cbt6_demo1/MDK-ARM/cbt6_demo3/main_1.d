@@ -30,4 +30,4 @@ cbt6_demo3/main_1.o: ../UserApp/main.cpp ../UserApp/common_inc.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_pwr.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdio \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ../UserApp/test.h

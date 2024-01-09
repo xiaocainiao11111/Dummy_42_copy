@@ -500,6 +500,16 @@
               <FileType>8</FileType>
               <FilePath>..\UserApp\main.cpp</FilePath>
             </File>
+            <File>
+              <FileName>user.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UserApp\user.c</FilePath>
+            </File>
+            <File>
+              <FileName>test.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\UserApp\test.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
