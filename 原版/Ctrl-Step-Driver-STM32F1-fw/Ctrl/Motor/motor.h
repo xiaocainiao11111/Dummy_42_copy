@@ -130,7 +130,7 @@ public:
     private:
         Motor *context;
         int32_t realLapPosition{};
-        int32_t realLapPositionLast{};
+        int32_t realLapPositionLast{};//上次细分数记录
         int32_t realPosition{};//目前实际位置，由mt6816校准得到
         int32_t realPositionLast{};
         int32_t estVelocity{};

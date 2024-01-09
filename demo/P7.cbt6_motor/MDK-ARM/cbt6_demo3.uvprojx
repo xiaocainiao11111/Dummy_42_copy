@@ -695,6 +695,11 @@
               <FileType>1</FileType>
               <FilePath>..\Memory\stockpile_f103cb.c</FilePath>
             </File>
+            <File>
+              <FileName>motion_planner.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Motor\motion_planner.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

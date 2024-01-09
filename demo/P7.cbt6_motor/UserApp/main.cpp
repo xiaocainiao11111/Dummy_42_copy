@@ -1,9 +1,18 @@
 #include "common_inc.h"
+#include "configurations.h"
+
+/*
+sqrtf测试，计算平方根
+*/
+
 
 // extern "C"  void tim4callback(void);
 
 uint16_t _b = 0, _g = 0, _p = 0;
 
+
+
+BoardConfig_t boardConfig;
 Motor motor;
 MT6816Base mt6816_base((uint16_t *)(0x08017C00));
 TB67H450Base tb67h450_base;
@@ -29,6 +38,9 @@ extern "C" void Main()
     encoder_calibrator_base.rcdX = 0;
     encoder_calibrator_base.rcdY = 0;
     encoder_calibrator_base.resultNum = 0;
+
+    motor.controller->Init();
+
 
     for (;;)
     {
@@ -68,6 +80,10 @@ extern "C" void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         if (encoder_calibrator_base.isTriggered)
         {
             encoder_calibrator_base.Tick20kHz();
+        }
+        else
+        {
+            motor.Tick20kHz();
         }
 
         // tim4callback();

@@ -28,6 +28,7 @@
 "cbt6_demo3\tb67h450_base.o"
 "cbt6_demo3\encoder_calibrator_base.o"
 "cbt6_demo3\stockpile_f103cb.o"
+"cbt6_demo3\motion_planner.o"
 "cbt6_demo3\retarget_io.o"
 --strict --scatter "cbt6_demo3\cbt6_demo3.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

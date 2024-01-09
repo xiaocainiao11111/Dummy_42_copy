@@ -34,7 +34,10 @@ cbt6_demo3/main_1.o: ../UserApp/main.cpp ../UserApp/common_inc.h \
   ../Core/Inc\tim.h D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdio \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ../Motor\motor.h \
-  ../Encoder\encoder_base.h \
+  ../Motor/motion_planner.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdint \
-  ../Encoder\MT6816_base.h ../Driver\tb67h450_base.h \
-  ../Encoder\encoder_calibrator_base.h
+  ../Encoder\encoder_base.h ../Encoder\MT6816_base.h \
+  ../Driver\tb67h450_base.h ../Encoder\encoder_calibrator_base.h \
+  ../UserApp/configurations.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h

@@ -234,7 +234,7 @@ void MotionPlanner::PositionTracker::CalcSoftGoal(int32_t _goalPosition)
                 auto need_down_location = (int32_t)((float)trackVelocity *
                                                     (float)trackVelocity *
                                                     (float)quickVelocityDownAcc);
-                if (abs(deltaPosition) > need_down_location)
+                if (fabs(deltaPosition) > need_down_location)
                 {
                     if (trackVelocity < context->config->ratedVelocity)
                     {
@@ -277,7 +277,7 @@ void MotionPlanner::PositionTracker::CalcSoftGoal(int32_t _goalPosition)
                 auto need_down_location = (int32_t)((float)trackVelocity *
                                                     (float)trackVelocity *
                                                     (float)quickVelocityDownAcc);
-                if (abs(deltaPosition) > need_down_location)
+                if (fabs(deltaPosition) > need_down_location)
                 {
                     if (trackVelocity > -context->config->ratedVelocity)
                     {

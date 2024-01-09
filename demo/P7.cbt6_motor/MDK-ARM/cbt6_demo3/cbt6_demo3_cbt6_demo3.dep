@@ -623,7 +623,7 @@ I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x64FAE934)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_spi.h)(0x64FAE934)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x64FAE934)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x64FAE934)
-F (..\UserApp\main.cpp)(0x659CE3CC)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../UserApp -I ../Motor -I ../Encoder -I ../Driver -I ../Memory-I./RTE/_cbt6_demo3-ID:/Keil_v5/ARM/PACK/ARM/CMSIS/5.0.1/CMSIS/Include-ID:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.2.0/Device/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o cbt6_demo3/main_1.o -MD)
+F (..\UserApp\main.cpp)(0x659CFE20)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../UserApp -I ../Motor -I ../Encoder -I ../Driver -I ../Memory-I./RTE/_cbt6_demo3-ID:/Keil_v5/ARM/PACK/ARM/CMSIS/5.0.1/CMSIS/Include-ID:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.2.0/Device/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o cbt6_demo3/main_1.o -MD)
 I (..\UserApp\common_inc.h)(0x659BB607)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdint.h)(0x57E9B0FE)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x58B875EA)
@@ -662,19 +662,24 @@ I (..\Core\Inc\tim.h)(0x659CAD7F)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\cstdio)(0x58211ED2)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdio.h)(0x561C442A)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x588CAFD2)
-I (..\Motor\motor.h)(0x659B4E9E)
-I (..\Encoder\encoder_base.h)(0x659B9498)
+I (..\Motor\motor.h)(0x659D0C76)
+I (..\Motor\motion_planner.h)(0x659CFD39)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\cstdint)(0x551CD06A)
+I (..\Encoder\encoder_base.h)(0x659B9498)
 I (..\Encoder\MT6816_base.h)(0x659BAF95)
 I (..\Driver\tb67h450_base.h)(0x659BAB80)
 I (..\Encoder\encoder_calibrator_base.h)(0x659CE362)
-F (..\Motor\motor.cpp)(0x6594D994)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../UserApp -I ../Motor -I ../Encoder -I ../Driver -I ../Memory-I./RTE/_cbt6_demo3-ID:/Keil_v5/ARM/PACK/ARM/CMSIS/5.0.1/CMSIS/Include-ID:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.2.0/Device/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o cbt6_demo3/motor.o -MD)
-I (..\Motor\motor.h)(0x659B4E9E)
-I (..\Encoder\encoder_base.h)(0x659B9498)
+I (..\UserApp\configurations.h)(0x659CFCE4)
+I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdbool.h)(0x56C7B584)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x588CAFD2)
+F (..\Motor\motor.cpp)(0x659D0D9A)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../UserApp -I ../Motor -I ../Encoder -I ../Driver -I ../Memory-I./RTE/_cbt6_demo3-ID:/Keil_v5/ARM/PACK/ARM/CMSIS/5.0.1/CMSIS/Include-ID:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.2.0/Device/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o cbt6_demo3/motor.o -MD)
+I (..\Motor\motor.h)(0x659D0C76)
+I (..\Motor\motion_planner.h)(0x659CFD39)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\cstdint)(0x551CD06A)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x58B875EA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdint.h)(0x57E9B0FE)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x588CAFD2)
+I (..\Encoder\encoder_base.h)(0x659B9498)
 I (..\Encoder\MT6816_base.h)(0x659BAF95)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\cmath)(0x58A8786A)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\math.h)(0x58A9C1F2)
@@ -683,6 +688,9 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\type_traits)(0x58B808AE)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\cstddef)(0x589D0B74)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x588CAFD2)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\__nullptr)(0x586D95D2)
+I (..\UserApp\configurations.h)(0x659CFCE4)
+I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdbool.h)(0x56C7B584)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x588CAFD2)
 F (..\Encoder\mt6816_base.cpp)(0x659BA2C8)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../UserApp -I ../Motor -I ../Encoder -I ../Driver -I ../Memory-I./RTE/_cbt6_demo3-ID:/Keil_v5/ARM/PACK/ARM/CMSIS/5.0.1/CMSIS/Include-ID:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.2.0/Device/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o cbt6_demo3/mt6816_base.o -MD)
 I (..\Encoder\mt6816_base.h)(0x659BAF95)
 I (..\Encoder\encoder_base.h)(0x659B9498)
@@ -796,7 +804,7 @@ I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x64FAE934)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_spi.h)(0x64FAE934)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x64FAE934)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x64FAE934)
-F (..\Encoder\encoder_calibrator_base.cpp)(0x659CE6BF)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../UserApp -I ../Motor -I ../Encoder -I ../Driver -I ../Memory-I./RTE/_cbt6_demo3-ID:/Keil_v5/ARM/PACK/ARM/CMSIS/5.0.1/CMSIS/Include-ID:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.2.0/Device/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o cbt6_demo3/encoder_calibrator_base.o -MD)
+F (..\Encoder\encoder_calibrator_base.cpp)(0x659D0F6E)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../UserApp -I ../Motor -I ../Encoder -I ../Driver -I ../Memory-I./RTE/_cbt6_demo3-ID:/Keil_v5/ARM/PACK/ARM/CMSIS/5.0.1/CMSIS/Include-ID:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.2.0/Device/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o cbt6_demo3/encoder_calibrator_base.o -MD)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\valarray)(0x587038D8)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x58B875EA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\cstddef)(0x589D0B74)
@@ -835,7 +843,8 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\tuple)(0x5897C546)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdexcept)(0x585DC3CC)
 I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\functional)(0x5882B21E)
 I (..\Encoder\encoder_calibrator_base.h)(0x659CE362)
-I (..\Motor\motor.h)(0x659B4E9E)
+I (..\Motor\motor.h)(0x659D0C76)
+I (..\Motor\motion_planner.h)(0x659CFD39)
 I (..\Encoder\encoder_base.h)(0x659B9498)
 I (..\Encoder\MT6816_base.h)(0x659BAF95)
 I (..\Memory\stockpile_f103cb.h)(0x6514F34B)
@@ -907,6 +916,18 @@ I (..\Core\Inc\gpio.h)(0x6588D801)
 I (..\Core\Inc\spi.h)(0x659B9215)
 I (..\Core\Inc\tim.h)(0x659CAD7F)
 I (..\Memory\stockpile_config.h)(0x659CC3D6)
+F (..\Motor\motion_planner.cpp)(0x659CEC05)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../UserApp -I ../Motor -I ../Encoder -I ../Driver -I ../Memory-I./RTE/_cbt6_demo3-ID:/Keil_v5/ARM/PACK/ARM/CMSIS/5.0.1/CMSIS/Include-ID:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.2.0/Device/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o cbt6_demo3/motion_planner.o -MD)
+I (..\Motor\motion_planner.h)(0x659CFD39)
+I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\cstdint)(0x551CD06A)
+I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\__config)(0x58B875EA)
+I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\stdint.h)(0x57E9B0FE)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x588CAFD2)
+I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\math.h)(0x58A9C1F2)
+I (D:\Keil_v5\ARM\ARMCLANG\include\math.h)(0x58A47FFE)
+I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\type_traits)(0x58B808AE)
+I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\cstddef)(0x589D0B74)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x588CAFD2)
+I (D:\Keil_v5\ARM\ARMCLANG\include\libcxx\__nullptr)(0x586D95D2)
 F (D:\Keil_v5\ARM\PACK\Keil\ARM_Compiler\1.3.1\Source\retarget_io.c)(0x584E29BE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../UserApp -I ../Motor -I ../Encoder -I ../Driver -I ../Memory-I./RTE/_cbt6_demo3-ID:/Keil_v5/ARM/PACK/ARM/CMSIS/5.0.1/CMSIS/Include-ID:/Keil_v5/ARM/PACK/Keil/STM32F1xx_DFP/2.2.0/Device/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o cbt6_demo3/retarget_io.o -MD)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x588CAFD2)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x588CAFD2)

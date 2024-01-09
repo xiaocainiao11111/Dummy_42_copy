@@ -38,9 +38,9 @@ cbt6_demo3/encoder_calibrator_base.o: \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdexcept \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\functional \
   ../Encoder/encoder_calibrator_base.h ../Motor\motor.h \
-  ../Encoder\encoder_base.h ../Encoder\MT6816_base.h \
-  ../Memory\stockpile_f103cb.h ../Core/Inc\main.h \
-  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal.h \
+  ../Motor/motion_planner.h ../Encoder\encoder_base.h \
+  ../Encoder\MT6816_base.h ../Memory\stockpile_f103cb.h \
+  ../Core/Inc\main.h ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal.h \
   ../Core/Inc\stm32f1xx_hal_conf.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_rcc.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
