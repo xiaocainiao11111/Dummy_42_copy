@@ -27,4 +27,5 @@ cbt6_demo3/test.o: ../UserApp/test.c ../UserApp/common_inc.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_spi.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_tim.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
-  ../Core/Inc\tim.h
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_uart.h \
+  ../Core/Inc\tim.h ../Core/Inc\usart.h

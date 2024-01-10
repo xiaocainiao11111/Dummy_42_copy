@@ -58,6 +58,7 @@ int32_t EncoderCalibratorBase::CycleDataAverage(const uint16_t *_data, uint16_t 
     return sumData;
 }
 
+//进行步距检测，通过后得到零点前的最后一步步数及零点后第一步与零点的编码器距离
 void EncoderCalibratorBase::CalibrationDataCheck()
 {
     uint32_t count;
@@ -87,7 +88,7 @@ void EncoderCalibratorBase::CalibrationDataCheck()
     {
         subData = CycleSubtract((int32_t)sampleDataAverageForward[count],
                                 (int32_t)sampleDataAverageForward[count - 1],
-                                mt6816_base.RESOLUTION);     // 取每相邻的两个数据的差值进行判断，正负百分之50内通过
+                                mt6816_base.RESOLUTION);     // 取每相邻的两个数据的差值进行判断
         if (fabs(subData) > (calibSampleResolution * 3 / 2)) // delta-data too large，121
         {
             errorCode = CALI_ERROR_AVERAGE_CONTINUTY;
@@ -114,6 +115,8 @@ void EncoderCalibratorBase::CalibrationDataCheck()
             return;
         }
     }
+
+    // 200步数据全部通过后进行零点判断
 
     uint32_t step_num = 0;
     if (goDirection) // 顺时针
@@ -160,7 +163,7 @@ void EncoderCalibratorBase::CalibrationDataCheck()
     errorCode = CALI_NO_ERROR;
 }
 
-// 默认1000电流
+// 默认1000电流，获取到每1.8度对应的编码器数据，包括正转和反转
 void EncoderCalibratorBase::Tick20kHz()
 {
     mt6816_base.UpdateAngle();
@@ -283,7 +286,7 @@ void EncoderCalibratorBase::TickMainLoop()
 
     tb67h450_base.Sleep();
 
-    CalibrationDataCheck(); // 得到零点步数及零点数据
+    CalibrationDataCheck();
 
     if (errorCode == CALI_NO_ERROR) // 正反转数据处理和零点处理成功
     {
@@ -295,7 +298,7 @@ void EncoderCalibratorBase::TickMainLoop()
 
         if (goDirection)
         {
-            for (stepX = rcdX; stepX < rcdX + 200 + 1; stepX++) // 算出编码器每个数对应的细分数，计算每两个1.8度的数据差
+            for (stepX = rcdX; stepX < rcdX + 200 + 1; stepX++) // 从零点前一步开始，算出编码器每个数对应的细分数，计算每两个1.8度的数据差
             {
                 dataI32 = CycleSubtract(
                     sampleDataAverageForward[CycleMod(stepX + 1, 200)],
@@ -408,13 +411,13 @@ void EncoderCalibratorBase::TickMainLoop()
     //     HAL_NVIC_SystemReset(); // 复位芯片
 }
 
-// 取余，限制在200内
+// 取余，把_a限制在_b内
 uint32_t EncoderCalibratorBase::CycleMod(uint32_t _a, uint32_t _b)
 {
     return (_a + _b) % _b;
 }
 
-// 取循环距离差，返回两者在圆上的距离，指在圆上距离小的那段值，有正负，a大b小
+// 取循环距离差，返回两者在圆上的距离，指在圆上距离小的那段值，有正负，例如(11,1,12)=-2,(1,11,12)=2
 int32_t EncoderCalibratorBase::CycleSubtract(int32_t _a, int32_t _b, int32_t _cyc)
 {
     int32_t sub_data;

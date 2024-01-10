@@ -1,6 +1,5 @@
-cbt6_demo3/stm32f1xx_hal_gpio_ex.o: \
-  ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c \
-  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal.h \
+cbt6_demo3/usart.o: ../Core/Src/usart.c ../Core/Inc\usart.h \
+  ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal.h \
   ../Core/Inc\stm32f1xx_hal_conf.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_rcc.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \

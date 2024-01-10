@@ -28,5 +28,6 @@ cbt6_demo3/stockpile_f103cb.o: ../Memory/stockpile_f103cb.c \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_spi.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_tim.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_uart.h \
   ../Core/Inc\gpio.h ../Core/Inc\spi.h ../Core/Inc\tim.h \
   ../Memory/stockpile_config.h

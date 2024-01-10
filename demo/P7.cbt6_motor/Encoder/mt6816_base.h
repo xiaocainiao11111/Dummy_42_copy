@@ -12,7 +12,7 @@ extern "C"
     class MT6816Base
     {
     public:
-        explicit MT6816Base(uint16_t *_quickCaliDataPtr)
+        explicit MT6816Base(uint16_t *_quickCaliDataPtr) : quickCaliDataPtr(_quickCaliDataPtr)
         {
         }
 
@@ -27,7 +27,7 @@ extern "C"
         } AngleData_t;
         AngleData_t angleData{0};
 
-        bool Init();
+        void Init();
 
         uint8_t _g = 0;
         void test();

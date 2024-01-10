@@ -177,7 +177,7 @@ extern "C"
         };
         Config_t config;
 
-        // MotionPlanner motionPlanner;
+        MotionPlanner motionPlanner;
         Controller *controller = nullptr;
         MT6816Base *encoder = nullptr;
         // DriverBase *driver = nullptr;

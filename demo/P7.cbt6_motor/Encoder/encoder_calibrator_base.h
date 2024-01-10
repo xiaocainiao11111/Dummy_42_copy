@@ -54,7 +54,7 @@ extern "C"
         void Tick20kHz();
         void TickMainLoop();
 
-    // private:
+        // private:
         Motor *motor;
 
         Error_t errorCode;
@@ -65,7 +65,8 @@ extern "C"
         uint16_t sampleDataRaw[SAMPLE_COUNTS_PER_STEP]{};                      // 记录每1.8度的mt6816数据16次的缓存区
         uint16_t sampleDataAverageForward[MOTOR_ONE_CIRCLE_HARD_STEPS + 1]{};  // 正转每1.8度的数据记录
         uint16_t sampleDataAverageBackward[MOTOR_ONE_CIRCLE_HARD_STEPS + 1]{}; // 反转每1.8度的数据记录
-        int32_t rcdX, rcdY;                                                    // X:最接近零点的步数（下一步就越过零点）,Y:X距零点的编码器距离
+        int32_t rcdX;                                                          // X:最接近零点的步数（下一步就越过零点），正数
+        int32_t rcdY;                                                          // Y:X+1步距零点的编码器距离，正数
         uint32_t resultNum;
 
         void CalibrationDataCheck();

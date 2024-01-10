@@ -5,21 +5,22 @@
 sqrtf测试，计算平方根
 */
 
-
 // extern "C"  void tim4callback(void);
 
 uint16_t _b = 0, _g = 0, _p = 0;
-
-
+uint8_t rx_buffer[128] = {0}, rxLen = 0;
 
 BoardConfig_t boardConfig;
 Motor motor;
 MT6816Base mt6816_base((uint16_t *)(0x08017C00));
 TB67H450Base tb67h450_base;
 EncoderCalibratorBase encoder_calibrator_base;
-
+extern DMA_HandleTypeDef hdma_usart1_rx;
 extern uint8_t _a;
 extern uint16_t _v;
+
+
+uint16_t aaa=0;
 
 extern "C" void Main()
 {
@@ -39,8 +40,12 @@ extern "C" void Main()
     encoder_calibrator_base.rcdY = 0;
     encoder_calibrator_base.resultNum = 0;
 
+    mt6816_base.Init();
     motor.controller->Init();
 
+    HAL_UART_Receive_DMA(&huart1, rx_buffer, 128);
+
+    motor.AttachEncoder(&mt6816_base);
 
     for (;;)
     {
@@ -77,6 +82,7 @@ extern "C" void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         //     goPosition += 2;
         // }
         // mt6816_base.UpdateAngle();
+
         if (encoder_calibrator_base.isTriggered)
         {
             encoder_calibrator_base.Tick20kHz();
@@ -115,4 +121,12 @@ void test2()
     {
         _g = 0;
     }
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    uint32_t temp = __HAL_DMA_GET_COUNTER(&hdma_usart1_rx);
+    rxLen = 128 - temp;
+
+    HAL_UART_Receive_DMA(&huart1, rx_buffer, 128);
 }

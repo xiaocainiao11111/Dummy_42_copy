@@ -61,37 +61,37 @@ void Motor::CloseLoopControlTick()
         return;
     }
 
-    //     /********************************* Update Data *********************************/
-    //     int32_t deltaLapPosition; // 超半圈的运动变反向
+        /********************************* Update Data *********************************/
+        int32_t deltaLapPosition; // 超半圈的运动变反向
 
-    //     // Read Encoder data
-    //     controller->realLapPositionLast = controller->realLapPosition;   // 上次细分数
-    //     controller->realLapPosition = encoder->angleData.rectifiedAngle; // 当前细分数
+        // Read Encoder data
+        controller->realLapPositionLast = controller->realLapPosition;   // 上次细分数
+        controller->realLapPosition = encoder->angleData.rectifiedAngle; // 当前细分数
 
-    //     // 注意以下都是以细分数进行
-    //     //  Lap-Position calculate
-    //     deltaLapPosition = controller->realLapPosition - controller->realLapPositionLast; // 与上次位置差
-    //     if (deltaLapPosition > MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS >> 1)
-    //         deltaLapPosition -= MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS;
-    //     else if (deltaLapPosition < -MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS >> 1)
-    //         deltaLapPosition += MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS;
+        // 注意以下都是以细分数进行
+        //  Lap-Position calculate
+        deltaLapPosition = controller->realLapPosition - controller->realLapPositionLast; // 与上次位置差
+        if (deltaLapPosition > MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS >> 1)
+            deltaLapPosition -= MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS;
+        else if (deltaLapPosition < -MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS >> 1)
+            deltaLapPosition += MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS;
 
-    //     // Naive-Position calculate
-    //     controller->realPositionLast = controller->realPosition;
-    //     controller->realPosition += deltaLapPosition;
+        // Naive-Position calculate
+        controller->realPositionLast = controller->realPosition;
+        controller->realPosition += deltaLapPosition;
 
-    //     /********************************* Estimate Data *********************************/
-    //     // Estimate Velocity
-    //     controller->estVelocityIntegral += ((controller->realPosition - controller->realPositionLast) * motionPlanner.CONTROL_FREQUENCY + ((controller->estVelocity << 5) - controller->estVelocity)); // 位置差值*20000+a*31累加
-    //     controller->estVelocity = controller->estVelocityIntegral >> 5;
-    //     controller->estVelocityIntegral -= (controller->estVelocity << 5);
+        /********************************* Estimate Data *********************************/
+        // Estimate Velocity
+        controller->estVelocityIntegral += ((controller->realPosition - controller->realPositionLast) * motionPlanner.CONTROL_FREQUENCY + ((controller->estVelocity << 5) - controller->estVelocity)); // 位置差值*20000+a*31累加
+        controller->estVelocity = controller->estVelocityIntegral >> 5;
+        controller->estVelocityIntegral -= (controller->estVelocity << 5);
 
-    //     // Estimate Position
-    //     controller->estLeadPosition = Controller::CompensateAdvancedAngle(controller->estVelocity);
-    //     controller->estPosition = controller->realPosition + controller->estLeadPosition; // 由估计速度和补偿表得到估计位置
+        // Estimate Position
+        controller->estLeadPosition = Controller::CompensateAdvancedAngle(controller->estVelocity);
+        controller->estPosition = controller->realPosition + controller->estLeadPosition; // 由估计速度和补偿表得到估计位置
 
-    //     // Estimate Error
-    //     controller->estError = controller->softPosition - controller->estPosition;
+        // Estimate Error
+        controller->estError = controller->softPosition - controller->estPosition;
 
     //     /************************************ Ctrl Loop ************************************/
     //     if (controller->isStalled ||

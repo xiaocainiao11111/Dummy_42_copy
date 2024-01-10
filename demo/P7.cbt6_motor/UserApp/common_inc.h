@@ -9,14 +9,15 @@ extern "C"
 #include "stdint.h"
 #include "main.h"
 #include "tim.h"
+#include "usart.h"
+
     void Main(void);
 
-void tim4callback(void);
+    void tim4callback(void);
 
-void test2();
+    void test2();
 
-void test1();
-
+    void test1();
 
 #ifdef __cplusplus
 }
@@ -29,27 +30,27 @@ void test1();
 #include "tb67h450_base.h"
 #include "encoder_calibrator_base.h"
 
-    // C++测试
-    class Test
+// C++测试
+class Test
+{
+public:
+    Test()
     {
-    public:
-        Test()
-        {
-        }
-        explicit Test(uint8_t _id) : id(_id)
-        {
-        }
-        enum Event
-        {
-        };
-        void tick(void);
-        uint16_t num;
-
-    protected:
-        uint8_t id;
-
-    private:
-        bool flag;
+    }
+    explicit Test(uint8_t _id) : id(_id)
+    {
+    }
+    enum Event
+    {
     };
+    void tick(void);
+    uint16_t num;
+
+protected:
+    uint8_t id;
+
+private:
+    bool flag;
+};
 #endif
 #endif

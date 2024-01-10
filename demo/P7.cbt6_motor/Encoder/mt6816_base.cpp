@@ -33,7 +33,6 @@
 //     return dataRx;
 // }
 
-
 extern "C" void MT6816Base::SpiInit()
 {
     MX_SPI1_Init();
@@ -44,16 +43,16 @@ extern "C" uint16_t MT6816Base::SpiTransmitAndRead16Bits(uint16_t _dataTx)
     uint16_t dataRx;
 
     GPIOA->BRR = GPIO_PIN_15; // Chip select
-    HAL_SPI_TransmitReceive(&hspi1, (uint8_t*) &_dataTx, (uint8_t*) &dataRx, 1, HAL_MAX_DELAY);
+    HAL_SPI_TransmitReceive(&hspi1, (uint8_t *)&_dataTx, (uint8_t *)&dataRx, 1, HAL_MAX_DELAY);
     GPIOA->BSRR = GPIO_PIN_15;
 
     return dataRx;
 }
 
-extern "C" bool MT6816Base::Init()
+extern "C" void MT6816Base::Init()
 {
-    SpiInit();
-    UpdateAngle();
+    // SpiInit();
+    // UpdateAngle();
 
     // Check if the stored calibration data are valid
     angleData.rectifyValid = true;
@@ -62,8 +61,6 @@ extern "C" bool MT6816Base::Init()
         if (quickCaliDataPtr[i] == 0xFFFF)
             angleData.rectifyValid = false;
     }
-
-    return angleData.rectifyValid;
 }
 void MT6816Base::test()
 {
@@ -93,7 +90,7 @@ uint8_t MT6816Base::test1()
 }
 
 // 获取校准数据
-extern "C" uint16_t  MT6816Base::UpdateAngle()
+extern "C" uint16_t MT6816Base::UpdateAngle()
 {
 
     dataTx[0] = (0x80 | 0x03) << 8; // 0x8300
@@ -134,7 +131,6 @@ extern "C" uint16_t  MT6816Base::UpdateAngle()
     angleData.rectifiedAngle = quickCaliDataPtr[angleData.rawAngle];
 
     return angleData.rectifiedAngle;
-
 }
 
 // bool MT6816Base::IsCalibrated()
