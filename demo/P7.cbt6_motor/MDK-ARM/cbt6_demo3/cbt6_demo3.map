@@ -969,15 +969,43 @@ Section Cross References
     motor.o(.ARM.exidx.text._ZN5Motor9Tick20kHzEv) refers to Unwind-EHABI.cpp.o(.text.__aeabi_unwind_cpp_pr0) for __aeabi_unwind_cpp_pr0
     motor.o(.ARM.exidx.text._ZN5Motor9Tick20kHzEv) refers to motor.o(.text._ZN5Motor9Tick20kHzEv) for [Anonymous Symbol]
     motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi) for Motor::Controller::CompensateAdvancedAngle(int)
-    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motor.o(.bss._ZZN5Motor20CloseLoopControlTickEvE13isFirstCalled) for [Anonymous Symbol]
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to tb67h450_base.o(.text._ZN12TB67H450Base5BrakeEv) for TB67H450Base::Brake()
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to tb67h450_base.o(.text._ZN12TB67H450Base5SleepEv) for TB67H450Base::Sleep()
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motion_planner.o(.text._ZN13MotionPlanner15PositionTracker7NewTaskEii) for MotionPlanner::PositionTracker::NewTask(int, int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motor.o(.text._ZN5Motor10Controller15CalcDceToOutputEii) for Motor::Controller::CalcDceToOutput(int, int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker7NewTaskEi) for MotionPlanner::VelocityTracker::NewTask(int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motion_planner.o(.text._ZN13MotionPlanner14CurrentTracker7NewTaskEi) for MotionPlanner::CurrentTracker::NewTask(int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker7NewTaskEii) for MotionPlanner::TrajectoryTracker::NewTask(int, int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motion_planner.o(.text._ZN13MotionPlanner20PositionInterpolator7NewTaskEii) for MotionPlanner::PositionInterpolator::NewTask(int, int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motion_planner.o(.text._ZN13MotionPlanner15PositionTracker12CalcSoftGoalEi) for MotionPlanner::PositionTracker::CalcSoftGoal(int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker12CalcSoftGoalEi) for MotionPlanner::VelocityTracker::CalcSoftGoal(int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motion_planner.o(.text._ZN13MotionPlanner14CurrentTracker12CalcSoftGoalEi) for MotionPlanner::CurrentTracker::CalcSoftGoal(int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker12CalcSoftGoalEii) for MotionPlanner::TrajectoryTracker::CalcSoftGoal(int, int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motion_planner.o(.text._ZN13MotionPlanner20PositionInterpolator12CalcSoftGoalEi) for MotionPlanner::PositionInterpolator::CalcSoftGoal(int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to dflt_clz.o(x$fpl$dflt) for __aeabi_i2d
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to dfix.o(x$fpl$dfix) for __aeabi_d2iz
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to dcmp.o(x$fpl$fcmp) for __aeabi_dcmpge
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to mt6816_base.o(.text._ZN10MT6816Base12IsCalibratedEv) for MT6816Base::IsCalibrated()
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motor.o(.text._ZN5Motor10Controller19CalcCurrentToOutputEi) for Motor::Controller::CalcCurrentToOutput(int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motor.o(.text._ZN5Motor10Controller15CalcPidToOutputEi) for Motor::Controller::CalcPidToOutput(int)
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to motor.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    motor.o(.text._ZN5Motor20CloseLoopControlTickEv) refers to main_1.o(.bss.tb67h450_base) for tb67h450_base
+    motor.o(.ARM.exidx.text._ZN5Motor20CloseLoopControlTickEv) refers to Unwind-EHABI.cpp.o(.text.__aeabi_unwind_cpp_pr0) for __aeabi_unwind_cpp_pr0
     motor.o(.ARM.exidx.text._ZN5Motor20CloseLoopControlTickEv) refers to motor.o(.text._ZN5Motor20CloseLoopControlTickEv) for [Anonymous Symbol]
     motor.o(.ARM.exidx.text._ZN5Motor13AttachEncoderEP10MT6816Base) refers to motor.o(.text._ZN5Motor13AttachEncoderEP10MT6816Base) for [Anonymous Symbol]
     motor.o(.ARM.exidx.text._ZN5Motor10Controller23CompensateAdvancedAngleEi) refers to motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi) for [Anonymous Symbol]
+    motor.o(.ARM.exidx.text._ZNK5Motor10Controller13ClearIntegralEv) refers to motor.o(.text._ZNK5Motor10Controller13ClearIntegralEv) for [Anonymous Symbol]
+    motor.o(.text._ZN5Motor10Controller15CalcDceToOutputEii) refers to motor.o(.text._ZN5Motor10Controller19CalcCurrentToOutputEi) for Motor::Controller::CalcCurrentToOutput(int)
+    motor.o(.ARM.exidx.text._ZN5Motor10Controller15CalcDceToOutputEii) refers to Unwind-EHABI.cpp.o(.text.__aeabi_unwind_cpp_pr0) for __aeabi_unwind_cpp_pr0
+    motor.o(.ARM.exidx.text._ZN5Motor10Controller15CalcDceToOutputEii) refers to motor.o(.text._ZN5Motor10Controller15CalcDceToOutputEii) for [Anonymous Symbol]
+    motor.o(.text._ZN5Motor10Controller19CalcCurrentToOutputEi) refers to tb67h450_base.o(.text._ZN12TB67H450Base19SetFocCurrentVectorEji) for TB67H450Base::SetFocCurrentVector(unsigned, int)
+    motor.o(.text._ZN5Motor10Controller19CalcCurrentToOutputEi) refers to main_1.o(.bss.tb67h450_base) for tb67h450_base
+    motor.o(.ARM.exidx.text._ZN5Motor10Controller19CalcCurrentToOutputEi) refers to Unwind-EHABI.cpp.o(.text.__aeabi_unwind_cpp_pr0) for __aeabi_unwind_cpp_pr0
     motor.o(.ARM.exidx.text._ZN5Motor10Controller19CalcCurrentToOutputEi) refers to motor.o(.text._ZN5Motor10Controller19CalcCurrentToOutputEi) for [Anonymous Symbol]
     motor.o(.text._ZN5Motor10Controller15CalcPidToOutputEi) refers to motor.o(.text._ZN5Motor10Controller19CalcCurrentToOutputEi) for Motor::Controller::CalcCurrentToOutput(int)
+    motor.o(.ARM.exidx.text._ZN5Motor10Controller15CalcPidToOutputEi) refers to Unwind-EHABI.cpp.o(.text.__aeabi_unwind_cpp_pr0) for __aeabi_unwind_cpp_pr0
     motor.o(.ARM.exidx.text._ZN5Motor10Controller15CalcPidToOutputEi) refers to motor.o(.text._ZN5Motor10Controller15CalcPidToOutputEi) for [Anonymous Symbol]
-    motor.o(.text._ZN5Motor10Controller15CalcDceToOutputEii) refers to motor.o(.text._ZN5Motor10Controller19CalcCurrentToOutputEi) for Motor::Controller::CalcCurrentToOutput(int)
-    motor.o(.ARM.exidx.text._ZN5Motor10Controller15CalcDceToOutputEii) refers to motor.o(.text._ZN5Motor10Controller15CalcDceToOutputEii) for [Anonymous Symbol]
+    motor.o(.ARM.exidx.text._ZN5Motor10Controller14ClearStallFlagEv) refers to motor.o(.text._ZN5Motor10Controller14ClearStallFlagEv) for [Anonymous Symbol]
     motor.o(.ARM.exidx.text._ZN5Motor10Controller11SetCtrlModeENS_6Mode_tE) refers to motor.o(.text._ZN5Motor10Controller11SetCtrlModeENS_6Mode_tE) for [Anonymous Symbol]
     motor.o(.ARM.exidx.text._ZN5Motor10Controller21AddTrajectorySetPointEii) refers to motor.o(.text._ZN5Motor10Controller21AddTrajectorySetPointEii) for [Anonymous Symbol]
     motor.o(.ARM.exidx.text._ZN5Motor10Controller19SetPositionSetPointEi) refers to motor.o(.text._ZN5Motor10Controller19SetPositionSetPointEi) for [Anonymous Symbol]
@@ -1004,13 +1032,11 @@ Section Cross References
     motor.o(.text._ZN5Motor10Controller13GetFocCurrentEv) refers to fdiv.o(x$fpl$fdiv) for __aeabi_fdiv
     motor.o(.ARM.exidx.text._ZN5Motor10Controller13GetFocCurrentEv) refers to motor.o(.text._ZN5Motor10Controller13GetFocCurrentEv) for [Anonymous Symbol]
     motor.o(.ARM.exidx.text._ZN5Motor10Controller18SetCurrentSetPointEi) refers to motor.o(.text._ZN5Motor10Controller18SetCurrentSetPointEi) for [Anonymous Symbol]
-    motor.o(.ARM.exidx.text._ZN5Motor10Controller14ClearStallFlagEv) refers to motor.o(.text._ZN5Motor10Controller14ClearStallFlagEv) for [Anonymous Symbol]
     motor.o(.text._ZN5Motor10Controller4InitEv) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
     motor.o(.text._ZN5Motor10Controller4InitEv) refers to main_1.o(.bss.boardConfig) for boardConfig
     motor.o(.ARM.exidx.text._ZN5Motor10Controller4InitEv) refers to motor.o(.text._ZN5Motor10Controller4InitEv) for [Anonymous Symbol]
     motor.o(.ARM.exidx.text._ZN5Motor10Controller20ApplyPosAsHomeOffsetEv) refers to motor.o(.text._ZN5Motor10Controller20ApplyPosAsHomeOffsetEv) for [Anonymous Symbol]
     motor.o(.ARM.exidx.text._ZN5Motor10Controller12AttachConfigEPNS0_8Config_tE) refers to motor.o(.text._ZN5Motor10Controller12AttachConfigEPNS0_8Config_tE) for [Anonymous Symbol]
-    motor.o(.ARM.exidx.text._ZNK5Motor10Controller13ClearIntegralEv) refers to motor.o(.text._ZNK5Motor10Controller13ClearIntegralEv) for [Anonymous Symbol]
     mt6816_base.o(.text._ZN10MT6816Base7SpiInitEv) refers to spi.o(.text.MX_SPI1_Init) for MX_SPI1_Init
     mt6816_base.o(.ARM.exidx.text._ZN10MT6816Base7SpiInitEv) refers to Unwind-EHABI.cpp.o(.text.__aeabi_unwind_cpp_pr0) for __aeabi_unwind_cpp_pr0
     mt6816_base.o(.ARM.exidx.text._ZN10MT6816Base7SpiInitEv) refers to mt6816_base.o(.text._ZN10MT6816Base7SpiInitEv) for [Anonymous Symbol]
@@ -1026,6 +1052,7 @@ Section Cross References
     mt6816_base.o(.text._ZN10MT6816Base11UpdateAngleEv) refers to mt6816_base.o(.text._ZN10MT6816Base24SpiTransmitAndRead16BitsEt) for MT6816Base::SpiTransmitAndRead16Bits(unsigned short)
     mt6816_base.o(.ARM.exidx.text._ZN10MT6816Base11UpdateAngleEv) refers to Unwind-EHABI.cpp.o(.text.__aeabi_unwind_cpp_pr0) for __aeabi_unwind_cpp_pr0
     mt6816_base.o(.ARM.exidx.text._ZN10MT6816Base11UpdateAngleEv) refers to mt6816_base.o(.text._ZN10MT6816Base11UpdateAngleEv) for [Anonymous Symbol]
+    mt6816_base.o(.ARM.exidx.text._ZN10MT6816Base12IsCalibratedEv) refers to mt6816_base.o(.text._ZN10MT6816Base12IsCalibratedEv) for [Anonymous Symbol]
     test.o(.text.test1) refers to test.o(.bss._v) for _v
     test.o(.ARM.exidx.text.test1) refers to test.o(.text.test1) for [Anonymous Symbol]
     tb67h450_base.o(.text._ZN12TB67H450Base16DacOutputVoltageEtt) refers to tim.o(.bss.htim2) for htim2
@@ -2387,12 +2414,13 @@ Removing Unused input sections from the image.
     Removing motor.o(.ARM.exidx.text._ZN5Motor20CloseLoopControlTickEv), (8 bytes).
     Removing motor.o(.ARM.exidx.text._ZN5Motor13AttachEncoderEP10MT6816Base), (8 bytes).
     Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller23CompensateAdvancedAngleEi), (8 bytes).
-    Removing motor.o(.text._ZN5Motor10Controller19CalcCurrentToOutputEi), (32 bytes).
-    Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller19CalcCurrentToOutputEi), (8 bytes).
-    Removing motor.o(.text._ZN5Motor10Controller15CalcPidToOutputEi), (156 bytes).
-    Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller15CalcPidToOutputEi), (8 bytes).
-    Removing motor.o(.text._ZN5Motor10Controller15CalcDceToOutputEii), (192 bytes).
+    Removing motor.o(.text._ZNK5Motor10Controller13ClearIntegralEv), (18 bytes).
+    Removing motor.o(.ARM.exidx.text._ZNK5Motor10Controller13ClearIntegralEv), (8 bytes).
     Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller15CalcDceToOutputEii), (8 bytes).
+    Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller19CalcCurrentToOutputEi), (8 bytes).
+    Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller15CalcPidToOutputEi), (8 bytes).
+    Removing motor.o(.text._ZN5Motor10Controller14ClearStallFlagEv), (8 bytes).
+    Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller14ClearStallFlagEv), (8 bytes).
     Removing motor.o(.text._ZN5Motor10Controller11SetCtrlModeENS_6Mode_tE), (4 bytes).
     Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller11SetCtrlModeENS_6Mode_tE), (8 bytes).
     Removing motor.o(.text._ZN5Motor10Controller21AddTrajectorySetPointEii), (32 bytes).
@@ -2411,14 +2439,10 @@ Removing Unused input sections from the image.
     Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller13GetFocCurrentEv), (8 bytes).
     Removing motor.o(.text._ZN5Motor10Controller18SetCurrentSetPointEi), (24 bytes).
     Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller18SetCurrentSetPointEi), (8 bytes).
-    Removing motor.o(.text._ZN5Motor10Controller14ClearStallFlagEv), (8 bytes).
-    Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller14ClearStallFlagEv), (8 bytes).
     Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller4InitEv), (8 bytes).
     Removing motor.o(.text._ZN5Motor10Controller20ApplyPosAsHomeOffsetEv), (18 bytes).
     Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller20ApplyPosAsHomeOffsetEv), (8 bytes).
     Removing motor.o(.ARM.exidx.text._ZN5Motor10Controller12AttachConfigEPNS0_8Config_tE), (8 bytes).
-    Removing motor.o(.text._ZNK5Motor10Controller13ClearIntegralEv), (18 bytes).
-    Removing motor.o(.ARM.exidx.text._ZNK5Motor10Controller13ClearIntegralEv), (8 bytes).
     Removing mt6816_base.o(.text), (0 bytes).
     Removing mt6816_base.o(.text._ZN10MT6816Base7SpiInitEv), (4 bytes).
     Removing mt6816_base.o(.ARM.exidx.text._ZN10MT6816Base7SpiInitEv), (8 bytes).
@@ -2430,6 +2454,7 @@ Removing Unused input sections from the image.
     Removing mt6816_base.o(.text._ZN10MT6816Base5test1Ev), (24 bytes).
     Removing mt6816_base.o(.ARM.exidx.text._ZN10MT6816Base5test1Ev), (8 bytes).
     Removing mt6816_base.o(.ARM.exidx.text._ZN10MT6816Base11UpdateAngleEv), (8 bytes).
+    Removing mt6816_base.o(.ARM.exidx.text._ZN10MT6816Base12IsCalibratedEv), (8 bytes).
     Removing mt6816_base.o(.bss._ZZN10MT6816Base5test1EvE2_a), (1 bytes).
     Removing test.o(.text), (0 bytes).
     Removing test.o(.text.test1), (24 bytes).
@@ -2446,7 +2471,6 @@ Removing Unused input sections from the image.
     Removing tb67h450_base.o(.text._ZN12TB67H450Base18SetTwoCoilsCurrentEtt), (20 bytes).
     Removing tb67h450_base.o(.ARM.exidx.text._ZN12TB67H450Base18SetTwoCoilsCurrentEtt), (8 bytes).
     Removing tb67h450_base.o(.ARM.exidx.text._ZN12TB67H450Base5SleepEv), (8 bytes).
-    Removing tb67h450_base.o(.text._ZN12TB67H450Base5BrakeEv), (44 bytes).
     Removing tb67h450_base.o(.ARM.exidx.text._ZN12TB67H450Base5BrakeEv), (8 bytes).
     Removing encoder_calibrator_base.o(.text), (0 bytes).
     Removing encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase15BeginWriteFlashEv), (12 bytes).
@@ -2483,49 +2507,33 @@ Removing Unused input sections from the image.
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner14CurrentTracker4InitEv), (8 bytes).
     Removing motion_planner.o(.text._ZN13MotionPlanner14CurrentTracker13SetCurrentAccEi), (4 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner14CurrentTracker13SetCurrentAccEi), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner14CurrentTracker7NewTaskEi), (8 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner14CurrentTracker7NewTaskEi), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner14CurrentTracker12CalcSoftGoalEi), (86 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner14CurrentTracker12CalcSoftGoalEi), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner14CurrentTracker19CalcCurrentIntegralEi), (26 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner14CurrentTracker19CalcCurrentIntegralEi), (8 bytes).
     Removing motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker4InitEv), (12 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner15VelocityTracker4InitEv), (8 bytes).
     Removing motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker14SetVelocityAccEi), (4 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner15VelocityTracker14SetVelocityAccEi), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker7NewTaskEi), (8 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner15VelocityTracker7NewTaskEi), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker12CalcSoftGoalEi), (86 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner15VelocityTracker12CalcSoftGoalEi), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker20CalcVelocityIntegralEi), (26 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner15VelocityTracker20CalcVelocityIntegralEi), (8 bytes).
     Removing motion_planner.o(.text._ZN13MotionPlanner15PositionTracker4InitEv), (38 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner15PositionTracker4InitEv), (8 bytes).
     Removing motion_planner.o(.text._ZN13MotionPlanner15PositionTracker14SetVelocityAccEi), (28 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner15PositionTracker14SetVelocityAccEi), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner15PositionTracker7NewTaskEii), (12 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner15PositionTracker7NewTaskEii), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner15PositionTracker12CalcSoftGoalEi), (356 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner15PositionTracker12CalcSoftGoalEi), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner15PositionTracker20CalcVelocityIntegralEi), (26 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner15PositionTracker20CalcVelocityIntegralEi), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner15PositionTracker20CalcPositionIntegralEi), (26 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner15PositionTracker20CalcPositionIntegralEi), (8 bytes).
     Removing motion_planner.o(.text._ZN13MotionPlanner20PositionInterpolator4InitEv), (2 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner20PositionInterpolator4InitEv), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner20PositionInterpolator7NewTaskEii), (10 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner20PositionInterpolator7NewTaskEii), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner20PositionInterpolator12CalcSoftGoalEi), (54 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner20PositionInterpolator12CalcSoftGoalEi), (8 bytes).
     Removing motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker22SetSlowDownVelocityAccEi), (4 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner17TrajectoryTracker22SetSlowDownVelocityAccEi), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker7NewTaskEii), (16 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner17TrajectoryTracker7NewTaskEii), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker12CalcSoftGoalEii), (212 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner17TrajectoryTracker12CalcSoftGoalEii), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker20CalcVelocityIntegralEi), (26 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner17TrajectoryTracker20CalcVelocityIntegralEi), (8 bytes).
-    Removing motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker20CalcPositionIntegralEi), (26 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner17TrajectoryTracker20CalcPositionIntegralEi), (8 bytes).
     Removing motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker4InitEi), (14 bytes).
     Removing motion_planner.o(.ARM.exidx.text._ZN13MotionPlanner17TrajectoryTracker4InitEi), (8 bytes).
@@ -2667,7 +2675,7 @@ Removing Unused input sections from the image.
     Removing libunwind.cpp.o(.ARM.exidx.text._ZN9libunwind13Registers_arm15getRegisterNameEi), (8 bytes).
     Removing libunwind.cpp.o(.rodata._ZTVN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEEE), (72 bytes).
 
-1097 unused section(s) (total 40209 bytes) removed from the image.
+1078 unused section(s) (total 38789 bytes) removed from the image.
 
 ==============================================================================
 
@@ -2710,68 +2718,68 @@ Image Symbol Table
     ../UserApp/main.cpp                      0x00000000   Number         0  main_1.o ABSOLUTE
     ../UserApp/test.c                        0x00000000   Number         0  test.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr_intlibspace.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
     ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch_hlt.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command_hlt.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit_hlt.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch_hlt.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
     ../clib/arm_runtime.c                    0x00000000   Number         0  init_aeabi.o ABSOLUTE
     ../clib/arm_runtime.c                    0x00000000   Number         0  init_aeabi.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/fenv.c                           0x00000000   Number         0  _rserrno.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  strcmpv7m.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
-    ../clib/memcpset.s                       0x00000000   Number         0  strcmpv7m.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_v6.o ABSOLUTE
-    ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_outer.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
     ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
-    ../clib/stdlib.c                         0x00000000   Number         0  abort.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  abort.o ABSOLUTE
     ../fplib/dcmp.s                          0x00000000   Number         0  dcmp.o ABSOLUTE
     ../fplib/dcmpi.s                         0x00000000   Number         0  dcmpi.o ABSOLUTE
     ../fplib/deqf.s                          0x00000000   Number         0  deqf.o ABSOLUTE
@@ -2860,8 +2868,8 @@ Image Symbol Table
     .text                                    0x08000288   Section        0  sys_exit.o(.text)
     .text                                    0x08000294   Section        8  libspace.o(.text)
     .text                                    0x0800029c   Section        2  use_no_semi.o(.text)
-    .text                                    0x0800029e   Section       74  sys_stackheap_outer.o(.text)
     .text                                    0x0800029e   Section        0  indicate_semi.o(.text)
+    .text                                    0x0800029e   Section       74  sys_stackheap_outer.o(.text)
     .text                                    0x080002e8   Section        0  exit.o(.text)
     [Anonymous Symbol]                       0x080002fa   Section        0  stm32f1xx_it.o(.text.BusFault_Handler)
     [Anonymous Symbol]                       0x080002fc   Section        0  stm32f1xx_it.o(.text.DMA1_Channel4_IRQHandler)
@@ -3103,78 +3111,115 @@ Image Symbol Table
     __arm_cp.7_3                             0x08002980   Number         4  main_1.o(.text._GLOBAL__sub_I_main.cpp)
     [Anonymous Symbol]                       0x08002984   Section        0  mt6816_base.o(.text._ZN10MT6816Base11UpdateAngleEv)
     __arm_cp.5_0                             0x08002a04   Number         4  mt6816_base.o(.text._ZN10MT6816Base11UpdateAngleEv)
-    [Anonymous Symbol]                       0x08002a08   Section        0  mt6816_base.o(.text._ZN10MT6816Base24SpiTransmitAndRead16BitsEt)
-    __arm_cp.1_1                             0x08002a34   Number         4  mt6816_base.o(.text._ZN10MT6816Base24SpiTransmitAndRead16BitsEt)
-    [Anonymous Symbol]                       0x08002a38   Section        0  mt6816_base.o(.text._ZN10MT6816Base4InitEv)
-    [Anonymous Symbol]                       0x08002a64   Section        0  tb67h450_base.o(.text._ZN12TB67H450Base19SetFocCurrentVectorEji)
-    __arm_cp.3_0                             0x08002b44   Number         4  tb67h450_base.o(.text._ZN12TB67H450Base19SetFocCurrentVectorEji)
-    __arm_cp.3_2                             0x08002b48   Number         4  tb67h450_base.o(.text._ZN12TB67H450Base19SetFocCurrentVectorEji)
-    [Anonymous Symbol]                       0x08002b4c   Section        0  tb67h450_base.o(.text._ZN12TB67H450Base5SleepEv)
-    __arm_cp.5_0                             0x08002b70   Number         4  tb67h450_base.o(.text._ZN12TB67H450Base5SleepEv)
-    __arm_cp.5_1                             0x08002b74   Number         4  tb67h450_base.o(.text._ZN12TB67H450Base5SleepEv)
-    [Anonymous Symbol]                       0x08002b78   Section        0  main_1.o(.text._ZN13MotionPlannerC2Ev)
-    [Anonymous Symbol]                       0x08002bd6   Section        0  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12CycleAverageEiii)
-    [Anonymous Symbol]                       0x08002c18   Section        0  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12TickMainLoopEv)
-    __arm_cp.10_0                            0x08002e98   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12TickMainLoopEv)
-    __arm_cp.10_1                            0x08002e9c   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12TickMainLoopEv)
-    __arm_cp.10_2                            0x08002ea0   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12TickMainLoopEv)
-    [Anonymous Symbol]                       0x08002ea4   Section        0  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase16CycleDataAverageEPKtti)
-    [Anonymous Symbol]                       0x08002ef4   Section        0  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase20CalibrationDataCheckEv)
-    __arm_cp.5_0                             0x080030b8   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase20CalibrationDataCheckEv)
-    [Anonymous Symbol]                       0x080030bc   Section        0  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase22WriteFlash16bitsAppendEt)
-    __arm_cp.3_0                             0x080030d0   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase22WriteFlash16bitsAppendEt)
-    [Anonymous Symbol]                       0x080030d4   Section        0  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase9Tick20kHzEv)
-    __arm_cp.9_0                             0x08003244   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase9Tick20kHzEv)
-    __arm_cp.9_1                             0x08003248   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase9Tick20kHzEv)
-    __arm_cp.9_2                             0x0800324c   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase9Tick20kHzEv)
-    [Anonymous Symbol]                       0x08003250   Section        0  motor.o(.text._ZN5Motor10Controller12AttachConfigEPNS0_8Config_tE)
-    [Anonymous Symbol]                       0x08003254   Section        0  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_0                             0x080032f4   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_1                             0x080032f8   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_2                             0x080032fc   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_3                             0x08003300   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_4                             0x08003304   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_5                             0x08003308   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_6                             0x0800330c   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_7                             0x08003310   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_8                             0x08003314   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_9                             0x08003318   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_10                            0x0800331c   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_11                            0x08003320   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_12                            0x08003324   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_13                            0x08003328   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    __arm_cp.3_14                            0x0800332c   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    [Anonymous Symbol]                       0x08003330   Section        0  motor.o(.text._ZN5Motor10Controller4InitEv)
-    __arm_cp.17_0                            0x0800339c   Number         4  motor.o(.text._ZN5Motor10Controller4InitEv)
-    [Anonymous Symbol]                       0x080033a0   Section        0  motor.o(.text._ZN5Motor13AttachEncoderEP10MT6816Base)
-    [Anonymous Symbol]                       0x080033a8   Section        0  motor.o(.text._ZN5Motor20CloseLoopControlTickEv)
-    __arm_cp.1_0                             0x08003450   Number         4  motor.o(.text._ZN5Motor20CloseLoopControlTickEv)
-    [Anonymous Symbol]                       0x08003454   Section        0  motor.o(.text._ZN5Motor9Tick20kHzEv)
-    __arm_cp.0_0                             0x08003468   Number         4  motor.o(.text._ZN5Motor9Tick20kHzEv)
-    [Anonymous Symbol]                       0x0800346c   Section        0  main_1.o(.text._ZN5MotorC2Ev)
-    [Anonymous Symbol]                       0x08003536   Section        0  main.o(.text.main)
-    x$fpl$dcmpinf                            0x08003562   Section       24  dcmpi.o(x$fpl$dcmpinf)
-    x$fpl$deqf                               0x0800357c   Section      120  deqf.o(x$fpl$deqf)
-    x$fpl$dfixu                              0x080035f4   Section       90  dfixu.o(x$fpl$dfixu)
-    x$fpl$dflt                               0x0800364e   Section       46  dflt_clz.o(x$fpl$dflt)
-    x$fpl$dfltu                              0x0800367c   Section       38  dflt_clz.o(x$fpl$dfltu)
-    x$fpl$dgeqf                              0x080036a4   Section      120  dgeqf.o(x$fpl$dgeqf)
-    x$fpl$dleqf                              0x0800371c   Section      120  dleqf.o(x$fpl$dleqf)
-    x$fpl$dmul                               0x08003794   Section      340  dmul.o(x$fpl$dmul)
-    x$fpl$dnaninf                            0x080038e8   Section      156  dnaninf.o(x$fpl$dnaninf)
-    x$fpl$dretinf                            0x08003984   Section       12  dretinf.o(x$fpl$dretinf)
-    x$fpl$fcmp                               0x08003990   Section       84  dcmp.o(x$fpl$fcmp)
-    x$fpl$usenofp                            0x080039e4   Section        0  usenofp.o(x$fpl$usenofp)
-    [Anonymous Symbol]                       0x080039fc   Section        0  tb67h450_base.o(.rodata._ZL9sin_pi_m2)
-    _ZL9sin_pi_m2                            0x080039fc   Data        2050  tb67h450_base.o(.rodata._ZL9sin_pi_m2)
+    [Anonymous Symbol]                       0x08002a08   Section        0  mt6816_base.o(.text._ZN10MT6816Base12IsCalibratedEv)
+    [Anonymous Symbol]                       0x08002a0c   Section        0  mt6816_base.o(.text._ZN10MT6816Base24SpiTransmitAndRead16BitsEt)
+    __arm_cp.1_1                             0x08002a38   Number         4  mt6816_base.o(.text._ZN10MT6816Base24SpiTransmitAndRead16BitsEt)
+    [Anonymous Symbol]                       0x08002a3c   Section        0  mt6816_base.o(.text._ZN10MT6816Base4InitEv)
+    [Anonymous Symbol]                       0x08002a68   Section        0  tb67h450_base.o(.text._ZN12TB67H450Base19SetFocCurrentVectorEji)
+    __arm_cp.3_0                             0x08002b48   Number         4  tb67h450_base.o(.text._ZN12TB67H450Base19SetFocCurrentVectorEji)
+    [Anonymous Symbol]                       0x08002b4c   Section        0  tb67h450_base.o(.text._ZN12TB67H450Base5BrakeEv)
+    __arm_cp.6_1                             0x08002b70   Number         4  tb67h450_base.o(.text._ZN12TB67H450Base5BrakeEv)
+    [Anonymous Symbol]                       0x08002b74   Section        0  tb67h450_base.o(.text._ZN12TB67H450Base5SleepEv)
+    __arm_cp.5_0                             0x08002b98   Number         4  tb67h450_base.o(.text._ZN12TB67H450Base5SleepEv)
+    __arm_cp.5_1                             0x08002b9c   Number         4  tb67h450_base.o(.text._ZN12TB67H450Base5SleepEv)
+    [Anonymous Symbol]                       0x08002ba0   Section        0  motion_planner.o(.text._ZN13MotionPlanner14CurrentTracker12CalcSoftGoalEi)
+    [Anonymous Symbol]                       0x08002bf6   Section        0  motion_planner.o(.text._ZN13MotionPlanner14CurrentTracker19CalcCurrentIntegralEi)
+    [Anonymous Symbol]                       0x08002c10   Section        0  motion_planner.o(.text._ZN13MotionPlanner14CurrentTracker7NewTaskEi)
+    [Anonymous Symbol]                       0x08002c18   Section        0  motion_planner.o(.text._ZN13MotionPlanner15PositionTracker12CalcSoftGoalEi)
+    [Anonymous Symbol]                       0x08002d7c   Section        0  motion_planner.o(.text._ZN13MotionPlanner15PositionTracker20CalcPositionIntegralEi)
+    [Anonymous Symbol]                       0x08002d96   Section        0  motion_planner.o(.text._ZN13MotionPlanner15PositionTracker20CalcVelocityIntegralEi)
+    [Anonymous Symbol]                       0x08002db0   Section        0  motion_planner.o(.text._ZN13MotionPlanner15PositionTracker7NewTaskEii)
+    [Anonymous Symbol]                       0x08002dbc   Section        0  motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker12CalcSoftGoalEi)
+    [Anonymous Symbol]                       0x08002e12   Section        0  motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker20CalcVelocityIntegralEi)
+    [Anonymous Symbol]                       0x08002e2c   Section        0  motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker7NewTaskEi)
+    [Anonymous Symbol]                       0x08002e34   Section        0  motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker12CalcSoftGoalEii)
+    [Anonymous Symbol]                       0x08002f08   Section        0  motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker20CalcPositionIntegralEi)
+    [Anonymous Symbol]                       0x08002f22   Section        0  motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker20CalcVelocityIntegralEi)
+    [Anonymous Symbol]                       0x08002f3c   Section        0  motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker7NewTaskEii)
+    [Anonymous Symbol]                       0x08002f4c   Section        0  motion_planner.o(.text._ZN13MotionPlanner20PositionInterpolator12CalcSoftGoalEi)
+    [Anonymous Symbol]                       0x08002f82   Section        0  motion_planner.o(.text._ZN13MotionPlanner20PositionInterpolator7NewTaskEii)
+    [Anonymous Symbol]                       0x08002f8c   Section        0  main_1.o(.text._ZN13MotionPlannerC2Ev)
+    [Anonymous Symbol]                       0x08002fea   Section        0  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12CycleAverageEiii)
+    [Anonymous Symbol]                       0x0800302c   Section        0  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12TickMainLoopEv)
+    __arm_cp.10_0                            0x080032ac   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12TickMainLoopEv)
+    __arm_cp.10_1                            0x080032b0   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12TickMainLoopEv)
+    __arm_cp.10_2                            0x080032b4   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12TickMainLoopEv)
+    [Anonymous Symbol]                       0x080032b8   Section        0  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase16CycleDataAverageEPKtti)
+    [Anonymous Symbol]                       0x08003308   Section        0  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase20CalibrationDataCheckEv)
+    __arm_cp.5_0                             0x080034cc   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase20CalibrationDataCheckEv)
+    [Anonymous Symbol]                       0x080034d0   Section        0  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase22WriteFlash16bitsAppendEt)
+    __arm_cp.3_0                             0x080034e4   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase22WriteFlash16bitsAppendEt)
+    [Anonymous Symbol]                       0x080034e8   Section        0  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase9Tick20kHzEv)
+    __arm_cp.9_0                             0x08003658   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase9Tick20kHzEv)
+    __arm_cp.9_1                             0x0800365c   Number         4  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase9Tick20kHzEv)
+    [Anonymous Symbol]                       0x08003660   Section        0  motor.o(.text._ZN5Motor10Controller12AttachConfigEPNS0_8Config_tE)
+    [Anonymous Symbol]                       0x08003664   Section        0  motor.o(.text._ZN5Motor10Controller15CalcDceToOutputEii)
+    __arm_cp.5_0                             0x08003718   Number         4  motor.o(.text._ZN5Motor10Controller15CalcDceToOutputEii)
+    __arm_cp.5_1                             0x0800371c   Number         4  motor.o(.text._ZN5Motor10Controller15CalcDceToOutputEii)
+    __arm_cp.5_2                             0x08003720   Number         4  motor.o(.text._ZN5Motor10Controller15CalcDceToOutputEii)
+    [Anonymous Symbol]                       0x08003724   Section        0  motor.o(.text._ZN5Motor10Controller15CalcPidToOutputEi)
+    __arm_cp.7_0                             0x080037bc   Number         4  motor.o(.text._ZN5Motor10Controller15CalcPidToOutputEi)
+    [Anonymous Symbol]                       0x080037c0   Section        0  motor.o(.text._ZN5Motor10Controller19CalcCurrentToOutputEi)
+    __arm_cp.6_0                             0x080037e8   Number         4  motor.o(.text._ZN5Motor10Controller19CalcCurrentToOutputEi)
+    [Anonymous Symbol]                       0x080037ec   Section        0  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_0                             0x0800388c   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_1                             0x08003890   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_2                             0x08003894   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_3                             0x08003898   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_4                             0x0800389c   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_5                             0x080038a0   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_6                             0x080038a4   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_7                             0x080038a8   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_8                             0x080038ac   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_9                             0x080038b0   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_10                            0x080038b4   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_11                            0x080038b8   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_12                            0x080038bc   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_13                            0x080038c0   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    __arm_cp.3_14                            0x080038c4   Number         4  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    [Anonymous Symbol]                       0x080038c8   Section        0  motor.o(.text._ZN5Motor10Controller4InitEv)
+    __arm_cp.18_0                            0x08003934   Number         4  motor.o(.text._ZN5Motor10Controller4InitEv)
+    [Anonymous Symbol]                       0x08003938   Section        0  motor.o(.text._ZN5Motor13AttachEncoderEP10MT6816Base)
+    [Anonymous Symbol]                       0x08003940   Section        0  motor.o(.text._ZN5Motor20CloseLoopControlTickEv)
+    __arm_cp.1_0                             0x08003cfc   Number         4  motor.o(.text._ZN5Motor20CloseLoopControlTickEv)
+    __arm_cp.1_1                             0x08003d00   Number         4  motor.o(.text._ZN5Motor20CloseLoopControlTickEv)
+    __arm_cp.1_2                             0x08003d04   Number         4  motor.o(.text._ZN5Motor20CloseLoopControlTickEv)
+    __arm_cp.1_3                             0x08003d08   Number         4  motor.o(.text._ZN5Motor20CloseLoopControlTickEv)
+    [Anonymous Symbol]                       0x08003d0c   Section        0  motor.o(.text._ZN5Motor9Tick20kHzEv)
+    __arm_cp.0_0                             0x08003d20   Number         4  motor.o(.text._ZN5Motor9Tick20kHzEv)
+    [Anonymous Symbol]                       0x08003d24   Section        0  main_1.o(.text._ZN5MotorC2Ev)
+    [Anonymous Symbol]                       0x08003dee   Section        0  main.o(.text.main)
+    x$fpl$dcmpinf                            0x08003e1a   Section       24  dcmpi.o(x$fpl$dcmpinf)
+    x$fpl$deqf                               0x08003e34   Section      120  deqf.o(x$fpl$deqf)
+    x$fpl$dfix                               0x08003eac   Section       94  dfix.o(x$fpl$dfix)
+    x$fpl$dfixu                              0x08003f0c   Section       90  dfixu.o(x$fpl$dfixu)
+    x$fpl$dflt                               0x08003f66   Section       46  dflt_clz.o(x$fpl$dflt)
+    x$fpl$dfltu                              0x08003f94   Section       38  dflt_clz.o(x$fpl$dfltu)
+    x$fpl$dgeqf                              0x08003fbc   Section      120  dgeqf.o(x$fpl$dgeqf)
+    x$fpl$dleqf                              0x08004034   Section      120  dleqf.o(x$fpl$dleqf)
+    x$fpl$dmul                               0x080040ac   Section      340  dmul.o(x$fpl$dmul)
+    x$fpl$dnaninf                            0x08004200   Section      156  dnaninf.o(x$fpl$dnaninf)
+    x$fpl$dretinf                            0x0800429c   Section       12  dretinf.o(x$fpl$dretinf)
+    x$fpl$fcmp                               0x080042a8   Section       84  dcmp.o(x$fpl$fcmp)
+    x$fpl$fdiv                               0x080042fc   Section      388  fdiv.o(x$fpl$fdiv)
+    _fdiv1                                   0x080042fd   Thumb Code     0  fdiv.o(x$fpl$fdiv)
+    x$fpl$ffix                               0x08004480   Section       54  ffix.o(x$fpl$ffix)
+    x$fpl$fflt                               0x080044b8   Section       48  fflt_clz.o(x$fpl$fflt)
+    x$fpl$fmul                               0x080044e8   Section      258  fmul.o(x$fpl$fmul)
+    x$fpl$fnaninf                            0x080045ea   Section      140  fnaninf.o(x$fpl$fnaninf)
+    x$fpl$fretinf                            0x08004676   Section       10  fretinf.o(x$fpl$fretinf)
+    x$fpl$usenofp                            0x08004680   Section        0  usenofp.o(x$fpl$usenofp)
+    [Anonymous Symbol]                       0x08004698   Section        0  tb67h450_base.o(.rodata._ZL9sin_pi_m2)
+    _ZL9sin_pi_m2                            0x08004698   Data        2050  tb67h450_base.o(.rodata._ZL9sin_pi_m2)
     [Anonymous Symbol]                       0x20000000   Section        0  stm32f1xx_hal.o(.data..L_MergedGlobals)
     .bss                                     0x20000020   Section       96  libspace.o(.bss)
     [Anonymous Symbol]                       0x20000080   Section        0  usart.o(.bss..L_MergedGlobals)
+    [Anonymous Symbol]                       0x200000c4   Section        0  motor.o(.bss..L_MergedGlobals)
+    Motor::CloseLoopControlTick()::isFirstCalled 0x200000c4   Data           1  motor.o(.bss..L_MergedGlobals)
+    Motor::CloseLoopControlTick()::_flag1    0x200000c5   Data           1  motor.o(.bss..L_MergedGlobals)
     [Anonymous Symbol]                       0x200000d0   Section        0  usart.o(.bss..L_MergedGlobals.1)
     [Anonymous Symbol]                       0x20000114   Section        0  encoder_calibrator_base.o(.bss._ZZN21EncoderCalibratorBase9Tick20kHzEvE5_flag)
     EncoderCalibratorBase::Tick20kHz()::_flag 0x20000114   Data           1  encoder_calibrator_base.o(.bss._ZZN21EncoderCalibratorBase9Tick20kHzEvE5_flag)
-    [Anonymous Symbol]                       0x20000115   Section        0  motor.o(.bss._ZZN5Motor20CloseLoopControlTickEvE13isFirstCalled)
-    Motor::CloseLoopControlTick()::isFirstCalled 0x20000115   Data           1  motor.o(.bss._ZZN5Motor20CloseLoopControlTickEvE13isFirstCalled)
     HEAP                                     0x200008a8   Section      512  startup_stm32f103xb.o(HEAP)
     Heap_Mem                                 0x200008a8   Data         512  startup_stm32f103xb.o(HEAP)
     STACK                                    0x20000aa8   Section     1024  startup_stm32f103xb.o(STACK)
@@ -3416,61 +3461,94 @@ Image Symbol Table
     USART1_IRQHandler                        0x08002939   Thumb Code    12  stm32f1xx_it.o(.text.USART1_IRQHandler)
     UsageFault_Handler                       0x08002945   Thumb Code     2  stm32f1xx_it.o(.text.UsageFault_Handler)
     MT6816Base::UpdateAngle()                0x08002985   Thumb Code   132  mt6816_base.o(.text._ZN10MT6816Base11UpdateAngleEv)
-    MT6816Base::SpiTransmitAndRead16Bits(unsigned short) 0x08002a09   Thumb Code    52  mt6816_base.o(.text._ZN10MT6816Base24SpiTransmitAndRead16BitsEt)
-    MT6816Base::Init()                       0x08002a39   Thumb Code    42  mt6816_base.o(.text._ZN10MT6816Base4InitEv)
-    TB67H450Base::SetFocCurrentVector(unsigned, int) 0x08002a65   Thumb Code   236  tb67h450_base.o(.text._ZN12TB67H450Base19SetFocCurrentVectorEji)
-    TB67H450Base::Sleep()                    0x08002b4d   Thumb Code    44  tb67h450_base.o(.text._ZN12TB67H450Base5SleepEv)
-    MotionPlanner::MotionPlanner__sub_object() 0x08002b79   Thumb Code    94  main_1.o(.text._ZN13MotionPlannerC2Ev)
-    EncoderCalibratorBase::CycleAverage(int, int, int) 0x08002bd7   Thumb Code    66  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12CycleAverageEiii)
-    EncoderCalibratorBase::TickMainLoop()    0x08002c19   Thumb Code   652  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12TickMainLoopEv)
-    EncoderCalibratorBase::CycleDataAverage(const unsigned short*, unsigned short, int) 0x08002ea5   Thumb Code    80  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase16CycleDataAverageEPKtti)
-    EncoderCalibratorBase::CalibrationDataCheck() 0x08002ef5   Thumb Code   456  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase20CalibrationDataCheckEv)
-    EncoderCalibratorBase::WriteFlash16bitsAppend(unsigned short) 0x080030bd   Thumb Code    24  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase22WriteFlash16bitsAppendEt)
-    EncoderCalibratorBase::Tick20kHz()       0x080030d5   Thumb Code   380  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase9Tick20kHzEv)
-    Motor::Controller::AttachConfig(Motor::Controller::Config_t*) 0x08003251   Thumb Code     4  motor.o(.text._ZN5Motor10Controller12AttachConfigEPNS0_8Config_tE)
-    Motor::Controller::CompensateAdvancedAngle(int) 0x08003255   Thumb Code   220  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
-    Motor::Controller::Init()                0x08003331   Thumb Code   112  motor.o(.text._ZN5Motor10Controller4InitEv)
-    Motor::AttachEncoder(MT6816Base*)        0x080033a1   Thumb Code     6  motor.o(.text._ZN5Motor13AttachEncoderEP10MT6816Base)
-    Motor::CloseLoopControlTick()            0x080033a9   Thumb Code   172  motor.o(.text._ZN5Motor20CloseLoopControlTickEv)
-    Motor::Tick20kHz()                       0x08003455   Thumb Code    24  motor.o(.text._ZN5Motor9Tick20kHzEv)
-    Motor::Motor__sub_object()               0x0800346d   Thumb Code   202  main_1.o(.text._ZN5MotorC2Ev)
-    main                                     0x08003537   Thumb Code    44  main.o(.text.main)
-    __fpl_dcmp_Inf                           0x08003563   Thumb Code    24  dcmpi.o(x$fpl$dcmpinf)
-    __aeabi_cdcmpeq                          0x0800357d   Thumb Code     0  deqf.o(x$fpl$deqf)
-    _dcmpeq                                  0x0800357d   Thumb Code   120  deqf.o(x$fpl$deqf)
-    __aeabi_d2uiz                            0x080035f5   Thumb Code     0  dfixu.o(x$fpl$dfixu)
-    _dfixu                                   0x080035f5   Thumb Code    90  dfixu.o(x$fpl$dfixu)
-    __aeabi_i2d                              0x0800364f   Thumb Code     0  dflt_clz.o(x$fpl$dflt)
-    _dflt                                    0x0800364f   Thumb Code    46  dflt_clz.o(x$fpl$dflt)
-    __aeabi_ui2d                             0x0800367d   Thumb Code     0  dflt_clz.o(x$fpl$dfltu)
-    _dfltu                                   0x0800367d   Thumb Code    38  dflt_clz.o(x$fpl$dfltu)
-    __aeabi_cdcmpge                          0x080036a5   Thumb Code     0  dgeqf.o(x$fpl$dgeqf)
-    _dcmpge                                  0x080036a5   Thumb Code   120  dgeqf.o(x$fpl$dgeqf)
-    __aeabi_cdcmple                          0x0800371d   Thumb Code     0  dleqf.o(x$fpl$dleqf)
-    _dcmple                                  0x0800371d   Thumb Code   120  dleqf.o(x$fpl$dleqf)
-    __fpl_dcmple_InfNaN                      0x0800377f   Thumb Code     0  dleqf.o(x$fpl$dleqf)
-    __aeabi_dmul                             0x08003795   Thumb Code     0  dmul.o(x$fpl$dmul)
-    _dmul                                    0x08003795   Thumb Code   332  dmul.o(x$fpl$dmul)
-    __fpl_dnaninf                            0x080038e9   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
-    __fpl_dretinf                            0x08003985   Thumb Code    12  dretinf.o(x$fpl$dretinf)
-    __aeabi_dcmpeq                           0x08003991   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _deq                                     0x08003991   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    _dneq                                    0x0800399f   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __aeabi_dcmpgt                           0x080039ad   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _dgr                                     0x080039ad   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __aeabi_dcmpge                           0x080039bb   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _dgeq                                    0x080039bb   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __aeabi_dcmple                           0x080039c9   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _dleq                                    0x080039c9   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __aeabi_dcmplt                           0x080039d7   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _dls                                     0x080039d7   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    AHBPrescTable                            0x080039e4   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
-    __I$use$fp                               0x080039e4   Number         0  usenofp.o(x$fpl$usenofp)
-    APBPrescTable                            0x080039f4   Data           8  system_stm32f1xx.o(.rodata.APBPrescTable)
-    Region$$Table$$Base                      0x08004200   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08004220   Number         0  anon$$obj.o(Region$$Table)
-    SHT$$INIT_ARRAY$$Base                    0x08004220   Number         0  main_1.o(.init_array)
-    SHT$$INIT_ARRAY$$Limit                   0x08004224   Number         0  main_1.o(.init_array)
+    MT6816Base::IsCalibrated()               0x08002a09   Thumb Code     4  mt6816_base.o(.text._ZN10MT6816Base12IsCalibratedEv)
+    MT6816Base::SpiTransmitAndRead16Bits(unsigned short) 0x08002a0d   Thumb Code    52  mt6816_base.o(.text._ZN10MT6816Base24SpiTransmitAndRead16BitsEt)
+    MT6816Base::Init()                       0x08002a3d   Thumb Code    42  mt6816_base.o(.text._ZN10MT6816Base4InitEv)
+    TB67H450Base::SetFocCurrentVector(unsigned, int) 0x08002a69   Thumb Code   236  tb67h450_base.o(.text._ZN12TB67H450Base19SetFocCurrentVectorEji)
+    TB67H450Base::Brake()                    0x08002b4d   Thumb Code    44  tb67h450_base.o(.text._ZN12TB67H450Base5BrakeEv)
+    TB67H450Base::Sleep()                    0x08002b75   Thumb Code    44  tb67h450_base.o(.text._ZN12TB67H450Base5SleepEv)
+    MotionPlanner::CurrentTracker::CalcSoftGoal(int) 0x08002ba1   Thumb Code    86  motion_planner.o(.text._ZN13MotionPlanner14CurrentTracker12CalcSoftGoalEi)
+    MotionPlanner::CurrentTracker::CalcCurrentIntegral(int) 0x08002bf7   Thumb Code    26  motion_planner.o(.text._ZN13MotionPlanner14CurrentTracker19CalcCurrentIntegralEi)
+    MotionPlanner::CurrentTracker::NewTask(int) 0x08002c11   Thumb Code     8  motion_planner.o(.text._ZN13MotionPlanner14CurrentTracker7NewTaskEi)
+    MotionPlanner::PositionTracker::CalcSoftGoal(int) 0x08002c19   Thumb Code   356  motion_planner.o(.text._ZN13MotionPlanner15PositionTracker12CalcSoftGoalEi)
+    MotionPlanner::PositionTracker::CalcPositionIntegral(int) 0x08002d7d   Thumb Code    26  motion_planner.o(.text._ZN13MotionPlanner15PositionTracker20CalcPositionIntegralEi)
+    MotionPlanner::PositionTracker::CalcVelocityIntegral(int) 0x08002d97   Thumb Code    26  motion_planner.o(.text._ZN13MotionPlanner15PositionTracker20CalcVelocityIntegralEi)
+    MotionPlanner::PositionTracker::NewTask(int, int) 0x08002db1   Thumb Code    12  motion_planner.o(.text._ZN13MotionPlanner15PositionTracker7NewTaskEii)
+    MotionPlanner::VelocityTracker::CalcSoftGoal(int) 0x08002dbd   Thumb Code    86  motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker12CalcSoftGoalEi)
+    MotionPlanner::VelocityTracker::CalcVelocityIntegral(int) 0x08002e13   Thumb Code    26  motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker20CalcVelocityIntegralEi)
+    MotionPlanner::VelocityTracker::NewTask(int) 0x08002e2d   Thumb Code     8  motion_planner.o(.text._ZN13MotionPlanner15VelocityTracker7NewTaskEi)
+    MotionPlanner::TrajectoryTracker::CalcSoftGoal(int, int) 0x08002e35   Thumb Code   212  motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker12CalcSoftGoalEii)
+    MotionPlanner::TrajectoryTracker::CalcPositionIntegral(int) 0x08002f09   Thumb Code    26  motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker20CalcPositionIntegralEi)
+    MotionPlanner::TrajectoryTracker::CalcVelocityIntegral(int) 0x08002f23   Thumb Code    26  motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker20CalcVelocityIntegralEi)
+    MotionPlanner::TrajectoryTracker::NewTask(int, int) 0x08002f3d   Thumb Code    16  motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker7NewTaskEii)
+    MotionPlanner::PositionInterpolator::CalcSoftGoal(int) 0x08002f4d   Thumb Code    54  motion_planner.o(.text._ZN13MotionPlanner20PositionInterpolator12CalcSoftGoalEi)
+    MotionPlanner::PositionInterpolator::NewTask(int, int) 0x08002f83   Thumb Code    10  motion_planner.o(.text._ZN13MotionPlanner20PositionInterpolator7NewTaskEii)
+    MotionPlanner::MotionPlanner__sub_object() 0x08002f8d   Thumb Code    94  main_1.o(.text._ZN13MotionPlannerC2Ev)
+    EncoderCalibratorBase::CycleAverage(int, int, int) 0x08002feb   Thumb Code    66  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12CycleAverageEiii)
+    EncoderCalibratorBase::TickMainLoop()    0x0800302d   Thumb Code   652  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase12TickMainLoopEv)
+    EncoderCalibratorBase::CycleDataAverage(const unsigned short*, unsigned short, int) 0x080032b9   Thumb Code    80  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase16CycleDataAverageEPKtti)
+    EncoderCalibratorBase::CalibrationDataCheck() 0x08003309   Thumb Code   456  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase20CalibrationDataCheckEv)
+    EncoderCalibratorBase::WriteFlash16bitsAppend(unsigned short) 0x080034d1   Thumb Code    24  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase22WriteFlash16bitsAppendEt)
+    EncoderCalibratorBase::Tick20kHz()       0x080034e9   Thumb Code   380  encoder_calibrator_base.o(.text._ZN21EncoderCalibratorBase9Tick20kHzEv)
+    Motor::Controller::AttachConfig(Motor::Controller::Config_t*) 0x08003661   Thumb Code     4  motor.o(.text._ZN5Motor10Controller12AttachConfigEPNS0_8Config_tE)
+    Motor::Controller::CalcDceToOutput(int, int) 0x08003665   Thumb Code   192  motor.o(.text._ZN5Motor10Controller15CalcDceToOutputEii)
+    Motor::Controller::CalcPidToOutput(int)  0x08003725   Thumb Code   156  motor.o(.text._ZN5Motor10Controller15CalcPidToOutputEi)
+    Motor::Controller::CalcCurrentToOutput(int) 0x080037c1   Thumb Code    44  motor.o(.text._ZN5Motor10Controller19CalcCurrentToOutputEi)
+    Motor::Controller::CompensateAdvancedAngle(int) 0x080037ed   Thumb Code   220  motor.o(.text._ZN5Motor10Controller23CompensateAdvancedAngleEi)
+    Motor::Controller::Init()                0x080038c9   Thumb Code   112  motor.o(.text._ZN5Motor10Controller4InitEv)
+    Motor::AttachEncoder(MT6816Base*)        0x08003939   Thumb Code     6  motor.o(.text._ZN5Motor13AttachEncoderEP10MT6816Base)
+    Motor::CloseLoopControlTick()            0x08003941   Thumb Code   972  motor.o(.text._ZN5Motor20CloseLoopControlTickEv)
+    Motor::Tick20kHz()                       0x08003d0d   Thumb Code    24  motor.o(.text._ZN5Motor9Tick20kHzEv)
+    Motor::Motor__sub_object()               0x08003d25   Thumb Code   202  main_1.o(.text._ZN5MotorC2Ev)
+    main                                     0x08003def   Thumb Code    44  main.o(.text.main)
+    __fpl_dcmp_Inf                           0x08003e1b   Thumb Code    24  dcmpi.o(x$fpl$dcmpinf)
+    __aeabi_cdcmpeq                          0x08003e35   Thumb Code     0  deqf.o(x$fpl$deqf)
+    _dcmpeq                                  0x08003e35   Thumb Code   120  deqf.o(x$fpl$deqf)
+    __aeabi_d2iz                             0x08003ead   Thumb Code     0  dfix.o(x$fpl$dfix)
+    _dfix                                    0x08003ead   Thumb Code    94  dfix.o(x$fpl$dfix)
+    __aeabi_d2uiz                            0x08003f0d   Thumb Code     0  dfixu.o(x$fpl$dfixu)
+    _dfixu                                   0x08003f0d   Thumb Code    90  dfixu.o(x$fpl$dfixu)
+    __aeabi_i2d                              0x08003f67   Thumb Code     0  dflt_clz.o(x$fpl$dflt)
+    _dflt                                    0x08003f67   Thumb Code    46  dflt_clz.o(x$fpl$dflt)
+    __aeabi_ui2d                             0x08003f95   Thumb Code     0  dflt_clz.o(x$fpl$dfltu)
+    _dfltu                                   0x08003f95   Thumb Code    38  dflt_clz.o(x$fpl$dfltu)
+    __aeabi_cdcmpge                          0x08003fbd   Thumb Code     0  dgeqf.o(x$fpl$dgeqf)
+    _dcmpge                                  0x08003fbd   Thumb Code   120  dgeqf.o(x$fpl$dgeqf)
+    __aeabi_cdcmple                          0x08004035   Thumb Code     0  dleqf.o(x$fpl$dleqf)
+    _dcmple                                  0x08004035   Thumb Code   120  dleqf.o(x$fpl$dleqf)
+    __fpl_dcmple_InfNaN                      0x08004097   Thumb Code     0  dleqf.o(x$fpl$dleqf)
+    __aeabi_dmul                             0x080040ad   Thumb Code     0  dmul.o(x$fpl$dmul)
+    _dmul                                    0x080040ad   Thumb Code   332  dmul.o(x$fpl$dmul)
+    __fpl_dnaninf                            0x08004201   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
+    __fpl_dretinf                            0x0800429d   Thumb Code    12  dretinf.o(x$fpl$dretinf)
+    __aeabi_dcmpeq                           0x080042a9   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _deq                                     0x080042a9   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    _dneq                                    0x080042b7   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_dcmpgt                           0x080042c5   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _dgr                                     0x080042c5   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_dcmpge                           0x080042d3   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _dgeq                                    0x080042d3   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_dcmple                           0x080042e1   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _dleq                                    0x080042e1   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_dcmplt                           0x080042ef   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _dls                                     0x080042ef   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_fdiv                             0x080042fd   Thumb Code     0  fdiv.o(x$fpl$fdiv)
+    _fdiv                                    0x080042fd   Thumb Code   384  fdiv.o(x$fpl$fdiv)
+    __aeabi_f2iz                             0x08004481   Thumb Code     0  ffix.o(x$fpl$ffix)
+    _ffix                                    0x08004481   Thumb Code    54  ffix.o(x$fpl$ffix)
+    __aeabi_i2f                              0x080044b9   Thumb Code     0  fflt_clz.o(x$fpl$fflt)
+    _fflt                                    0x080044b9   Thumb Code    48  fflt_clz.o(x$fpl$fflt)
+    __aeabi_fmul                             0x080044e9   Thumb Code     0  fmul.o(x$fpl$fmul)
+    _fmul                                    0x080044e9   Thumb Code   258  fmul.o(x$fpl$fmul)
+    __fpl_fnaninf                            0x080045eb   Thumb Code   140  fnaninf.o(x$fpl$fnaninf)
+    __fpl_fretinf                            0x08004677   Thumb Code    10  fretinf.o(x$fpl$fretinf)
+    AHBPrescTable                            0x08004680   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
+    __I$use$fp                               0x08004680   Number         0  usenofp.o(x$fpl$usenofp)
+    APBPrescTable                            0x08004690   Data           8  system_stm32f1xx.o(.rodata.APBPrescTable)
+    Region$$Table$$Base                      0x08004e9c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08004ebc   Number         0  anon$$obj.o(Region$$Table)
+    SHT$$INIT_ARRAY$$Base                    0x08004ebc   Number         0  main_1.o(.init_array)
+    SHT$$INIT_ARRAY$$Limit                   0x08004ec0   Number         0  main_1.o(.init_array)
     uwTickFreq                               0x20000000   Data           1  stm32f1xx_hal.o(.data..L_MergedGlobals)
     uwTickPrio                               0x20000004   Data           4  stm32f1xx_hal.o(.data..L_MergedGlobals)
     uwTick                                   0x20000008   Data           4  stm32f1xx_hal.o(.data..L_MergedGlobals)
@@ -3502,72 +3580,72 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00004250, Max: 0x00020000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00004ee0, Max: 0x00020000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00004224, Max: 0x00020000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00004ec0, Max: 0x00020000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000000ec   Data   RO            3    RESET               startup_stm32f103xb.o
-    0x080000ec   0x080000ec   0x00000008   Code   RO         1486  * !!!main             c_w.l(__main.o)
-    0x080000f4   0x080000f4   0x00000034   Code   RO         1859    !!!scatter          c_w.l(__scatter.o)
-    0x08000128   0x08000128   0x0000001a   Code   RO         1861    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x080000ec   0x080000ec   0x00000008   Code   RO         1488  * !!!main             c_w.l(__main.o)
+    0x080000f4   0x080000f4   0x00000034   Code   RO         1861    !!!scatter          c_w.l(__scatter.o)
+    0x08000128   0x08000128   0x0000001a   Code   RO         1863    !!handler_copy      c_w.l(__scatter_copy.o)
     0x08000142   0x08000142   0x00000002   PAD
-    0x08000144   0x08000144   0x0000001c   Code   RO         1863    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x08000160   0x08000160   0x00000002   Code   RO         1792    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1586    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1588    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1591    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1593    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1595    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1598    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1600    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1602    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1604    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1606    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1608    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1610    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1612    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1614    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1616    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1618    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1622    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1624    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000000   Code   RO         1626    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x08000162   0x08000162   0x00000004   Code   RO         1627    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
-    0x08000166   0x08000166   0x00000000   Code   RO         1628    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x08000166   0x08000166   0x00000002   Code   RO         1629    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x08000168   0x08000168   0x00000002   Code   RO         1840    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x0800016a   0x0800016a   0x00000000   Code   RO         1842    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x0800016a   0x0800016a   0x00000000   Code   RO         1844    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x0800016a   0x0800016a   0x00000000   Code   RO         1847    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x0800016a   0x0800016a   0x00000000   Code   RO         1850    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x0800016a   0x0800016a   0x00000000   Code   RO         1852    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x0800016a   0x0800016a   0x00000000   Code   RO         1855    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x0800016a   0x0800016a   0x00000002   Code   RO         1856    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x0800016c   0x0800016c   0x00000000   Code   RO         1580    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x0800016c   0x0800016c   0x00000000   Code   RO         1731    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x0800016c   0x0800016c   0x00000006   Code   RO         1743    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x08000172   0x08000172   0x00000000   Code   RO         1733    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x08000172   0x08000172   0x00000004   Code   RO         1734    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x08000176   0x08000176   0x00000000   Code   RO         1736    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x08000176   0x08000176   0x00000008   Code   RO         1737    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x0800017e   0x0800017e   0x00000002   Code   RO         1797    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x08000180   0x08000180   0x00000000   Code   RO         1814    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x08000180   0x08000180   0x00000004   Code   RO         1815    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x08000184   0x08000184   0x00000006   Code   RO         1816    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x08000144   0x08000144   0x0000001c   Code   RO         1865    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x08000160   0x08000160   0x00000002   Code   RO         1794    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1588    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1590    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1593    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1595    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1597    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1600    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1602    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1604    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1606    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1608    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1610    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1612    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1614    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1616    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1618    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1620    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1624    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1626    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000000   Code   RO         1628    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x08000162   0x08000162   0x00000004   Code   RO         1629    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
+    0x08000166   0x08000166   0x00000000   Code   RO         1630    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x08000166   0x08000166   0x00000002   Code   RO         1631    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x08000168   0x08000168   0x00000002   Code   RO         1842    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x0800016a   0x0800016a   0x00000000   Code   RO         1844    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x0800016a   0x0800016a   0x00000000   Code   RO         1846    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x0800016a   0x0800016a   0x00000000   Code   RO         1849    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x0800016a   0x0800016a   0x00000000   Code   RO         1852    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x0800016a   0x0800016a   0x00000000   Code   RO         1854    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x0800016a   0x0800016a   0x00000000   Code   RO         1857    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x0800016a   0x0800016a   0x00000002   Code   RO         1858    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x0800016c   0x0800016c   0x00000000   Code   RO         1582    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x0800016c   0x0800016c   0x00000000   Code   RO         1733    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x0800016c   0x0800016c   0x00000006   Code   RO         1745    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x08000172   0x08000172   0x00000000   Code   RO         1735    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x08000172   0x08000172   0x00000004   Code   RO         1736    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1738    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x08000176   0x08000176   0x00000008   Code   RO         1739    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x0800017e   0x0800017e   0x00000002   Code   RO         1799    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x08000180   0x08000180   0x00000000   Code   RO         1816    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x08000180   0x08000180   0x00000004   Code   RO         1817    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x08000184   0x08000184   0x00000006   Code   RO         1818    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x0800018a   0x0800018a   0x00000002   PAD
     0x0800018c   0x0800018c   0x00000040   Code   RO            4    .text               startup_stm32f103xb.o
-    0x080001cc   0x080001cc   0x00000044   Code   RO         1478    .text               c_w.l(rt_memclr.o)
-    0x08000210   0x08000210   0x0000004e   Code   RO         1480    .text               c_w.l(rt_memclr_w.o)
-    0x0800025e   0x0800025e   0x00000006   Code   RO         1484    .text               c_w.l(heapauxi.o)
-    0x08000264   0x08000264   0x00000024   Code   RO         1491    .text               c_w.l(init_aeabi.o)
-    0x08000288   0x08000288   0x0000000c   Code   RO         1726    .text               c_w.l(sys_exit.o)
-    0x08000294   0x08000294   0x00000008   Code   RO         1765    .text               c_w.l(libspace.o)
-    0x0800029c   0x0800029c   0x00000002   Code   RO         1768    .text               c_w.l(use_no_semi.o)
-    0x0800029e   0x0800029e   0x00000000   Code   RO         1770    .text               c_w.l(indicate_semi.o)
-    0x0800029e   0x0800029e   0x0000004a   Code   RO         1771    .text               c_w.l(sys_stackheap_outer.o)
-    0x080002e8   0x080002e8   0x00000012   Code   RO         1775    .text               c_w.l(exit.o)
+    0x080001cc   0x080001cc   0x00000044   Code   RO         1480    .text               c_w.l(rt_memclr.o)
+    0x08000210   0x08000210   0x0000004e   Code   RO         1482    .text               c_w.l(rt_memclr_w.o)
+    0x0800025e   0x0800025e   0x00000006   Code   RO         1486    .text               c_w.l(heapauxi.o)
+    0x08000264   0x08000264   0x00000024   Code   RO         1493    .text               c_w.l(init_aeabi.o)
+    0x08000288   0x08000288   0x0000000c   Code   RO         1728    .text               c_w.l(sys_exit.o)
+    0x08000294   0x08000294   0x00000008   Code   RO         1767    .text               c_w.l(libspace.o)
+    0x0800029c   0x0800029c   0x00000002   Code   RO         1770    .text               c_w.l(use_no_semi.o)
+    0x0800029e   0x0800029e   0x00000000   Code   RO         1772    .text               c_w.l(indicate_semi.o)
+    0x0800029e   0x0800029e   0x0000004a   Code   RO         1773    .text               c_w.l(sys_stackheap_outer.o)
+    0x080002e8   0x080002e8   0x00000012   Code   RO         1777    .text               c_w.l(exit.o)
     0x080002fa   0x080002fa   0x00000002   Code   RO          129    .text.BusFault_Handler  stm32f1xx_it.o
     0x080002fc   0x080002fc   0x0000000c   Code   RO          141    .text.DMA1_Channel4_IRQHandler  stm32f1xx_it.o
     0x08000308   0x08000308   0x0000000c   Code   RO          143    .text.DMA1_Channel5_IRQHandler  stm32f1xx_it.o
@@ -3658,10 +3736,10 @@ Memory Map of the image
     0x080021c6   0x080021c6   0x00000022   Code   RO          201    .text.SPI_EndRxTxTransaction  stm32f1xx_hal_spi.o
     0x080021e8   0x080021e8   0x000000b8   Code   RO          299    .text.SPI_WaitFlagStateUntilTimeout  stm32f1xx_hal_spi.o
     0x080022a0   0x080022a0   0x00000002   Code   RO          133    .text.SVC_Handler   stm32f1xx_it.o
-    0x080022a2   0x080022a2   0x0000000e   Code   RO         1355    .text.Stockpile_Flash_Data_Begin  stockpile_f103cb.o
-    0x080022b0   0x080022b0   0x00000060   Code   RO         1353    .text.Stockpile_Flash_Data_Empty  stockpile_f103cb.o
-    0x08002310   0x08002310   0x00000004   Code   RO         1357    .text.Stockpile_Flash_Data_End  stockpile_f103cb.o
-    0x08002314   0x08002314   0x0000003e   Code   RO         1361    .text.Stockpile_Flash_Data_Write_Data16  stockpile_f103cb.o
+    0x080022a2   0x080022a2   0x0000000e   Code   RO         1357    .text.Stockpile_Flash_Data_Begin  stockpile_f103cb.o
+    0x080022b0   0x080022b0   0x00000060   Code   RO         1355    .text.Stockpile_Flash_Data_Empty  stockpile_f103cb.o
+    0x08002310   0x08002310   0x00000004   Code   RO         1359    .text.Stockpile_Flash_Data_End  stockpile_f103cb.o
+    0x08002314   0x08002314   0x0000003e   Code   RO         1363    .text.Stockpile_Flash_Data_Write_Data16  stockpile_f103cb.o
     0x08002352   0x08002352   0x00000004   Code   RO          139    .text.SysTick_Handler  stm32f1xx_it.o
     0x08002356   0x08002356   0x00000066   Code   RO           13    .text.SystemClock_Config  main.o
     0x080023bc   0x080023bc   0x00000002   Code   RO         1144    .text.SystemInit    system_stm32f1xx.o
@@ -3689,63 +3767,93 @@ Memory Map of the image
     0x08002946   0x08002946   0x00000002   PAD
     0x08002948   0x08002948   0x0000003c   Code   RO         1172    .text._GLOBAL__sub_I_main.cpp  main_1.o
     0x08002984   0x08002984   0x00000084   Code   RO         1265    .text._ZN10MT6816Base11UpdateAngleEv  mt6816_base.o
-    0x08002a08   0x08002a08   0x00000030   Code   RO         1256    .text._ZN10MT6816Base24SpiTransmitAndRead16BitsEt  mt6816_base.o
-    0x08002a38   0x08002a38   0x0000002a   Code   RO         1259    .text._ZN10MT6816Base4InitEv  mt6816_base.o
-    0x08002a62   0x08002a62   0x00000002   PAD
-    0x08002a64   0x08002a64   0x000000e8   Code   RO         1299    .text._ZN12TB67H450Base19SetFocCurrentVectorEji  tb67h450_base.o
-    0x08002b4c   0x08002b4c   0x0000002c   Code   RO         1303    .text._ZN12TB67H450Base5SleepEv  tb67h450_base.o
-    0x08002b78   0x08002b78   0x0000005e   Code   RO         1197    .text._ZN13MotionPlannerC2Ev  main_1.o
-    0x08002bd6   0x08002bd6   0x00000042   Code   RO         1331    .text._ZN21EncoderCalibratorBase12CycleAverageEiii  encoder_calibrator_base.o
-    0x08002c18   0x08002c18   0x0000028c   Code   RO         1339    .text._ZN21EncoderCalibratorBase12TickMainLoopEv  encoder_calibrator_base.o
-    0x08002ea4   0x08002ea4   0x00000050   Code   RO         1327    .text._ZN21EncoderCalibratorBase16CycleDataAverageEPKtti  encoder_calibrator_base.o
-    0x08002ef4   0x08002ef4   0x000001c8   Code   RO         1329    .text._ZN21EncoderCalibratorBase20CalibrationDataCheckEv  encoder_calibrator_base.o
-    0x080030bc   0x080030bc   0x00000018   Code   RO         1325    .text._ZN21EncoderCalibratorBase22WriteFlash16bitsAppendEt  encoder_calibrator_base.o
-    0x080030d4   0x080030d4   0x0000017c   Code   RO         1337    .text._ZN21EncoderCalibratorBase9Tick20kHzEv  encoder_calibrator_base.o
-    0x08003250   0x08003250   0x00000004   Code   RO         1238    .text._ZN5Motor10Controller12AttachConfigEPNS0_8Config_tE  motor.o
-    0x08003254   0x08003254   0x000000dc   Code   RO         1206    .text._ZN5Motor10Controller23CompensateAdvancedAngleEi  motor.o
-    0x08003330   0x08003330   0x00000070   Code   RO         1234    .text._ZN5Motor10Controller4InitEv  motor.o
-    0x080033a0   0x080033a0   0x00000006   Code   RO         1204    .text._ZN5Motor13AttachEncoderEP10MT6816Base  motor.o
-    0x080033a6   0x080033a6   0x00000002   PAD
-    0x080033a8   0x080033a8   0x000000ac   Code   RO         1202    .text._ZN5Motor20CloseLoopControlTickEv  motor.o
-    0x08003454   0x08003454   0x00000018   Code   RO         1200    .text._ZN5Motor9Tick20kHzEv  motor.o
-    0x0800346c   0x0800346c   0x000000ca   Code   RO         1195    .text._ZN5MotorC2Ev  main_1.o
-    0x08003536   0x08003536   0x0000002c   Code   RO           11    .text.main          main.o
-    0x08003562   0x08003562   0x00000018   Code   RO         1758    x$fpl$dcmpinf       fz_ws.l(dcmpi.o)
-    0x0800357a   0x0800357a   0x00000002   PAD
-    0x0800357c   0x0800357c   0x00000078   Code   RO         1630    x$fpl$deqf          fz_ws.l(deqf.o)
-    0x080035f4   0x080035f4   0x0000005a   Code   RO         1500    x$fpl$dfixu         fz_ws.l(dfixu.o)
-    0x0800364e   0x0800364e   0x0000002e   Code   RO         1505    x$fpl$dflt          fz_ws.l(dflt_clz.o)
-    0x0800367c   0x0800367c   0x00000026   Code   RO         1504    x$fpl$dfltu         fz_ws.l(dflt_clz.o)
-    0x080036a2   0x080036a2   0x00000002   PAD
-    0x080036a4   0x080036a4   0x00000078   Code   RO         1632    x$fpl$dgeqf         fz_ws.l(dgeqf.o)
-    0x0800371c   0x0800371c   0x00000078   Code   RO         1634    x$fpl$dleqf         fz_ws.l(dleqf.o)
-    0x08003794   0x08003794   0x00000154   Code   RO         1510    x$fpl$dmul          fz_ws.l(dmul.o)
-    0x080038e8   0x080038e8   0x0000009c   Code   RO         1636    x$fpl$dnaninf       fz_ws.l(dnaninf.o)
-    0x08003984   0x08003984   0x0000000c   Code   RO         1638    x$fpl$dretinf       fz_ws.l(dretinf.o)
-    0x08003990   0x08003990   0x00000054   Code   RO         1494    x$fpl$fcmp          fz_ws.l(dcmp.o)
-    0x080039e4   0x080039e4   0x00000000   Code   RO         1652    x$fpl$usenofp       fz_ws.l(usenofp.o)
-    0x080039e4   0x080039e4   0x00000010   Data   RO         1149    .rodata.AHBPrescTable  system_stm32f1xx.o
-    0x080039f4   0x080039f4   0x00000008   Data   RO         1150    .rodata.APBPrescTable  system_stm32f1xx.o
-    0x080039fc   0x080039fc   0x00000802   Data   RO         1307    .rodata._ZL9sin_pi_m2  tb67h450_base.o
-    0x080041fe   0x080041fe   0x00000002   PAD
-    0x08004200   0x08004200   0x00000020   Data   RO         1857    Region$$Table       anon$$obj.o
-    0x08004220   0x08004220   0x00000004   Data   RO         1183    .init_array         main_1.o
+    0x08002a08   0x08002a08   0x00000004   Code   RO         1267    .text._ZN10MT6816Base12IsCalibratedEv  mt6816_base.o
+    0x08002a0c   0x08002a0c   0x00000030   Code   RO         1256    .text._ZN10MT6816Base24SpiTransmitAndRead16BitsEt  mt6816_base.o
+    0x08002a3c   0x08002a3c   0x0000002a   Code   RO         1259    .text._ZN10MT6816Base4InitEv  mt6816_base.o
+    0x08002a66   0x08002a66   0x00000002   PAD
+    0x08002a68   0x08002a68   0x000000e4   Code   RO         1301    .text._ZN12TB67H450Base19SetFocCurrentVectorEji  tb67h450_base.o
+    0x08002b4c   0x08002b4c   0x00000028   Code   RO         1307    .text._ZN12TB67H450Base5BrakeEv  tb67h450_base.o
+    0x08002b74   0x08002b74   0x0000002c   Code   RO         1305    .text._ZN12TB67H450Base5SleepEv  tb67h450_base.o
+    0x08002ba0   0x08002ba0   0x00000056   Code   RO         1389    .text._ZN13MotionPlanner14CurrentTracker12CalcSoftGoalEi  motion_planner.o
+    0x08002bf6   0x08002bf6   0x0000001a   Code   RO         1391    .text._ZN13MotionPlanner14CurrentTracker19CalcCurrentIntegralEi  motion_planner.o
+    0x08002c10   0x08002c10   0x00000008   Code   RO         1387    .text._ZN13MotionPlanner14CurrentTracker7NewTaskEi  motion_planner.o
+    0x08002c18   0x08002c18   0x00000164   Code   RO         1409    .text._ZN13MotionPlanner15PositionTracker12CalcSoftGoalEi  motion_planner.o
+    0x08002d7c   0x08002d7c   0x0000001a   Code   RO         1413    .text._ZN13MotionPlanner15PositionTracker20CalcPositionIntegralEi  motion_planner.o
+    0x08002d96   0x08002d96   0x0000001a   Code   RO         1411    .text._ZN13MotionPlanner15PositionTracker20CalcVelocityIntegralEi  motion_planner.o
+    0x08002db0   0x08002db0   0x0000000c   Code   RO         1407    .text._ZN13MotionPlanner15PositionTracker7NewTaskEii  motion_planner.o
+    0x08002dbc   0x08002dbc   0x00000056   Code   RO         1399    .text._ZN13MotionPlanner15VelocityTracker12CalcSoftGoalEi  motion_planner.o
+    0x08002e12   0x08002e12   0x0000001a   Code   RO         1401    .text._ZN13MotionPlanner15VelocityTracker20CalcVelocityIntegralEi  motion_planner.o
+    0x08002e2c   0x08002e2c   0x00000008   Code   RO         1397    .text._ZN13MotionPlanner15VelocityTracker7NewTaskEi  motion_planner.o
+    0x08002e34   0x08002e34   0x000000d4   Code   RO         1425    .text._ZN13MotionPlanner17TrajectoryTracker12CalcSoftGoalEii  motion_planner.o
+    0x08002f08   0x08002f08   0x0000001a   Code   RO         1429    .text._ZN13MotionPlanner17TrajectoryTracker20CalcPositionIntegralEi  motion_planner.o
+    0x08002f22   0x08002f22   0x0000001a   Code   RO         1427    .text._ZN13MotionPlanner17TrajectoryTracker20CalcVelocityIntegralEi  motion_planner.o
+    0x08002f3c   0x08002f3c   0x00000010   Code   RO         1423    .text._ZN13MotionPlanner17TrajectoryTracker7NewTaskEii  motion_planner.o
+    0x08002f4c   0x08002f4c   0x00000036   Code   RO         1419    .text._ZN13MotionPlanner20PositionInterpolator12CalcSoftGoalEi  motion_planner.o
+    0x08002f82   0x08002f82   0x0000000a   Code   RO         1417    .text._ZN13MotionPlanner20PositionInterpolator7NewTaskEii  motion_planner.o
+    0x08002f8c   0x08002f8c   0x0000005e   Code   RO         1197    .text._ZN13MotionPlannerC2Ev  main_1.o
+    0x08002fea   0x08002fea   0x00000042   Code   RO         1333    .text._ZN21EncoderCalibratorBase12CycleAverageEiii  encoder_calibrator_base.o
+    0x0800302c   0x0800302c   0x0000028c   Code   RO         1341    .text._ZN21EncoderCalibratorBase12TickMainLoopEv  encoder_calibrator_base.o
+    0x080032b8   0x080032b8   0x00000050   Code   RO         1329    .text._ZN21EncoderCalibratorBase16CycleDataAverageEPKtti  encoder_calibrator_base.o
+    0x08003308   0x08003308   0x000001c8   Code   RO         1331    .text._ZN21EncoderCalibratorBase20CalibrationDataCheckEv  encoder_calibrator_base.o
+    0x080034d0   0x080034d0   0x00000018   Code   RO         1327    .text._ZN21EncoderCalibratorBase22WriteFlash16bitsAppendEt  encoder_calibrator_base.o
+    0x080034e8   0x080034e8   0x00000178   Code   RO         1339    .text._ZN21EncoderCalibratorBase9Tick20kHzEv  encoder_calibrator_base.o
+    0x08003660   0x08003660   0x00000004   Code   RO         1240    .text._ZN5Motor10Controller12AttachConfigEPNS0_8Config_tE  motor.o
+    0x08003664   0x08003664   0x000000c0   Code   RO         1210    .text._ZN5Motor10Controller15CalcDceToOutputEii  motor.o
+    0x08003724   0x08003724   0x0000009c   Code   RO         1214    .text._ZN5Motor10Controller15CalcPidToOutputEi  motor.o
+    0x080037c0   0x080037c0   0x0000002c   Code   RO         1212    .text._ZN5Motor10Controller19CalcCurrentToOutputEi  motor.o
+    0x080037ec   0x080037ec   0x000000dc   Code   RO         1206    .text._ZN5Motor10Controller23CompensateAdvancedAngleEi  motor.o
+    0x080038c8   0x080038c8   0x00000070   Code   RO         1236    .text._ZN5Motor10Controller4InitEv  motor.o
+    0x08003938   0x08003938   0x00000006   Code   RO         1204    .text._ZN5Motor13AttachEncoderEP10MT6816Base  motor.o
+    0x0800393e   0x0800393e   0x00000002   PAD
+    0x08003940   0x08003940   0x000003cc   Code   RO         1202    .text._ZN5Motor20CloseLoopControlTickEv  motor.o
+    0x08003d0c   0x08003d0c   0x00000018   Code   RO         1200    .text._ZN5Motor9Tick20kHzEv  motor.o
+    0x08003d24   0x08003d24   0x000000ca   Code   RO         1195    .text._ZN5MotorC2Ev  main_1.o
+    0x08003dee   0x08003dee   0x0000002c   Code   RO           11    .text.main          main.o
+    0x08003e1a   0x08003e1a   0x00000018   Code   RO         1760    x$fpl$dcmpinf       fz_ws.l(dcmpi.o)
+    0x08003e32   0x08003e32   0x00000002   PAD
+    0x08003e34   0x08003e34   0x00000078   Code   RO         1632    x$fpl$deqf          fz_ws.l(deqf.o)
+    0x08003eac   0x08003eac   0x0000005e   Code   RO         1498    x$fpl$dfix          fz_ws.l(dfix.o)
+    0x08003f0a   0x08003f0a   0x00000002   PAD
+    0x08003f0c   0x08003f0c   0x0000005a   Code   RO         1502    x$fpl$dfixu         fz_ws.l(dfixu.o)
+    0x08003f66   0x08003f66   0x0000002e   Code   RO         1507    x$fpl$dflt          fz_ws.l(dflt_clz.o)
+    0x08003f94   0x08003f94   0x00000026   Code   RO         1506    x$fpl$dfltu         fz_ws.l(dflt_clz.o)
+    0x08003fba   0x08003fba   0x00000002   PAD
+    0x08003fbc   0x08003fbc   0x00000078   Code   RO         1634    x$fpl$dgeqf         fz_ws.l(dgeqf.o)
+    0x08004034   0x08004034   0x00000078   Code   RO         1636    x$fpl$dleqf         fz_ws.l(dleqf.o)
+    0x080040ac   0x080040ac   0x00000154   Code   RO         1512    x$fpl$dmul          fz_ws.l(dmul.o)
+    0x08004200   0x08004200   0x0000009c   Code   RO         1638    x$fpl$dnaninf       fz_ws.l(dnaninf.o)
+    0x0800429c   0x0800429c   0x0000000c   Code   RO         1640    x$fpl$dretinf       fz_ws.l(dretinf.o)
+    0x080042a8   0x080042a8   0x00000054   Code   RO         1496    x$fpl$fcmp          fz_ws.l(dcmp.o)
+    0x080042fc   0x080042fc   0x00000184   Code   RO         1523    x$fpl$fdiv          fz_ws.l(fdiv.o)
+    0x08004480   0x08004480   0x00000036   Code   RO         1526    x$fpl$ffix          fz_ws.l(ffix.o)
+    0x080044b6   0x080044b6   0x00000002   PAD
+    0x080044b8   0x080044b8   0x00000030   Code   RO         1531    x$fpl$fflt          fz_ws.l(fflt_clz.o)
+    0x080044e8   0x080044e8   0x00000102   Code   RO         1536    x$fpl$fmul          fz_ws.l(fmul.o)
+    0x080045ea   0x080045ea   0x0000008c   Code   RO         1648    x$fpl$fnaninf       fz_ws.l(fnaninf.o)
+    0x08004676   0x08004676   0x0000000a   Code   RO         1650    x$fpl$fretinf       fz_ws.l(fretinf.o)
+    0x08004680   0x08004680   0x00000000   Code   RO         1654    x$fpl$usenofp       fz_ws.l(usenofp.o)
+    0x08004680   0x08004680   0x00000010   Data   RO         1149    .rodata.AHBPrescTable  system_stm32f1xx.o
+    0x08004690   0x08004690   0x00000008   Data   RO         1150    .rodata.APBPrescTable  system_stm32f1xx.o
+    0x08004698   0x08004698   0x00000802   Data   RO         1309    .rodata._ZL9sin_pi_m2  tb67h450_base.o
+    0x08004e9a   0x08004e9a   0x00000002   PAD
+    0x08004e9c   0x08004e9c   0x00000020   Data   RO         1859    Region$$Table       anon$$obj.o
+    0x08004ebc   0x08004ebc   0x00000004   Data   RO         1183    .init_array         main_1.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08004230, Size: 0x00000ea8, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08004ec0, Size: 0x00000ea8, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08004230   0x0000000c   Data   RW          362    .data..L_MergedGlobals  stm32f1xx_hal.o
-    0x2000000c   0x0800423c   0x00000004   Data   RW         1148    .data.SystemCoreClock  system_stm32f1xx.o
-    0x20000010   0x08004240   0x00000010   Data   RW         1368    .data.stockpile_quick_cali  stockpile_f103cb.o
-    0x20000020        -       0x00000060   Zero   RW         1766    .bss                c_w.l(libspace.o)
+    0x20000000   0x08004ec0   0x0000000c   Data   RW          362    .data..L_MergedGlobals  stm32f1xx_hal.o
+    0x2000000c   0x08004ecc   0x00000004   Data   RW         1148    .data.SystemCoreClock  system_stm32f1xx.o
+    0x20000010   0x08004ed0   0x00000010   Data   RW         1370    .data.stockpile_quick_cali  stockpile_f103cb.o
+    0x20000020        -       0x00000060   Zero   RW         1768    .bss                c_w.l(libspace.o)
     0x20000080        -       0x00000044   Zero   RW          110    .bss..L_MergedGlobals  usart.o
-    0x200000c4   0x08004250   0x0000000c   PAD
+    0x200000c4        -       0x00000002   Zero   RW         1242    .bss..L_MergedGlobals  motor.o
+    0x200000c6   0x08004ee0   0x0000000a   PAD
     0x200000d0        -       0x00000044   Zero   RW          111    .bss..L_MergedGlobals.1  usart.o
-    0x20000114        -       0x00000001   Zero   RW         1341    .bss._ZZN21EncoderCalibratorBase9Tick20kHzEvE5_flag  encoder_calibrator_base.o
-    0x20000115        -       0x00000001   Zero   RW         1242    .bss._ZZN5Motor20CloseLoopControlTickEvE13isFirstCalled  motor.o
-    0x20000116   0x08004250   0x00000002   PAD
+    0x20000114        -       0x00000001   Zero   RW         1343    .bss._ZZN21EncoderCalibratorBase9Tick20kHzEvE5_flag  encoder_calibrator_base.o
+    0x20000115   0x08004ee0   0x00000003   PAD
     0x20000118        -       0x00000034   Zero   RW         1177    .bss.boardConfig    main_1.o
     0x2000014c        -       0x00000364   Zero   RW         1181    .bss.encoder_calibrator_base  main_1.o
     0x200004b0        -       0x00000058   Zero   RW           61    .bss.hspi1          spi.o
@@ -3758,9 +3866,9 @@ Memory Map of the image
     0x200007f8        -       0x00000020   Zero   RW          608    .bss.pFlash         stm32f1xx_hal_flash.o
     0x20000818        -       0x00000001   Zero   RW         1176    .bss.rxLen          main_1.o
     0x20000819        -       0x00000080   Zero   RW         1175    .bss.rx_buffer      main_1.o
-    0x20000899   0x08004250   0x00000001   PAD
+    0x20000899   0x08004ee0   0x00000001   PAD
     0x2000089a        -       0x0000000c   Zero   RW         1180    .bss.tb67h450_base  main_1.o
-    0x200008a6   0x08004250   0x00000002   PAD
+    0x200008a6   0x08004ee0   0x00000002   PAD
     0x200008a8        -       0x00000200   Zero   RW            2    HEAP                startup_stm32f103xb.o
     0x20000aa8        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103xb.o
 
@@ -3773,12 +3881,13 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
         64          4          0          0          0       2082   dma.o
-      1658         40          0          0          1      28734   encoder_calibrator_base.o
+      1654         36          0          0          1      28734   encoder_calibrator_base.o
        104          8          0          0          0       1715   gpio.o
        154          0          0          0          0       1926   main.o
-       556         64          4          0       1525      22987   main_1.o
-       538         72          0          0          1      25877   motor.o
-       222          8          0          0          0       5365   mt6816_base.o
+       556         64          4          0       1525      23057   main_1.o
+      1004          0          0          0          0      21445   motion_planner.o
+      1730        138          0          0          2      27199   motor.o
+       226          8          0          0          0       5542   mt6816_base.o
        200         20          0          0         88       4908   spi.o
         64         26        236          0       1536        784   startup_stm32f103xb.o
        116          8          0         12          0       6479   stm32f1xx_hal.o
@@ -3796,14 +3905,14 @@ Image component sizes
         80         20          0          0          0       1793   stm32f1xx_it.o
        176          4          0         16          0       3895   stockpile_f103cb.o
          2          0         24          4          0       1729   system_stm32f1xx.o
-       276         16       2050          0          0      15163   tb67h450_base.o
+       312         16       2050          0          0      15163   tb67h450_base.o
        556         32          0          0        216       8335   tim.o
        300         28          0          0        208       6302   usart.o
 
     ----------------------------------------------------------------------
-     12968        638       2348         32       3624     288781   Object Totals
+     15200        700       2348         32       3624     311795   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        32          0          2          0         17          0   (incl. Padding)
+        32          0          2          0         16          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -3835,6 +3944,7 @@ Image component sizes
         84          0          0          0          0        196   dcmp.o
         24          0          0          0          0         68   dcmpi.o
        120          4          0          0          0         92   deqf.o
+        94          4          0          0          0         92   dfix.o
         90          4          0          0          0         92   dfixu.o
         84          0          0          0          0        136   dflt_clz.o
        120          4          0          0          0         92   dgeqf.o
@@ -3842,21 +3952,27 @@ Image component sizes
        340         12          0          0          0        104   dmul.o
        156          4          0          0          0         92   dnaninf.o
         12          0          0          0          0         68   dretinf.o
+       388         76          0          0          0         96   fdiv.o
+        54          4          0          0          0         84   ffix.o
+        48          0          0          0          0         68   fflt_clz.o
+       258          4          0          0          0         84   fmul.o
+       140          4          0          0          0         84   fnaninf.o
+        10          0          0          0          0         68   fretinf.o
          0          0          0          0          0          0   usenofp.o
 
     ----------------------------------------------------------------------
-      1616         58          0          0         96       1844   Library Totals
-         8          0          0          0          0          0   (incl. Padding)
+      2612        150          0          0         96       2420   Library Totals
+        12          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
        458         26          0          0         96        812   c_w.l
-      1150         32          0          0          0       1032   fz_ws.l
+      2142        124          0          0          0       1608   fz_ws.l
 
     ----------------------------------------------------------------------
-      1616         58          0          0         96       1844   Library Totals
+      2612        150          0          0         96       2420   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -3865,15 +3981,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     14584        696       2348         32       3720     289389   Grand Totals
-     14584        696       2348         32       3720     289389   ELF Image Totals
-     14584        696       2348         32          0          0   ROM Totals
+     17812        850       2348         32       3720     312599   Grand Totals
+     17812        850       2348         32       3720     312599   ELF Image Totals
+     17812        850       2348         32          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                16932 (  16.54kB)
+    Total RO  Size (Code + RO Data)                20160 (  19.69kB)
     Total RW  Size (RW Data + ZI Data)              3752 (   3.66kB)
-    Total ROM Size (Code + RO Data + RW Data)      16964 (  16.57kB)
+    Total ROM Size (Code + RO Data + RW Data)      20192 (  19.72kB)
 
 ==============================================================================
 

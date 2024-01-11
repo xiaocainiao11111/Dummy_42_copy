@@ -14,4 +14,5 @@ cbt6_demo3/motor.o: ../Motor/motor.cpp ../Motor/motor.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
   ../UserApp\configurations.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  ../Driver\tb67h450_base.h

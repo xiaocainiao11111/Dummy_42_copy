@@ -89,7 +89,8 @@ extern "C"
             typedef struct
             {
                 int32_t kp, kv, ki, kd;
-                int32_t pError, vError; // 目标位置差和目标速度差
+                int32_t pError; // 目标位置差
+                int32_t vError; // 目标速度差
                 int32_t outputKp, outputKi, outputKd;
                 int32_t integralRound;
                 int32_t integralRemainder;
@@ -101,7 +102,7 @@ extern "C"
                 PID_t pid;
                 DCE_t dce;
 
-                bool stallProtectSwitch;
+                bool stallProtectSwitch; // 堵转保护
             } Config_t;
 
             explicit Controller(Motor *_context)
@@ -113,13 +114,13 @@ extern "C"
             }
 
             Config_t *config = nullptr;
-            Mode_t requestMode;
-            Mode_t modeRunning;
+            Mode_t requestMode; // 要求模式
+            Mode_t modeRunning; // 正在运行记录
             State_t state = STATE_STOP;
             bool isStalled = false;
 
             void Init();
-            void SetCtrlMode(Mode_t _mode);
+            void SetCtrlMode(Mode_t _mode); // 由串口或can接收的电机运行新模式
             void SetCurrentSetPoint(int32_t _cur);
             void SetVelocitySetPoint(int32_t _vel);
             void SetPositionSetPoint(int32_t _pos);
@@ -127,7 +128,7 @@ extern "C"
             float GetPosition(bool _isLap = false);
             float GetVelocity();
             float GetFocCurrent();
-            void AddTrajectorySetPoint(int32_t _pos, int32_t _vel);
+            void AddTrajectorySetPoint(int32_t _pos, int32_t _vel); // 好像没用到
             // void SetDisable(bool _disable);// 没用
             // void SetBrake(bool _brake); // 没用
             void ApplyPosAsHomeOffset();
@@ -135,26 +136,26 @@ extern "C"
 
         private:
             Motor *context;
-            int32_t realLapPosition{};     // 当前细分数
+            int32_t realLapPosition{};     // 当前细分数，从编码器获取
             int32_t realLapPositionLast{}; // 上次细分数记录
-            int32_t realPosition{};        // 目前实际位置，由mt6816校准得到，为细分数
+            int32_t realPosition{};        // 每次细分差的累加，有正负
             int32_t realPositionLast{};
-            int32_t estVelocity{};
-            int32_t estVelocityIntegral{};
-            int32_t estLeadPosition{}; // 由估计速度通过补偿表得到的估计位移
-            int32_t estPosition{};     // 由估计速度和补偿表得到估计位置
-            int32_t estError{};        // 估计误差
+            int32_t estVelocity{};         // 初始为0，估计速度
+            int32_t estVelocityIntegral{}; // 初始为0
+            int32_t estLeadPosition{};     // 由估计速度通过补偿表得到的估计位移
+            int32_t estPosition{};         // 由估计速度和补偿表得到估计位置
+            int32_t estError{};            // 估计误差
             int32_t focCurrent{};
             int32_t goalPosition{}; // 目标位置
             int32_t goalVelocity{};
             int32_t goalCurrent{};
-            bool goalDisable{};
-            bool goalBrake{};
+            bool goalDisable{}; // 永远是false
+            bool goalBrake{};   // 永远是false
             int32_t softPosition{};
             int32_t softVelocity{};
             int32_t softCurrent{};
-            bool softDisable{};
-            bool softBrake{};
+            bool softDisable{}; // 永远是false
+            bool softBrake{};   // 永远是false
             bool softNewCurve{};
             int32_t focPosition{};
             uint32_t stalledTime{};

@@ -16,7 +16,7 @@ extern "C"
         {
         }
 
-        const int32_t RESOLUTION = ((int32_t)((0x00000001U) << 14));    
+        const int32_t RESOLUTION = ((int32_t)((0x00000001U) << 14));
 
         // bool Init() override;
         typedef struct
@@ -33,7 +33,7 @@ extern "C"
         void test();
         uint8_t test1();
         uint16_t UpdateAngle(); // Get current rawAngle (rad)
-        // bool IsCalibrated() override;
+        bool IsCalibrated();
 
     private:
         typedef struct
@@ -56,7 +56,7 @@ extern "C"
         uint16_t SpiTransmitAndRead16Bits(uint16_t _dataTx);
     };
 
-
+    extern MT6816Base mt6816_base;
 
 #ifdef __cplusplus
 }

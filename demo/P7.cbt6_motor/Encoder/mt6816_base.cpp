@@ -1,21 +1,6 @@
 #include "mt6816_base.h"
 #include "spi.h"
 
-// bool MT6816Base::Init()
-// {
-//     SpiInit();
-//     UpdateAngle();
-
-//     // Check if the stored calibration data are valid
-//     angleData.rectifyValid = true;
-//     for (uint32_t i = 0; i < RESOLUTION; i++)
-//     {
-//         if (quickCaliDataPtr[i] == 0xFFFF)
-//             angleData.rectifyValid = false;
-//     }
-
-//     return angleData.rectifyValid;
-// }
 
 // void MT6816Base::SpiInit()
 // {
@@ -133,7 +118,7 @@ extern "C" uint16_t MT6816Base::UpdateAngle()
     return angleData.rectifiedAngle;
 }
 
-// bool MT6816Base::IsCalibrated()
-// {
-//     return angleData.rectifyValid;
-// }
+bool MT6816Base::IsCalibrated()
+{
+    return angleData.rectifyValid;
+}

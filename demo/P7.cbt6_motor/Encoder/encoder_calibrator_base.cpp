@@ -4,9 +4,7 @@
 #include "stockpile_f103cb.h"
 #include "mt6816_base.h"
 #include "tb67h450_base.h"
-
-extern MT6816Base mt6816_base;
-extern TB67H450Base tb67h450_base;
+#include "motor.h"
 
 void EncoderCalibratorBase::BeginWriteFlash()
 {
@@ -58,7 +56,7 @@ int32_t EncoderCalibratorBase::CycleDataAverage(const uint16_t *_data, uint16_t 
     return sumData;
 }
 
-//进行步距检测，通过后得到零点前的最后一步步数及零点后第一步与零点的编码器距离
+// 进行步距检测，通过后得到零点前的最后一步步数及零点后第一步与零点的编码器距离
 void EncoderCalibratorBase::CalibrationDataCheck()
 {
     uint32_t count;

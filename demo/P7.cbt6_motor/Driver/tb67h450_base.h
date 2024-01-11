@@ -45,6 +45,8 @@ extern "C"
         FastSinToDac_t phaseB{};
         FastSinToDac_t phaseA{};
     };
+    extern TB67H450Base tb67h450_base;
+
 #ifdef __cplusplus
 }
 #endif

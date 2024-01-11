@@ -3,8 +3,7 @@
 #include <cmath>
 #include "mt6816_base.h"
 #include "configurations.h"
-
-extern MT6816Base mt6816_base;
+#include "tb67h450_base.h"
 
 void Motor::Tick20kHz()
 {
@@ -61,286 +60,301 @@ void Motor::CloseLoopControlTick()
         return;
     }
 
-        /********************************* Update Data *********************************/
-        int32_t deltaLapPosition; // 超半圈的运动变反向
+    /********************************* Update Data *********************************/
+    int32_t deltaLapPosition; // 超半圈的运动变反向
 
-        // Read Encoder data
-        controller->realLapPositionLast = controller->realLapPosition;   // 上次细分数
-        controller->realLapPosition = encoder->angleData.rectifiedAngle; // 当前细分数
+    // Read Encoder data
+    controller->realLapPositionLast = controller->realLapPosition;   // 上次细分数
+    controller->realLapPosition = encoder->angleData.rectifiedAngle; // 当前细分数
 
-        // 注意以下都是以细分数进行
-        //  Lap-Position calculate
-        deltaLapPosition = controller->realLapPosition - controller->realLapPositionLast; // 与上次位置差
-        if (deltaLapPosition > MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS >> 1)
-            deltaLapPosition -= MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS;
-        else if (deltaLapPosition < -MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS >> 1)
-            deltaLapPosition += MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS;
+    // 注意以下都是以细分数进行
+    //  Lap-Position calculate
+    deltaLapPosition = controller->realLapPosition - controller->realLapPositionLast; // 与上次细分差
+    if (deltaLapPosition > MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS >> 1)
+        deltaLapPosition -= MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS;
+    else if (deltaLapPosition < -MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS >> 1)
+        deltaLapPosition += MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS;
 
-        // Naive-Position calculate
-        controller->realPositionLast = controller->realPosition;
-        controller->realPosition += deltaLapPosition;
+    // Naive-Position calculate
+    controller->realPositionLast = controller->realPosition;
+    controller->realPosition += deltaLapPosition;
 
-        /********************************* Estimate Data *********************************/
-        // Estimate Velocity
-        controller->estVelocityIntegral += ((controller->realPosition - controller->realPositionLast) * motionPlanner.CONTROL_FREQUENCY + ((controller->estVelocity << 5) - controller->estVelocity)); // 位置差值*20000+a*31累加
-        controller->estVelocity = controller->estVelocityIntegral >> 5;
-        controller->estVelocityIntegral -= (controller->estVelocity << 5);
+    /********************************* Estimate Data *********************************/
+    // Estimate Velocity
+    controller->estVelocityIntegral += ((controller->realPosition - controller->realPositionLast) * motionPlanner.CONTROL_FREQUENCY + ((controller->estVelocity << 5) - controller->estVelocity)); // 位置差值*20000+estVelocity*31累加
 
-        // Estimate Position
-        controller->estLeadPosition = Controller::CompensateAdvancedAngle(controller->estVelocity);
-        controller->estPosition = controller->realPosition + controller->estLeadPosition; // 由估计速度和补偿表得到估计位置
+    controller->estVelocity = controller->estVelocityIntegral >> 5;    // estVelocityIntegral / 32
+    controller->estVelocityIntegral -= (controller->estVelocity << 5); // (位置差值*20000+estVelocity*31)-(位置差值*20000+estVelocity*31)/32*32
 
-        // Estimate Error
-        controller->estError = controller->softPosition - controller->estPosition;
+    // Estimate Position
+    controller->estLeadPosition = Controller::CompensateAdvancedAngle(controller->estVelocity);
+    controller->estPosition = controller->realPosition + controller->estLeadPosition; // 由估计速度和补偿表得到估计位置
 
-    //     /************************************ Ctrl Loop ************************************/
-    //     if (controller->isStalled ||
-    //         controller->softDisable ||
-    //         !encoder->IsCalibrated()) // 首次会进入
-    //     {
-    //         controller->ClearIntegral(); // clear integrals
-    //         controller->focPosition = 0; // clear outputs
-    //         controller->focCurrent = 0;
-    //         driver->Sleep();
-    //     }
-    //     else if (controller->softBrake)
-    //     {
-    //         controller->ClearIntegral();
-    //         controller->focPosition = 0;
-    //         controller->focCurrent = 0;
-    //         driver->Brake();
-    //     }
-    //     else
-    //     {
-    //         switch (controller->modeRunning)
-    //         {
-    //         case MODE_STEP_DIR:
-    //             controller->CalcDceToOutput(controller->softPosition, controller->softVelocity);
-    //             break;
-    //         case MODE_STOP:
-    //             driver->Sleep();
-    //             break;
-    //         case MODE_COMMAND_Trajectory:
-    //             controller->CalcDceToOutput(controller->softPosition, controller->softVelocity);
-    //             break;
-    //         case MODE_COMMAND_CURRENT:
-    //             controller->CalcCurrentToOutput(controller->softCurrent);
-    //             break;
-    //         case MODE_COMMAND_VELOCITY:
-    //             controller->CalcPidToOutput(controller->softVelocity);
-    //             break;
-    //         case MODE_COMMAND_POSITION:
-    //             controller->CalcDceToOutput(controller->softPosition, controller->softVelocity);
-    //             break;
-    //         case MODE_PWM_CURRENT:
-    //             controller->CalcCurrentToOutput(controller->softCurrent);
-    //             break;
-    //         case MODE_PWM_VELOCITY:
-    //             controller->CalcPidToOutput(controller->softVelocity);
-    //             break;
-    //         case MODE_PWM_POSITION:
-    //             controller->CalcDceToOutput(controller->softPosition, controller->softVelocity);
-    //             break;
-    //         default:
-    //             break;
-    //         }
-    //     }
+    // Estimate Error
+    controller->estError = controller->softPosition - controller->estPosition;
 
-    //     /******************************* Mode Change Handle *******************************/
-    //     if (controller->modeRunning != controller->requestMode) //
-    //     {
-    //         controller->modeRunning = controller->requestMode;
-    //         controller->softNewCurve = true;
-    //     }
+    /************************************ Ctrl Loop ************************************/
+    // if (controller->isStalled ||
+    //     controller->softDisable ||
+    //     !mt6816_base.IsCalibrated()) // 首次会进入
+    // {
+    //     controller->ClearIntegral(); // clear integrals
+    //     controller->focPosition = 0; // clear outputs
+    //     controller->focCurrent = 0;
+    //     tb67h450_base.Sleep();
+    // }
 
-    //     /******************************* Update Hard-Goal，限制速度和电流 *******************************/
-    //     if (controller->goalVelocity > config.motionParams.ratedVelocity)
-    //         controller->goalVelocity = config.motionParams.ratedVelocity;
-    //     else if (controller->goalVelocity < -config.motionParams.ratedVelocity)
-    //         controller->goalVelocity = -config.motionParams.ratedVelocity;
-    //     if (controller->goalCurrent > config.motionParams.ratedCurrent)
-    //         controller->goalCurrent = config.motionParams.ratedCurrent;
-    //     else if (controller->goalCurrent < -config.motionParams.ratedCurrent)
-    //         controller->goalCurrent = -config.motionParams.ratedCurrent;
+    static bool _flag1 = 0;
+    if (_flag1 == 0)
+    {
+        controller->ClearIntegral(); // clear integrals
+        controller->focPosition = 0; // clear outputs
+        controller->focCurrent = 0;
+        tb67h450_base.Sleep();
+        _flag1 = 1;
+    }
 
-    //     /******************************** Motion Plan，好像没用上 *********************************/
-    //     if ((controller->softDisable && !controller->goalDisable) ||
-    //         (controller->softBrake && !controller->goalBrake))
-    //     {
-    //         controller->softNewCurve = true;
-    //     }
+    else if (controller->softBrake)
+    {
+        controller->ClearIntegral();
+        controller->focPosition = 0;
+        controller->focCurrent = 0;
+        tb67h450_base.Brake();
+    }
+    else
+    {
+        controller->requestMode = MODE_COMMAND_VELOCITY;
+        switch (controller->modeRunning)
+        {
+        case MODE_STEP_DIR:
+            controller->CalcDceToOutput(controller->softPosition, controller->softVelocity);
+            break;
+        case MODE_STOP:
+            tb67h450_base.Sleep();
+            break;
+        case MODE_COMMAND_Trajectory:
+            controller->CalcDceToOutput(controller->softPosition, controller->softVelocity);
+            break;
+        case MODE_COMMAND_CURRENT:
+            controller->CalcCurrentToOutput(controller->softCurrent);
+            break;
+        case MODE_COMMAND_VELOCITY:
+            // controller->CalcPidToOutput(controller->softVelocity);
+            controller->CalcPidToOutput(200000);
+            break;
+        case MODE_COMMAND_POSITION:
+            controller->CalcDceToOutput(controller->softPosition, controller->softVelocity);
+            // controller->CalcDceToOutput(2000, 1000);
+            break;
+        case MODE_PWM_CURRENT:
+            controller->CalcCurrentToOutput(controller->softCurrent);
+            break;
+        case MODE_PWM_VELOCITY:
+            controller->CalcPidToOutput(controller->softVelocity);
+            break;
+        case MODE_PWM_POSITION:
+            controller->CalcDceToOutput(controller->softPosition, controller->softVelocity);
+            break;
+        default:
+            break;
+        }
+    }
 
-    //     if (controller->softNewCurve) // 只有模式变化时才执行一次，由估计速度和估计位置得到跟踪器速度和位置
-    //     {
-    //         controller->softNewCurve = false;
-    //         controller->ClearIntegral();
-    //         controller->ClearStallFlag();
+    /******************************* Mode Change Handle ，模式有变  *******************************/
+    if (controller->modeRunning != controller->requestMode) //
+    {
+        controller->modeRunning = controller->requestMode;
+        controller->softNewCurve = true;
+    }
 
-    //         switch (controller->modeRunning) // 更新tracker变量
-    //         {
-    //         case MODE_STOP:
-    //             break;
-    //         case MODE_COMMAND_POSITION:
-    //             motionPlanner.positionTracker.NewTask(controller->estPosition, controller->estVelocity);
-    //             break;
-    //         case MODE_COMMAND_VELOCITY:
-    //             motionPlanner.velocityTracker.NewTask(controller->estVelocity);
-    //             break;
-    //         case MODE_COMMAND_CURRENT:
-    //             motionPlanner.currentTracker.NewTask(controller->focCurrent);
-    //             break;
-    //         case MODE_COMMAND_Trajectory:
-    //             motionPlanner.trajectoryTracker.NewTask(controller->estPosition, controller->estVelocity);
-    //             break;
-    //         case MODE_PWM_POSITION:
-    //             motionPlanner.positionTracker.NewTask(controller->estPosition, controller->estVelocity);
-    //             break;
-    //         case MODE_PWM_VELOCITY:
-    //             motionPlanner.velocityTracker.NewTask(controller->estVelocity);
-    //             break;
-    //         case MODE_PWM_CURRENT:
-    //             motionPlanner.currentTracker.NewTask(controller->focCurrent);
-    //             break;
-    //         case MODE_STEP_DIR:
-    //             motionPlanner.positionInterpolator.NewTask(controller->estPosition, controller->estVelocity);
-    //             // step/dir mode uses delta-position, so stay where we are
-    //             controller->goalPosition = controller->estPosition;
-    //             break;
-    //         default:
-    //             break;
-    //         }
-    //     }
+    /******************************* Update Hard-Goal，限制速度和电流 *******************************/
+    if (controller->goalVelocity > config.motionParams.ratedVelocity)
+        controller->goalVelocity = config.motionParams.ratedVelocity;
+    else if (controller->goalVelocity < -config.motionParams.ratedVelocity)
+        controller->goalVelocity = -config.motionParams.ratedVelocity;
+    if (controller->goalCurrent > config.motionParams.ratedCurrent)
+        controller->goalCurrent = config.motionParams.ratedCurrent;
+    else if (controller->goalCurrent < -config.motionParams.ratedCurrent)
+        controller->goalCurrent = -config.motionParams.ratedCurrent;
 
-    //     /******************************* Update Soft Goal *******************************/
-    //     switch (controller->modeRunning) // 必定进入，更新soft变量
-    //     {
-    //     case MODE_STOP:
-    //         break;
-    //     case MODE_COMMAND_POSITION:
-    //         motionPlanner.positionTracker.CalcSoftGoal(controller->goalPosition);
-    //         controller->softPosition = motionPlanner.positionTracker.go_location;
-    //         controller->softVelocity = motionPlanner.positionTracker.go_velocity;
-    //         break;
-    //     case MODE_COMMAND_VELOCITY:
-    //         motionPlanner.velocityTracker.CalcSoftGoal(controller->goalVelocity);
-    //         controller->softVelocity = motionPlanner.velocityTracker.goVelocity;
-    //         break;
-    //     case MODE_COMMAND_CURRENT:
-    //         motionPlanner.currentTracker.CalcSoftGoal(controller->goalCurrent);
-    //         controller->softCurrent = motionPlanner.currentTracker.goCurrent;
-    //         break;
-    //     case MODE_COMMAND_Trajectory:
-    //         motionPlanner.trajectoryTracker.CalcSoftGoal(controller->goalPosition, controller->goalVelocity);
-    //         controller->softPosition = motionPlanner.trajectoryTracker.goPosition;
-    //         controller->softVelocity = motionPlanner.trajectoryTracker.goVelocity;
-    //         break;
-    //     case MODE_PWM_POSITION:
-    //         motionPlanner.positionTracker.CalcSoftGoal(controller->goalPosition);
-    //         controller->softPosition = motionPlanner.positionTracker.go_location;
-    //         controller->softVelocity = motionPlanner.positionTracker.go_velocity;
-    //         break;
-    //     case MODE_PWM_VELOCITY:
-    //         motionPlanner.velocityTracker.CalcSoftGoal(controller->goalVelocity);
-    //         controller->softVelocity = motionPlanner.velocityTracker.goVelocity;
-    //         break;
-    //     case MODE_PWM_CURRENT:
-    //         motionPlanner.currentTracker.CalcSoftGoal(controller->goalCurrent);
-    //         controller->softCurrent = motionPlanner.currentTracker.goCurrent;
-    //         break;
-    //     case MODE_STEP_DIR:
-    //         motionPlanner.positionInterpolator.CalcSoftGoal(controller->goalPosition);
-    //         controller->softPosition = motionPlanner.positionInterpolator.goPosition;
-    //         controller->softVelocity = motionPlanner.positionInterpolator.goVelocity;
-    //         break;
-    //     default:
-    //         break;
-    //     }
+    /******************************** Motion Plan ，进行新模式的跟踪器创建 *********************************/
+    if ((controller->softDisable && !controller->goalDisable) ||
+        (controller->softBrake && !controller->goalBrake))
+    {
+        controller->softNewCurve = true;
+    }
 
-    //     controller->softDisable = controller->goalDisable;
-    //     controller->softBrake = controller->goalBrake;
+    if (controller->softNewCurve) // 只有模式变化时才执行一次
+    {
+        controller->softNewCurve = false;
+        controller->ClearIntegral();
+        controller->ClearStallFlag();
 
-    //     /******************************** State Check ********************************/
-    //     int32_t current = fabs(controller->focCurrent);
+        switch (controller->modeRunning) // 更新tracker变量
+        {
+        case MODE_STOP:
+            break;
+        case MODE_COMMAND_POSITION:
+            motionPlanner.positionTracker.NewTask(controller->estPosition, controller->estVelocity);
+            break;
+        case MODE_COMMAND_VELOCITY:
+            motionPlanner.velocityTracker.NewTask(controller->estVelocity);
+            break;
+        case MODE_COMMAND_CURRENT:
+            motionPlanner.currentTracker.NewTask(controller->focCurrent);
+            break;
+        case MODE_COMMAND_Trajectory:
+            motionPlanner.trajectoryTracker.NewTask(controller->estPosition, controller->estVelocity);
+            break;
+        case MODE_PWM_POSITION:
+            motionPlanner.positionTracker.NewTask(controller->estPosition, controller->estVelocity);
+            break;
+        case MODE_PWM_VELOCITY:
+            motionPlanner.velocityTracker.NewTask(controller->estVelocity);
+            break;
+        case MODE_PWM_CURRENT:
+            motionPlanner.currentTracker.NewTask(controller->focCurrent);
+            break;
+        case MODE_STEP_DIR:
+            motionPlanner.positionInterpolator.NewTask(controller->estPosition, controller->estVelocity);
+            // step/dir mode uses delta-position, so stay where we are
+            controller->goalPosition = controller->estPosition;
+            break;
+        default:
+            break;
+        }
+    }
 
-    //     // Stall detect
-    //     if (controller->config->stallProtectSwitch)
-    //     {
-    //         if ( // Current Mode
-    //             ((controller->modeRunning == MODE_COMMAND_CURRENT ||
-    //               controller->modeRunning == MODE_PWM_CURRENT) &&
-    //              (current != 0)) || // Other Mode
-    //             current == config.motionParams.ratedCurrent)
-    //         {
-    //             if (fabs(controller->estVelocity) < MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS / 5)
-    //             {
-    //                 if (controller->stalledTime >= 1000 * 1000)
-    //                     controller->isStalled = true;
-    //                 else
-    //                     controller->stalledTime += motionPlanner.CONTROL_PERIOD;
-    //             }
-    //         }
-    //         else // can ONLY clear stall flag  MANUALLY
-    //         {
-    //             controller->stalledTime = 0;
-    //         }
-    //     }
+    /******************************* Update Soft Goal *******************************/
+    switch (controller->modeRunning) // 必定进入，更新soft变量
+    {
+    case MODE_STOP:
+        break;
+    case MODE_COMMAND_POSITION:
+        motionPlanner.positionTracker.CalcSoftGoal(controller->goalPosition);
+        controller->softPosition = motionPlanner.positionTracker.go_location;
+        controller->softVelocity = motionPlanner.positionTracker.go_velocity;
+        break;
+    case MODE_COMMAND_VELOCITY:
+        motionPlanner.velocityTracker.CalcSoftGoal(controller->goalVelocity);
+        controller->softVelocity = motionPlanner.velocityTracker.goVelocity;
+        break;
+    case MODE_COMMAND_CURRENT:
+        motionPlanner.currentTracker.CalcSoftGoal(controller->goalCurrent);
+        controller->softCurrent = motionPlanner.currentTracker.goCurrent;
+        break;
+    case MODE_COMMAND_Trajectory:
+        motionPlanner.trajectoryTracker.CalcSoftGoal(controller->goalPosition, controller->goalVelocity);
+        controller->softPosition = motionPlanner.trajectoryTracker.goPosition;
+        controller->softVelocity = motionPlanner.trajectoryTracker.goVelocity;
+        break;
+    case MODE_PWM_POSITION:
+        motionPlanner.positionTracker.CalcSoftGoal(controller->goalPosition);
+        controller->softPosition = motionPlanner.positionTracker.go_location;
+        controller->softVelocity = motionPlanner.positionTracker.go_velocity;
+        break;
+    case MODE_PWM_VELOCITY:
+        motionPlanner.velocityTracker.CalcSoftGoal(controller->goalVelocity);
+        controller->softVelocity = motionPlanner.velocityTracker.goVelocity;
+        break;
+    case MODE_PWM_CURRENT:
+        motionPlanner.currentTracker.CalcSoftGoal(controller->goalCurrent);
+        controller->softCurrent = motionPlanner.currentTracker.goCurrent;
+        break;
+    case MODE_STEP_DIR:
+        motionPlanner.positionInterpolator.CalcSoftGoal(controller->goalPosition);
+        controller->softPosition = motionPlanner.positionInterpolator.goPosition;
+        controller->softVelocity = motionPlanner.positionInterpolator.goVelocity;
+        break;
+    default:
+        break;
+    }
 
-    //     // Overload detect
-    //     if ((controller->modeRunning != MODE_COMMAND_CURRENT) &&
-    //         (controller->modeRunning != MODE_PWM_CURRENT) &&
-    //         (current == config.motionParams.ratedCurrent))
-    //     {
-    //         if (controller->overloadTime >= 1000 * 1000)
-    //             controller->overloadFlag = true;
-    //         else
-    //             controller->overloadTime += motionPlanner.CONTROL_PERIOD;
-    //     }
-    //     else // auto clear overload flag when released
-    //     {
-    //         controller->overloadTime = 0;
-    //         controller->overloadFlag = false;
-    //     }
+    controller->softDisable = controller->goalDisable;
+    controller->softBrake = controller->goalBrake;
 
-    //     /******************************** Update State ********************************/
-    //     if (!encoder->IsCalibrated())
-    //         controller->state = STATE_NO_CALIB;
-    //     else if (controller->modeRunning == MODE_STOP)
-    //         controller->state = STATE_STOP;
-    //     else if (controller->isStalled)
-    //         controller->state = STATE_STALL;
-    //     else if (controller->overloadFlag)
-    //         controller->state = STATE_OVERLOAD;
-    //     else
-    //     {
-    //         if (controller->modeRunning == MODE_COMMAND_POSITION)
-    //         {
-    //             if ((controller->softPosition == controller->goalPosition) && (controller->softVelocity == 0))
-    //                 controller->state = STATE_FINISH;
-    //             else
-    //                 controller->state = STATE_RUNNING;
-    //         }
-    //         else if (controller->modeRunning == MODE_COMMAND_VELOCITY)
-    //         {
-    //             if (controller->softVelocity == controller->goalVelocity)
-    //                 controller->state = STATE_FINISH;
-    //             else
-    //                 controller->state = STATE_RUNNING;
-    //         }
-    //         else if (controller->modeRunning == MODE_COMMAND_CURRENT)
-    //         {
-    //             if (controller->softCurrent == controller->goalCurrent)
-    //                 controller->state = STATE_FINISH;
-    //             else
-    //                 controller->state = STATE_RUNNING;
-    //         }
-    //         else
-    //         {
-    //             controller->state = STATE_FINISH;
-    //         }
-    //     }
+    /******************************** State Check ********************************/
+    int32_t current = fabs(controller->focCurrent);
+
+    // Stall detect
+    if (controller->config->stallProtectSwitch)
+    {
+        if ( // Current Mode
+            ((controller->modeRunning == MODE_COMMAND_CURRENT ||
+              controller->modeRunning == MODE_PWM_CURRENT) &&
+             (current != 0)) || // Other Mode
+            current == config.motionParams.ratedCurrent)
+        {
+            if (fabs(controller->estVelocity) < MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS / 5)
+            {
+                if (controller->stalledTime >= 1000 * 1000)
+                    controller->isStalled = true;
+                else
+                    controller->stalledTime += motionPlanner.CONTROL_PERIOD;
+            }
+        }
+        else // can ONLY clear stall flag  MANUALLY
+        {
+            controller->stalledTime = 0;
+        }
+    }
+
+    // Overload detect
+    if ((controller->modeRunning != MODE_COMMAND_CURRENT) &&
+        (controller->modeRunning != MODE_PWM_CURRENT) &&
+        (current == config.motionParams.ratedCurrent))
+    {
+        if (controller->overloadTime >= 1000 * 1000)
+            controller->overloadFlag = true;
+        else
+            controller->overloadTime += motionPlanner.CONTROL_PERIOD;
+    }
+    else // auto clear overload flag when released
+    {
+        controller->overloadTime = 0;
+        controller->overloadFlag = false;
+    }
+
+    /******************************** Update State ********************************/
+    if (!encoder->IsCalibrated())
+        controller->state = STATE_NO_CALIB;
+    else if (controller->modeRunning == MODE_STOP)
+        controller->state = STATE_STOP;
+    else if (controller->isStalled)
+        controller->state = STATE_STALL;
+    else if (controller->overloadFlag)
+        controller->state = STATE_OVERLOAD;
+    else
+    {
+        if (controller->modeRunning == MODE_COMMAND_POSITION)
+        {
+            if ((controller->softPosition == controller->goalPosition) && (controller->softVelocity == 0))
+                controller->state = STATE_FINISH;
+            else
+                controller->state = STATE_RUNNING;
+        }
+        else if (controller->modeRunning == MODE_COMMAND_VELOCITY)
+        {
+            if (controller->softVelocity == controller->goalVelocity)
+                controller->state = STATE_FINISH;
+            else
+                controller->state = STATE_RUNNING;
+        }
+        else if (controller->modeRunning == MODE_COMMAND_CURRENT)
+        {
+            if (controller->softCurrent == controller->goalCurrent)
+                controller->state = STATE_FINISH;
+            else
+                controller->state = STATE_RUNNING;
+        }
+        else
+        {
+            controller->state = STATE_FINISH;
+        }
+    }
 }
 
-// 由输入参数作为电流直接输出，并由其正负判断进行加减256后作为1024细分输出，还没配输出
+// 输入参数作为电流直接输出，并由其正负判断进行加减256后作为1024细分输出
 void Motor::Controller::CalcCurrentToOutput(int32_t current)
 {
     focCurrent = current;
@@ -352,21 +366,21 @@ void Motor::Controller::CalcCurrentToOutput(int32_t current)
     else
         focPosition = estPosition;
 
-    // context->driver->SetFocCurrentVector(focPosition, focCurrent);
+    tb67h450_base.SetFocCurrentVector(focPosition, focCurrent);
 }
 
-// 还没看
+// 输入目标速度，
 void Motor::Controller::CalcPidToOutput(int32_t _speed)
 {
     config->pid.vErrorLast = config->pid.vError;
-    config->pid.vError = _speed - estVelocity;
+    config->pid.vError = _speed - estVelocity; // 目标速度减估计速度
     if (config->pid.vError > (1024 * 1024))
         config->pid.vError = (1024 * 1024);
     if (config->pid.vError < (-1024 * 1024))
         config->pid.vError = (-1024 * 1024);
     config->pid.outputKp = ((config->pid.kp) * (config->pid.vError));
 
-    config->pid.integralRound += (config->pid.ki * config->pid.vError);
+    config->pid.integralRound += (config->pid.ki * config->pid.vError); // i*速度差
     config->pid.integralRemainder = config->pid.integralRound >> 10;
     config->pid.integralRound -= (config->pid.integralRemainder << 10);
     config->pid.outputKi += config->pid.integralRemainder;
@@ -387,6 +401,7 @@ void Motor::Controller::CalcPidToOutput(int32_t _speed)
     CalcCurrentToOutput(config->pid.output);
 }
 
+// 输入目标位置和速度，
 void Motor::Controller::CalcDceToOutput(int32_t _location, int32_t _speed)
 {
     config->dce.pError = _location - estPosition;
