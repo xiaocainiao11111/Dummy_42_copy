@@ -52,7 +52,7 @@ public:
         {
         }
 
-        int32_t goVelocity = 0;
+        int32_t goVelocity = 0;// 真实速度
 
         void Init();
         void SetVelocityAcc(int32_t _velocityAcc);
@@ -63,7 +63,7 @@ public:
         MotionPlanner *context;
         int32_t velocityAcc = 0;      // 加速度，默认51200*100（r/s^2）
         int32_t velocityIntegral = 0; // 模式变化置0
-        int32_t trackVelocity = 0;    // 模式变化时得到的估计速度或者目标速度
+        int32_t trackVelocity = 0;    // 跟踪速度，由加速度计算得到
 
         void CalcVelocityIntegral(int32_t _velocity);
     };

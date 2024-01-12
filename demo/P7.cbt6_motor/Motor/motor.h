@@ -138,7 +138,7 @@ extern "C"
             Motor *context;
             int32_t realLapPosition{};     // 当前细分数，从编码器获取
             int32_t realLapPositionLast{}; // 上次细分数记录
-            int32_t realPosition{};        // 每次细分差的累加，有正负
+            int32_t realPosition{};        // 每次细分差的累加，有正负，相当于运行总细分
             int32_t realPositionLast{};
             int32_t estVelocity{};         // 初始为0，估计速度
             int32_t estVelocityIntegral{}; // 初始为0
@@ -151,7 +151,7 @@ extern "C"
             int32_t goalCurrent{};
             bool goalDisable{}; // 永远是false
             bool goalBrake{};   // 永远是false
-            int32_t softPosition{};
+            int32_t softPosition{};// 等于goPosition，真实速度
             int32_t softVelocity{};
             int32_t softCurrent{};
             bool softDisable{}; // 永远是false

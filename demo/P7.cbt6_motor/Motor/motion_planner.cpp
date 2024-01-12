@@ -73,8 +73,6 @@ void MotionPlanner::CurrentTracker::CalcCurrentIntegral(int32_t _current)
     currentIntegral = currentIntegral % context->CONTROL_FREQUENCY;
 }
 
-
-
 void MotionPlanner::CurrentTracker::SetCurrentAcc(int32_t _currentAcc)
 {
     currentAcc = _currentAcc;
@@ -96,9 +94,10 @@ void MotionPlanner::VelocityTracker::NewTask(int32_t _realVelocity)
     trackVelocity = _realVelocity;
 }
 
+// 由加速度得到跟踪速度与目标速度比较，得到真实速度
 void MotionPlanner::VelocityTracker::CalcSoftGoal(int32_t _goalVelocity)
 {
-    int32_t deltaVelocity = _goalVelocity - trackVelocity;
+    int32_t deltaVelocity = _goalVelocity - trackVelocity;// 目标速度减跟踪速度
 
     if (deltaVelocity == 0)
     {
@@ -106,16 +105,16 @@ void MotionPlanner::VelocityTracker::CalcSoftGoal(int32_t _goalVelocity)
     }
     else if (deltaVelocity > 0)
     {
-        if (trackVelocity >= 0)
+        if (trackVelocity >= 0)// 跟踪速度大于或等于0但小于目标速度，进行正向加速度直到超过目标速度
         {
             CalcVelocityIntegral(velocityAcc);
-            if (trackVelocity >= _goalVelocity)//逐渐加速到目标速度
+            if (trackVelocity >= _goalVelocity)
             {
                 velocityIntegral = 0;
                 trackVelocity = _goalVelocity;
             }
         }
-        else
+        else// 跟踪速度小于0但目标速度大于0，先把跟踪速度正向加速到大于0，再把跟踪速度和加速度的累加值0，回到从0开始的加速阶段
         {
             CalcVelocityIntegral(velocityAcc);
             if (trackVelocity >= 0)
@@ -127,7 +126,7 @@ void MotionPlanner::VelocityTracker::CalcSoftGoal(int32_t _goalVelocity)
     }
     else if (deltaVelocity < 0)
     {
-        if (trackVelocity <= 0)
+        if (trackVelocity <= 0)// 跟踪速度比目标速度大，且都是负的，使用负加速度进行加速
         {
             CalcVelocityIntegral(-velocityAcc);
             if (trackVelocity <= _goalVelocity)
@@ -136,7 +135,7 @@ void MotionPlanner::VelocityTracker::CalcSoftGoal(int32_t _goalVelocity)
                 trackVelocity = _goalVelocity;
             }
         }
-        else
+        else// 跟踪速度为正，目标速度为负，先把跟踪速度减到0，再进行上面步骤
         {
             CalcVelocityIntegral(-velocityAcc);
             if (trackVelocity <= 0)
@@ -150,11 +149,12 @@ void MotionPlanner::VelocityTracker::CalcSoftGoal(int32_t _goalVelocity)
     goVelocity = (int32_t)trackVelocity;
 }
 
+// 由加速度计算跟踪速度算法
 void MotionPlanner::VelocityTracker::CalcVelocityIntegral(int32_t _velocity)
 {
-    velocityIntegral += _velocity;
-    trackVelocity += velocityIntegral / context->CONTROL_FREQUENCY;
-    velocityIntegral = velocityIntegral % context->CONTROL_FREQUENCY;
+    velocityIntegral += _velocity;                                    // 加速度累加得到变化速度
+    trackVelocity += velocityIntegral / context->CONTROL_FREQUENCY;   // 取整并累加得到跟踪速度，单位是50us
+    velocityIntegral = velocityIntegral % context->CONTROL_FREQUENCY; // 取余并累计得到变化速度
 }
 
 void MotionPlanner::PositionTracker::Init()

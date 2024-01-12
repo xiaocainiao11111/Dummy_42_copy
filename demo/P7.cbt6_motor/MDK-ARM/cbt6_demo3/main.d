@@ -20,6 +20,7 @@ cbt6_demo3/main.o: ../Core/Src/main.c ../Core/Inc\main.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_exti.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_dma.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h \
+  ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_can.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_cortex.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_flash.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
@@ -28,5 +29,6 @@ cbt6_demo3/main.o: ../Core/Src/main.c ../Core/Inc\main.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_tim.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_uart.h \
-  ../Core/Inc\dma.h ../Core/Inc\spi.h ../Core/Inc\tim.h \
-  ../Core/Inc\usart.h ../Core/Inc\gpio.h ../UserApp\common_inc.h
+  ../Core/Inc\can.h ../Core/Inc\dma.h ../Core/Inc\spi.h \
+  ../Core/Inc\tim.h ../Core/Inc\usart.h ../Core/Inc\gpio.h \
+  ../UserApp\common_inc.h

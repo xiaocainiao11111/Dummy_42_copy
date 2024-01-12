@@ -61,7 +61,7 @@ void Motor::CloseLoopControlTick()
     }
 
     /********************************* Update Data *********************************/
-    int32_t deltaLapPosition; // 超半圈的运动变反向
+    int32_t deltaLapPosition;
 
     // Read Encoder data
     controller->realLapPositionLast = controller->realLapPosition;   // 上次细分数
