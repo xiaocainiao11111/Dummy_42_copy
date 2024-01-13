@@ -33,7 +33,8 @@ cbt6_demo3/main_1.o: ../UserApp/main.cpp ../UserApp/common_inc.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_tim.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
   ../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_uart.h \
-  ../Core/Inc\tim.h ../Core/Inc\usart.h \
+  ../Core/Inc\tim.h ../Core/Inc\usart.h ../Core/Inc\can.h \
+  ../Core/Inc\gpio.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdio \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ../Motor\motor.h \
@@ -41,6 +42,6 @@ cbt6_demo3/main_1.o: ../UserApp/main.cpp ../UserApp/common_inc.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdint \
   ../Encoder\encoder_base.h ../Encoder\MT6816_base.h \
   ../Driver\tb67h450_base.h ../Encoder\encoder_calibrator_base.h \
-  ../UserApp/configurations.h \
+  ../Button\button_base.h ../UserApp/configurations.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdbool.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h

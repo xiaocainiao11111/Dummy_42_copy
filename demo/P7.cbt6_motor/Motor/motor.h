@@ -39,7 +39,7 @@ extern "C"
 
             /*****************************************************/
 
-            // motionPlanner.AttachConfig(&config.motionParams);
+            motionPlanner.AttachConfig(&config.motionParams);
             controller->AttachConfig(&config.ctrlParams);
         }
 

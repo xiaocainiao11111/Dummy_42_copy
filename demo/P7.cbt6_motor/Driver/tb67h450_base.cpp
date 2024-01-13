@@ -22,12 +22,10 @@
 //     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 // }
 
-
 // void TB67H450Base::InitPwm()
 // {
 //     MX_TIM2_Init();
 // }
-
 
 void TB67H450Base::DacOutputVoltage(uint16_t _voltageA_3300mVIn12bits, uint16_t _voltageB_3300mVIn12bits)
 {
@@ -35,13 +33,11 @@ void TB67H450Base::DacOutputVoltage(uint16_t _voltageA_3300mVIn12bits, uint16_t 
     __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, _voltageB_3300mVIn12bits >> 2);
 }
 
-
 void TB67H450Base::SetInputA(bool _statusAp, bool _statusAm)
 {
     _statusAp ? (GPIOA->BSRR = GPIO_PIN_5) : (GPIOA->BRR = GPIO_PIN_5);
     _statusAm ? (GPIOA->BSRR = GPIO_PIN_4) : (GPIOA->BRR = GPIO_PIN_4);
 }
-
 
 void TB67H450Base::SetInputB(bool _statusBp, bool _statusBm)
 {
@@ -49,17 +45,13 @@ void TB67H450Base::SetInputB(bool _statusBp, bool _statusBm)
     _statusBm ? (GPIOA->BSRR = GPIO_PIN_2) : (GPIOA->BRR = GPIO_PIN_2);
 }
 
-
-
-
 // void TB67H450Base::Init()
 // {
 //     InitGpio();
 //     InitPwm();
 // }
 
-
-//相当于算0到3300的数占4095的百分比，再用百分比算在1024的数，输出为对应占空比和对应电平
+// 输入细分数和最大电流，相当于算0到3300的数占4095的百分比，再用百分比算在1024的数，输出为对应占空比和对应电平
 void TB67H450Base::SetFocCurrentVector(uint32_t _directionInCount, int32_t _current_mA)
 {
     phaseB.sinMapPtr = (_directionInCount) & (0x000003FF);
@@ -69,12 +61,12 @@ void TB67H450Base::SetFocCurrentVector(uint32_t _directionInCount, int32_t _curr
     phaseB.sinMapData = sin_pi_m2[phaseB.sinMapPtr];
 
     uint32_t dac_reg = fabs(_current_mA);
-    dac_reg = (uint32_t) (dac_reg * 5083) >> 12;//将0到3300映射至0到4095
+    dac_reg = (uint32_t)(dac_reg * 5083) >> 12; // 将0到3300映射至0到4095
     dac_reg = dac_reg & (0x00000FFF);
     phaseA.dacValue12Bits =
-        (uint32_t) (dac_reg * fabs(phaseA.sinMapData)) >> sin_pi_m2_dpiybit;
+        (uint32_t)(dac_reg * fabs(phaseA.sinMapData)) >> sin_pi_m2_dpiybit;
     phaseB.dacValue12Bits =
-        (uint32_t) (dac_reg * fabs(phaseB.sinMapData)) >> sin_pi_m2_dpiybit;
+        (uint32_t)(dac_reg * fabs(phaseB.sinMapData)) >> sin_pi_m2_dpiybit;
 
     SetTwoCoilsCurrent(phaseA.dacValue12Bits, phaseB.dacValue12Bits);
 
@@ -93,7 +85,6 @@ void TB67H450Base::SetFocCurrentVector(uint32_t _directionInCount, int32_t _curr
         SetInputB(true, true);
 }
 
-
 void TB67H450Base::SetTwoCoilsCurrent(uint16_t _currentA_3300mAIn12Bits, uint16_t _currentB_3300mAIn12Bits)
 {
     /*
@@ -104,7 +95,6 @@ void TB67H450Base::SetTwoCoilsCurrent(uint16_t _currentA_3300mAIn12Bits, uint16_
 
     DacOutputVoltage(_currentA_3300mAIn12Bits, _currentB_3300mAIn12Bits);
 }
-
 
 void TB67H450Base::Sleep()
 {
@@ -117,7 +107,6 @@ void TB67H450Base::Sleep()
     SetInputB(false, false);
 }
 
-
 void TB67H450Base::Brake()
 {
     phaseA.dacValue12Bits = 0;
@@ -128,6 +117,3 @@ void TB67H450Base::Brake()
     SetInputA(true, true);
     SetInputB(true, true);
 }
-
-
-

@@ -157,7 +157,7 @@
           <Type>0</Type>
           <LineNumber>356</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>134231614</Address>
+          <Address>134233474</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -209,6 +209,11 @@
           <count>7</count>
           <WinNumber>1</WinNumber>
           <ItemText>dataU16</ItemText>
+        </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>\\cbt6_demo3\../UserApp/main.cpp\motor,0x0A</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
@@ -752,6 +757,18 @@
       <bDave2>0</bDave2>
       <PathWithFileName>..\Motor\motion_planner.cpp</PathWithFileName>
       <FilenameWithoutPath>motion_planner.cpp</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>5</GroupNumber>
+      <FileNumber>36</FileNumber>
+      <FileType>8</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\UserApp\interface_can.cpp</PathWithFileName>
+      <FilenameWithoutPath>interface_can.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

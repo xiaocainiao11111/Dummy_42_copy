@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../UserApp;../Motor;../Encoder;../Driver;../Memory</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../UserApp;../Motor;../Encoder;../Driver;../Memory;../Button</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -974,6 +974,11 @@
               <FileName>motion_planner.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Motor\motion_planner.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>interface_can.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\UserApp\interface_can.cpp</FilePath>
             </File>
           </Files>
         </Group>

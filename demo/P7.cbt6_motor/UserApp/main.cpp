@@ -7,6 +7,12 @@ sqrtf测试，计算平方根
 
 // extern "C"  void tim4callback(void);
 
+extern uint8_t TxData[8];
+extern uint8_t RxData[8];
+
+extern CAN_TxHeaderTypeDef TxHeader;
+extern CAN_RxHeaderTypeDef RxHeader;
+
 uint16_t _b = 0, _g = 0, _p = 0;
 uint8_t rx_buffer[128] = {0}, rxLen = 0;
 
@@ -15,12 +21,13 @@ Motor motor;
 MT6816Base mt6816_base((uint16_t *)(0x08017C00));
 TB67H450Base tb67h450_base;
 EncoderCalibratorBase encoder_calibrator_base;
+ButtonBase button1(GPIOB, GPIO_PIN_2, 1, 1000), button2(GPIOB, GPIO_PIN_12, 2, 1000);
+
 extern DMA_HandleTypeDef hdma_usart1_rx;
 extern uint8_t _a;
 extern uint16_t _v;
 
-
-uint16_t aaa=0;
+uint16_t aaa = 0;
 
 extern "C" void Main()
 {
@@ -46,6 +53,24 @@ extern "C" void Main()
     HAL_UART_Receive_DMA(&huart1, rx_buffer, 128);
 
     motor.AttachEncoder(&mt6816_base);
+
+    boardConfig = BoardConfig_t{
+        .configStatus = CONFIG_OK,
+        // .canNodeId = defaultNodeID,
+        .encoderHomeOffset = 0,
+        .defaultMode = Motor::MODE_COMMAND_POSITION,
+        .currentLimit = 1 * 1000,                                     // A
+        .velocityLimit = 30 * motor.MOTOR_ONE_CIRCLE_SUBDIVIDE_STEPS, // r/s,51200*30
+        .velocityAcc = 1000000,                                       // r/s^2,5120000
+        .calibrationCurrent = 2000,
+        .dce_kp = 200,
+        .dce_kv = 80,
+        .dce_ki = 300,
+        .dce_kd = 250,
+        .enableMotorOnBoot = false,
+        .enableStallProtect = false};
+
+    motor.motionPlanner.velocityTracker.SetVelocityAcc(boardConfig.velocityAcc);
 
     for (;;)
     {
@@ -89,6 +114,7 @@ extern "C" void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         }
         else
         {
+
             motor.Tick20kHz();
         }
 
@@ -129,4 +155,21 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     rxLen = 128 - temp;
 
     HAL_UART_Receive_DMA(&huart1, rx_buffer, 128);
+}
+
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *CanHandle)
+{
+    /* Get RX message */
+    if (HAL_CAN_GetRxMessage(CanHandle, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
+    {
+        /* Reception Error */
+        Error_Handler();
+    }
+
+    uint8_t id = (RxHeader.StdId >> 7);  // 4Bits ID & 7Bits Msg
+    uint8_t cmd = RxHeader.StdId & 0x7F; // 4Bits ID & 7Bits Msg
+    if (id == 0 || id == 1)
+    {
+        OnCanCmd(cmd, RxData, RxHeader.DLC);
+    }
 }

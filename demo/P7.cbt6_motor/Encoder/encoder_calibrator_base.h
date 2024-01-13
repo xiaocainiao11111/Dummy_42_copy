@@ -81,7 +81,7 @@ extern "C"
         void ClearFlash();                           // 清空flash
         void WriteFlash16bitsAppend(uint16_t _data); // flash写入数据，需要在解锁和上锁之间使用
     };
-
+    extern EncoderCalibratorBase encoder_calibrator_base;
 #ifdef __cplusplus
 }
 #endif
