@@ -370,7 +370,7 @@ void Motor::CloseLoopControlTick()
         tb67h450_base.SetFocCurrentVector(focPosition, focCurrent);
     }
 
-    // 输入目标速度，
+    // 输入目标速度，进行pid计算
     void Motor::Controller::CalcPidToOutput(int32_t _speed)
     {
         config->pid.vErrorLast = config->pid.vError;
