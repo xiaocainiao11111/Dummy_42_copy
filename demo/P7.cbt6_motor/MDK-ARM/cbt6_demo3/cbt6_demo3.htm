@@ -3,9 +3,9 @@
 <title>Static Call Graph - [cbt6_demo3\cbt6_demo3.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image cbt6_demo3\cbt6_demo3.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6070001: Last Updated: Sat Jan 13 18:02:26 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6070001: Last Updated: Wed Mar  6 11:15:48 2024
 <BR><P>
-<H3>Maximum Stack Usage =        176 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        184 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; Main &rArr; EncoderCalibratorBase::TickMainLoop() &rArr; Stockpile_Flash_Data_Empty &rArr; HAL_FLASHEx_Erase &rArr; FLASH_WaitForLastOperation
 <P>
@@ -99,8 +99,8 @@ Function Pointers
 Global Symbols
 </H3>
 <P><STRONG><a name="[41]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
-<BR><BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<BR><BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
 <P><STRONG><a name="[43]"></a>__scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter))
@@ -215,7 +215,7 @@ Global Symbols
 <P><STRONG><a name="[150]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[4c]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; Main &rArr; EncoderCalibratorBase::TickMainLoop() &rArr; Stockpile_Flash_Data_Empty &rArr; HAL_FLASHEx_Erase &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1102,8 +1102,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b5]"></a>Main</STRONG> (Thumb, 216 bytes, Stack size 24 bytes, main_1.o(.text.Main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = Main &rArr; EncoderCalibratorBase::TickMainLoop() &rArr; Stockpile_Flash_Data_Empty &rArr; HAL_FLASHEx_Erase &rArr; FLASH_WaitForLastOperation
+<P><STRONG><a name="[b5]"></a>Main</STRONG> (Thumb, 232 bytes, Stack size 32 bytes, main_1.o(.text.Main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = Main &rArr; EncoderCalibratorBase::TickMainLoop() &rArr; Stockpile_Flash_Data_Empty &rArr; HAL_FLASHEx_Erase &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
@@ -1145,11 +1145,11 @@ Global Symbols
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor::Controller::GetVelocity()
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor::Controller::GetPosition(bool)
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MotionPlanner::VelocityTracker::SetVelocityAcc(int)
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Send(CAN_TxHeaderTypeDef*, unsigned char*)
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MotionPlanner::PositionTracker::SetVelocityAcc(int)
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Send(CAN_TxHeaderTypeDef*, unsigned char*)
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MotionPlanner::PositionTracker::SetVelocityAcc(int)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_RxFifo0MsgPendingCallback
 </UL>
@@ -1358,13 +1358,13 @@ Global Symbols
 <P><STRONG><a name="[e7]"></a>MotionPlanner::PositionTracker::CalcSoftGoal(int)</STRONG> (Thumb, 356 bytes, Stack size 32 bytes, motion_planner.o(.text._ZN13MotionPlanner15PositionTracker12CalcSoftGoalEi))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = MotionPlanner::PositionTracker::CalcSoftGoal(int) &rArr; __aeabi_fmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
+<BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmple
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MotionPlanner::PositionTracker::CalcVelocityIntegral(int)
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MotionPlanner::PositionTracker::CalcPositionIntegral(int)
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
 </UL>
 <BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor::CloseLoopControlTick()
 </UL>
@@ -1372,8 +1372,8 @@ Global Symbols
 <P><STRONG><a name="[c6]"></a>MotionPlanner::PositionTracker::SetVelocityAcc(int)</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, motion_planner.o(.text._ZN13MotionPlanner15PositionTracker14SetVelocityAccEi))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = MotionPlanner::PositionTracker::SetVelocityAcc(int) &rArr; __aeabi_fdiv
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
 </UL>
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OnCanCmd
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MotionPlanner::PositionTracker::Init()
@@ -1421,14 +1421,14 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[ee]"></a>MotionPlanner::TrajectoryTracker::CalcSoftGoal(int, int)</STRONG> (Thumb, 212 bytes, Stack size 32 bytes, motion_planner.o(.text._ZN13MotionPlanner17TrajectoryTracker12CalcSoftGoalEii))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = MotionPlanner::TrajectoryTracker::CalcSoftGoal(int, int) &rArr; __aeabi_fmul
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = MotionPlanner::TrajectoryTracker::CalcSoftGoal(int, int) &rArr; __aeabi_fdiv
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MotionPlanner::TrajectoryTracker::CalcVelocityIntegral(int)
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MotionPlanner::TrajectoryTracker::CalcPositionIntegral(int)
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
 </UL>
 <BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor::CloseLoopControlTick()
 </UL>
@@ -1523,8 +1523,8 @@ Global Symbols
 <P><STRONG><a name="[c5]"></a>Motor::Controller::GetPosition(bool)</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, motor.o(.text._ZN5Motor10Controller11GetPositionEb))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Motor::Controller::GetPosition(bool) &rArr; __aeabi_fdiv
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
 </UL>
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OnCanCmd
 </UL>
@@ -1532,8 +1532,8 @@ Global Symbols
 <P><STRONG><a name="[c8]"></a>Motor::Controller::GetVelocity()</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, motor.o(.text._ZN5Motor10Controller11GetVelocityEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Motor::Controller::GetVelocity() &rArr; __aeabi_fdiv
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
 </UL>
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OnCanCmd
 </UL>
@@ -1549,8 +1549,8 @@ Global Symbols
 <P><STRONG><a name="[ca]"></a>Motor::Controller::GetFocCurrent()</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, motor.o(.text._ZN5Motor10Controller13GetFocCurrentEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Motor::Controller::GetFocCurrent() &rArr; __aeabi_fdiv
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
 </UL>
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OnCanCmd
 </UL>
@@ -1604,16 +1604,16 @@ Global Symbols
 <P><STRONG><a name="[c9]"></a>Motor::Controller::SetPositionSetPointWithTime(int, float)</STRONG> (Thumb, 200 bytes, Stack size 40 bytes, motor.o(.text._ZN5Motor10Controller27SetPositionSetPointWithTimeEif))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = Motor::Controller::SetPositionSetPointWithTime(int, float) &rArr; sqrtf &rArr; _fsqrt &rArr; __fpl_fnaninf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrtf
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrtf
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
 </UL>
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OnCanCmd
 </UL>
@@ -1678,7 +1678,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[4d]"></a>main</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = main &rArr; Main &rArr; EncoderCalibratorBase::TickMainLoop() &rArr; Stockpile_Flash_Data_Empty &rArr; HAL_FLASHEx_Erase &rArr; FLASH_WaitForLastOperation
+<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = main &rArr; Main &rArr; EncoderCalibratorBase::TickMainLoop() &rArr; Stockpile_Flash_Data_Empty &rArr; HAL_FLASHEx_Erase &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main
@@ -2000,21 +2000,21 @@ Global Symbols
 <P><STRONG><a name="[11a]"></a>__fpl_fnaninf</STRONG> (Thumb, 140 bytes, Stack size 8 bytes, fnaninf.o(x$fpl$fnaninf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __fpl_fnaninf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fmul
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ffix
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fdiv
+<BR>[Called By]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fdiv
 <LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsqrt
 <LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpge
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fmul
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ffix
 </UL>
 
 <P><STRONG><a name="[119]"></a>__fpl_fretinf</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, fretinf.o(x$fpl$fretinf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fmul
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fdiv
+<BR><BR>[Called By]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fdiv
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fmul
 </UL>
 
 <P><STRONG><a name="[10d]"></a>_fsqrt</STRONG> (Thumb, 272 bytes, Stack size 24 bytes, fsqrt.o(x$fpl$fsqrt))

@@ -71,6 +71,8 @@ extern "C" void Main()
         .enableStallProtect = false};
 
     motor.motionPlanner.velocityTracker.SetVelocityAcc(boardConfig.velocityAcc);
+    __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_4, 500);
+    __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 900);
 
     for (;;)
     {
