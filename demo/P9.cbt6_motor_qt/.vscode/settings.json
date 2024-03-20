@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "common_inc.h": "c",
+        "stm32f1xx_it.h": "c",
+        "uart_handle.h": "c"
+    }
+}
